@@ -90,3 +90,9 @@ Tests: update existing game.test.js for new settings/timers; add tests for namin
 
 ## 5. Out of scope
 Per-host timer tuning, player-chosen teams, persistent team names across games.
+
+## 6. Category selection (added 2026-11-20, user request #8)
+- `settings.categories`: array of selected category strings; default = all categories in the bank. `host:settings {categories}` (lobby only) validates known categories, dedupes, rejects empty.
+- Snapshot top-level `categoryCounts: {[category]: number}` (built-in counts, static, sent to all).
+- Deck at start = built-ins in selected categories + all custom questions. `host:start` fails if deck < 15 questions or no ≥5-answer question for the bonus ("Selected categories have only N questions — pick more (min 15)").
+- Lobby UI: host toggle chips per category with counts + All/None, live total, Start disabled under 15; non-hosts see selected chips read-only. How to Play mentions it.
