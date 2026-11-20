@@ -7,3 +7,4 @@ Deviations: pause allowed in team_naming/round_end; acting captain shown when ca
 Lead fixes: empty-guess toast now says "ran out of time".
 Tech debt: phone landscape (844x390) is cramped but usable; client-reported buzz timing still spoofable.
 - Added (user request): host "Close room" button (header, every phase, confirm) → `host:closeRoom` (ADR-003). Players land on start screen with "The host closed the room." Also fixed: after any server-initiated disconnect (kick/close) the client reconnects so it can join or create a new room (previously a kicked player's socket stayed dead).
+- Added (user request): "Leave" header button for every player (confirm). `player:leave` → removed from roster/team, others get "<name> left the room" toast; host leaving passes host immediately; last player leaving deletes the room. Kick now shares removePlayer().

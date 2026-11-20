@@ -161,6 +161,16 @@
     $('join-code').value = ''; // the closed room's code is dead
     leaveRoom(wasHost ? 'You closed the room.' : 'The host closed the room. Thanks for playing!');
   });
+  $('leave-room').addEventListener('click', async () => {
+    const host = !!(S && S.you && S.you.isHost);
+    const others = S ? S.players.length - 1 : 0;
+    const msg = host && others > 0
+      ? 'Leave the room? Host will pass to another player and the game continues without you.'
+      : 'Leave the room? You can rejoin with the room code (as a new player).';
+    if (!confirm(msg)) return;
+    const res = await cmd('player:leave');
+    if (res.ok) leaveRoom('You left the room.');
+  });
   $('close-room').addEventListener('click', () => {
     if (confirm('Close this room for everyone? All players will be sent back to the start screen.')) cmd('host:closeRoom');
   });
@@ -200,6 +210,7 @@
     show($('hdr-code'), !!S);
     if (S) setText($('hdr-code'), S.code);
     show($('close-room'), !!(S && S.you && S.you.isHost));
+    show($('leave-room'), !!(S && S.you));
     renderRoundChip();
     if (view !== 'lobby' && $('cq-dialog').open) $('cq-dialog').close();
     if (view !== 'game') closeSheet();
@@ -1083,6 +1094,7 @@
       case 'bonusReveal': FX.play('drumroll'); setTimeout(() => FX.chase($('marquee')), 2000); break;
       case 'gameOver': FX.play('fanfare'); FX.confetti(); announce('Game over'); break;
       case 'kicked': if (d.playerId === me().id) leaveRoom('You were removed by the host.'); break;
+      case 'left': if (d.name) toast(d.name + ' left the room'); break;
       case 'hostChanged': toast(pname(st.hostId) + ' is now the host'); break;
       case 'join': if (d.playerId && d.playerId !== me().id && st.phase === 'lobby') FX.play('tick'); break;
       default: break;

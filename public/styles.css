@@ -624,4 +624,4 @@ label > input, label > select { margin-top: 4px; }
 
 /* host close-room button: icon only on phones */
 .close-room { border-color: rgba(230, 57, 70, 0.6); }
-@media (max-width: 767px) { .close-room .lbl { display: none; } }
+@media (max-width: 767px) { .close-room .lbl, .leave-room .lbl { display: none; } }

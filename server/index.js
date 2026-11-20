@@ -16,7 +16,7 @@ const IDLE_MS = 3 * 60 * 60 * 1000;
 const GAME_EVENTS = [
   'host:settings', 'host:addQuestion', 'host:removeQuestion', 'host:start', 'host:next', 'host:pause', 'host:resume',
   'host:skip', 'host:accept', 'host:kick', 'host:end', 'host:playAgain', 'team:name', 'team:lock', 'buzz', 'answer',
-  'bonus:bet', 'bonus:answer',
+  'bonus:bet', 'bonus:answer', 'player:leave',
 ];
 
 let questions;
@@ -137,6 +137,16 @@ io.on('connection', (socket) => {
       const room = rooms.get(socket.data.code);
       if (!room || !socket.data.playerId) return { ok: false, error: 'Not in a room' };
       const res = game.handle(room, socket.data.playerId, event, payload);
+      if (event === 'player:leave' && res.ok) {
+        const leaverId = socket.data.playerId;
+        // Detach every socket (tab) of the leaver but keep them connected so they can join/host again.
+        for (const s of socketsIn(room.code)) {
+          if (s.data.playerId !== leaverId) continue;
+          s.data.code = s.data.playerId = null;
+          s.leave(room.code);
+        }
+        if (!room.players.length) setImmediate(() => closeRoom(room)); // last one out turns off the lights
+      }
       if (event === 'host:kick' && res.ok) {
         // Kicked sockets already got their final state (lastEvent kicked) from broadcast.
         for (const s of socketsIn(room.code)) {

@@ -177,6 +177,12 @@ function reconnect(room, token) {
   return p;
 }
 
+// ponytail: a removed current typer/faceoff player just times out (counts as a miss).
+function removePlayer(room, target) {
+  room.players = room.players.filter((x) => x !== target);
+  for (const t of room.teams) t.playerIds = t.playerIds.filter((id) => id !== target.id);
+}
+
 function disconnect(room, playerId) {
   const p = byId(room, playerId);
   if (!p || !p.connected) return;
@@ -620,10 +626,19 @@ const handlers = {
     const target = byId(room, d.playerId);
     if (!target) return fail('No such player');
     if (target.id === p.id) return fail('Cannot kick yourself');
-    room.players = room.players.filter((x) => x !== target);
-    for (const t of room.teams) t.playerIds = t.playerIds.filter((id) => id !== target.id);
-    // ponytail: a kicked current typer/faceoff player just times out (counts as a miss).
+    removePlayer(room, target);
     emit(room, 'kicked', { playerId: target.id, name: target.name });
+  },
+
+  // A player leaves voluntarily. If the host leaves, host passes on immediately.
+  'player:leave'(room, p) {
+    removePlayer(room, p);
+    emit(room, 'left', { playerId: p.id, name: p.name });
+    if (room.hostId === p.id && room.players.length) {
+      const next = [...room.players].sort((a, b) => (b.connected - a.connected) || (a.connectedSince - b.connectedSince))[0];
+      room.hostId = next.id;
+      emit(room, 'hostChanged', { hostId: next.id });
+    }
   },
 
   'host:end'(room) {

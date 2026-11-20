@@ -6,3 +6,4 @@
 - Bugs: empty-guess toast (fixed). Earlier "hang after bonus" was a test-harness timeout, not a game bug.
 - Not covered: real phones/Safari, real 20-person session.
 - Close room e2e (Chrome host 1280 + phone player 390 + socket bots): 13/13 PASS — non-host rejected, button host-only, all clients notified & on landing, no false error toast, room deleted, ex-player can create a new room, no page errors.
+- Leave room: unit test (lobby leave, host leave mid-game transfers host, new host can act) → 27/27. Chrome e2e 13/13 PASS (player leaves, toast, roster update, ex-player hosts new room, host leaves → host passes, last leave deletes room, no page errors). Phone host header fits at 360/390 px.

@@ -620,3 +620,25 @@ test('categories: unselected categories never appear in a full game', () => {
   for (const c of cats) assert.ok(['zoo', 'filler', 'custom'].includes(c), c);
   assert.strictEqual(room.bonus.question, 'Name a cheese');
 });
+
+test('player:leave removes the player; host leaving passes host on', () => {
+  const { room, ids } = setup(4);
+  const host = room.hostId;
+  const other = ids.find((id) => id !== host);
+  // Non-host leaves in the lobby.
+  ok(handle(room, other, 'player:leave', {}));
+  assert.ok(!room.players.some((p) => p.id === other));
+  assert.strictEqual(room.lastEvent.type, 'left');
+  bad(handle(room, other, 'player:leave', {})); // already gone
+
+  // Mid-game: host leaves, is removed from their team, host transfers to a remaining player.
+  begin(room);
+  const hostTeam = room.teams.find((t) => t.playerIds.includes(host));
+  ok(handle(room, host, 'player:leave', {}));
+  assert.ok(!hostTeam.playerIds.includes(host));
+  assert.notStrictEqual(room.hostId, host);
+  assert.ok(room.players.some((p) => p.id === room.hostId));
+  assert.strictEqual(room.lastEvent.type, 'hostChanged');
+  // The new host can run the game.
+  ok(handle(room, room.hostId, 'host:pause', {}));
+});
