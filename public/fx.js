@@ -79,6 +79,7 @@
       tone(c, 1568, t, 0.18, 'square', 0.1);
       tone(c, 2093, t + 0.09, 0.25, 'square', 0.09);
     },
+    turn(c, t) { [659, 880, 1175].forEach((f, i) => tone(c, f, t + i * 0.09, 0.22, 'triangle', 0.16)); },
     alarm(c, t) { for (let i = 0; i < 6; i++) tone(c, i % 2 ? 950 : 700, t + i * 0.18, 0.16, 'square', 0.1); },
     chip(c, t) {
       tone(c, 2000, t, 0.08, 'triangle', 0.12);
