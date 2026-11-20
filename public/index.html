@@ -341,6 +341,18 @@
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <div id="live" class="sr-only" aria-live="assertive"></div>
 
+<!-- Themed confirmation dialog (replaces browser confirm()). Filled by askConfirm() in app.js. -->
+<dialog id="confirm-dialog" class="modal confirm-modal" aria-labelledby="cf-title" aria-describedby="cf-body">
+  <form method="dialog" class="confirm-inner">
+    <div id="cf-icon" class="cf-icon" aria-hidden="true"></div>
+    <h2 id="cf-title" class="cf-title"></h2>
+    <p id="cf-body" class="cf-body"></p>
+    <div class="cf-actions">
+      <button id="cf-cancel" class="btn ghost" value="cancel" type="submit">Cancel</button>
+      <button id="cf-ok" class="btn gold" value="ok" type="submit">OK</button>
+    </div>
+  </form>
+</dialog>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/fx.js"></script>
 <script src="/app.js"></script>

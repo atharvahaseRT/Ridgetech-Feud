@@ -74,6 +74,31 @@
     return res;
   }
 
+  // Themed replacement for window.confirm(). Resolves true only on the confirm button.
+  // Esc, Cancel and a backdrop click all resolve false. Text is set via textContent.
+  let cfResolve = null;
+  function askConfirm({ title, body, ok = 'OK', icon = '❓', danger = false }) {
+    const d = $('confirm-dialog');
+    if (cfResolve) { cfResolve(false); cfResolve = null; }
+    if (d.open) d.close('cancel');
+    setText($('cf-icon'), icon);
+    setText($('cf-title'), title);
+    setText($('cf-body'), body);
+    setText($('cf-ok'), ok);
+    d.classList.toggle('danger', danger);
+    $('cf-ok').className = 'btn ' + (danger ? 'danger' : 'gold');
+    d.returnValue = '';
+    d.showModal();
+    (danger ? $('cf-cancel') : $('cf-ok')).focus(); // destructive actions default to Cancel
+    return new Promise((resolve) => { cfResolve = resolve; });
+  }
+  $('confirm-dialog').addEventListener('close', () => {
+    const r = cfResolve;
+    cfResolve = null;
+    if (r) r($('confirm-dialog').returnValue === 'ok');
+  });
+  $('confirm-dialog').addEventListener('click', (e) => { if (e.target === e.currentTarget) e.currentTarget.close('cancel'); });
+
   const P = (id) => (S && S.players.find((p) => p.id === id)) || null;
   const pname = (id) => (P(id) ? P(id).name : 'Someone');
   const T = (id) => (S && S.teams.find((t) => t.id === id)) || null;
@@ -112,6 +137,7 @@
   }
 
   function leaveRoom(msg) {
+    if ($('confirm-dialog').open) $('confirm-dialog').close('cancel'); // a pending confirm is moot now
     if (session) store.del(session.code);
     session = null;
     S = null;
@@ -164,15 +190,15 @@
   $('leave-room').addEventListener('click', async () => {
     const host = !!(S && S.you && S.you.isHost);
     const others = S ? S.players.length - 1 : 0;
-    const msg = host && others > 0
-      ? 'Leave the room? Host will pass to another player and the game continues without you.'
-      : 'Leave the room? You can rejoin with the room code (as a new player).';
-    if (!confirm(msg)) return;
+    const body = host && others > 0
+      ? 'Host passes to another player and the game carries on without you.'
+      : 'You can rejoin later with the room code, as a new player.';
+    if (!(await askConfirm({ title: 'Leave the room?', body, ok: 'Leave', icon: '↩' }))) return;
     const res = await cmd('player:leave');
     if (res.ok) leaveRoom('You left the room.');
   });
-  $('close-room').addEventListener('click', () => {
-    if (confirm('Close this room for everyone? All players will be sent back to the start screen.')) cmd('host:closeRoom');
+  $('close-room').addEventListener('click', async () => {
+    if (await askConfirm({ title: 'Close the room?', body: 'Everyone is sent back to the start screen and this room code stops working.', ok: 'Close room', icon: '✕', danger: true })) cmd('host:closeRoom');
   });
 
   socket.on('state', (st) => {
@@ -283,7 +309,9 @@
       const b = el('button', 'btn tiny danger', '✕');
       b.type = 'button';
       b.setAttribute('aria-label', 'Remove ' + p.name);
-      b.addEventListener('click', () => { if (confirm('Remove ' + p.name + ' from the room?')) cmd('host:kick', { playerId: p.id }); });
+      b.addEventListener('click', async () => {
+        if (await askConfirm({ title: 'Remove ' + p.name + '?', body: 'They leave the room and their team. They can rejoin with the room code.', ok: 'Remove', icon: '🚪', danger: true })) cmd('host:kick', { playerId: p.id });
+      });
       li.appendChild(b);
     }
     return li;
@@ -941,10 +969,14 @@
     $('h-roster').replaceChildren(...S.players.map(rosterChip));
   }
   $('h-pause').addEventListener('click', () => cmd(S.paused ? 'host:resume' : 'host:pause'));
-  $('h-skip').addEventListener('click', () => { if (confirm('Skip this question? No points are awarded.')) cmd('host:skip'); });
+  $('h-skip').addEventListener('click', async () => {
+    if (await askConfirm({ title: 'Skip this question?', body: 'A new question is drawn for this round. No points are awarded.', ok: 'Skip', icon: '⏭' })) cmd('host:skip');
+  });
   $('h-accept').addEventListener('click', () => cmd('host:accept'));
   $('h-next').addEventListener('click', () => cmd('host:next'));
-  $('h-end').addEventListener('click', () => { if (confirm('End the game now and go to final scores?')) cmd('host:end'); });
+  $('h-end').addEventListener('click', async () => {
+    if (await askConfirm({ title: 'End the game?', body: 'Jump straight to the final scores and podium. This can’t be undone.', ok: 'End game', icon: '🏁', danger: true })) cmd('host:end');
+  });
 
   // --- last guess toast ---
   let lastGuessKey = null;
