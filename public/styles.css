@@ -621,3 +621,7 @@ label > input, label > select { margin-top: 4px; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   .stamp.show { animation: none; opacity: 1; transform: translate(-50%, -50%); }
 }
+
+/* host close-room button: icon only on phones */
+.close-room { border-color: rgba(230, 57, 70, 0.6); }
+@media (max-width: 767px) { .close-room .lbl { display: none; } }
