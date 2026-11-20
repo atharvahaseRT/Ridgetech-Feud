@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ridgetech Feud</title>
+<meta name="description" content="Ridgetech Feud: a Summit Showdown survey party game.">
+<link rel="icon" href="/brand/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="sky" aria-hidden="true">
+  <div class="stars"></div>
+  <svg class="ridges" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path class="r1" d="M0 190 L120 120 L210 170 L340 70 L470 160 L560 110 L700 180 L820 90 L960 170 L1080 100 L1210 160 L1330 80 L1440 140 V320 H0Z"/>
+    <path class="r2" d="M0 230 L90 190 L200 240 L320 160 L430 220 L580 150 L690 230 L800 180 L930 240 L1050 170 L1190 230 L1300 180 L1440 220 V320 H0Z"/>
+    <path class="r3" d="M0 280 L140 240 L260 285 L400 230 L540 280 L660 250 L790 290 L920 240 L1060 285 L1200 250 L1330 280 L1440 260 V320 H0Z"/>
+  </svg>
+</div>
+
+<div id="conn" class="conn-banner" role="status" hidden>Connection lost. Reconnecting&hellip;</div>
+
+<header class="top">
+  <a class="brand" href="/" aria-label="Ridgetech Feud home">
+    <img src="/brand/logo-wordmark.png" alt="Ridgetech" class="wordmark">
+    <span class="brand-tag">FEUD</span>
+  </a>
+  <div class="top-right">
+    <span id="hdr-code" class="code-pill" hidden></span>
+    <button id="mute" class="btn ghost small" type="button" aria-pressed="false">Sound on</button>
+  </div>
+</header>
+
+<main id="app">
+  <!-- LANDING -->
+  <section id="v-landing" class="view">
+    <div class="hero">
+      <img src="/brand/logo-badge.png" alt="" class="hero-badge">
+      <h1 class="title">Ridgetech <span>Feud</span></h1>
+      <p class="tagline">Summit Showdown &middot; guess what the crowd said, climb the ridge.</p>
+    </div>
+    <div class="landing-cards">
+      <form id="join-form" class="card">
+        <h2>Join a game</h2>
+        <label>Room code
+          <input id="join-code" class="mono upper" maxlength="4" required autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABCD">
+        </label>
+        <label>Your name
+          <input id="join-name" maxlength="20" required autocomplete="nickname">
+        </label>
+        <button class="btn big" type="submit">Join</button>
+      </form>
+      <form id="host-form" class="card">
+        <h2>Host a game</h2>
+        <label>Your name
+          <input id="host-name" maxlength="20" required autocomplete="nickname">
+        </label>
+        <p class="muted">You get a link to share. You play too.</p>
+        <button class="btn big gold" type="submit">Create room</button>
+      </form>
+    </div>
+    <p id="landing-error" class="error" role="alert"></p>
+  </section>
+
+  <!-- LOBBY -->
+  <section id="v-lobby" class="view" hidden>
+    <div class="lobby-grid">
+      <div class="card share-card">
+        <h2>Room <span id="lobby-code" class="mono gold-text"></span></h2>
+        <label for="share-link">Send this link to your crew</label>
+        <div class="share-row">
+          <input id="share-link" class="mono" readonly>
+          <button id="copy-link" class="btn gold" type="button">Copy link</button>
+        </div>
+        <div class="start-area">
+          <button id="start-btn" class="btn big gold" type="button" hidden>Start game</button>
+          <p id="start-hint" class="muted"></p>
+        </div>
+      </div>
+
+      <div class="card roster-card">
+        <h2>Climbers <span id="roster-count" class="muted"></span></h2>
+        <ul id="roster" class="roster"></ul>
+      </div>
+
+      <div class="card howto">
+        <h2>How to play</h2>
+        <ol>
+          <li>Teams are assigned automatically when the host starts.</li>
+          <li><b>Face-off:</b> one player from each of two teams. Wait for <b>GO</b>, then hit <kbd>Space</kbd> (or tap the buzzer). Jumping early costs you 1 second.</li>
+          <li>The team that wins the face-off plays the board. Typing rotates: only the highlighted typer can answer.</li>
+          <li>Three wrong answers = 3 strikes. Then every other team races to buzz in and <b>steal</b> the pot.</li>
+          <li>The last regular round pays <b>double points</b>.</li>
+          <li><b>Bonus round:</b> each captain secretly bets RB$. Your team gets 3 guesses. Land 2 or more on the board and win 1.5&times; your bet. Otherwise you lose the bet.</li>
+          <li>Scores are <b>Ridgetech Bucks (RB$)</b>. Highest climb wins.</li>
+        </ol>
+      </div>
+
+      <div class="card host-only" id="settings-card">
+        <h2>Host settings</h2>
+        <form id="settings-form" class="settings">
+          <label>Teams
+            <select name="teamCount">
+              <option value="auto">Auto</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+            </select>
+          </label>
+          <label>Answer time (s)<input name="answerSeconds" type="number" min="10" max="60" required></label>
+          <label>Steal time (s)<input name="stealSeconds" type="number" min="5" max="30" required></label>
+          <label>Bonus time (s)<input name="bonusSeconds" type="number" min="30" max="120" required></label>
+          <label>Rounds<input name="rounds" type="number" min="3" max="8" required></label>
+        </form>
+      </div>
+
+      <div class="card host-only" id="custom-card">
+        <h2>Custom questions</h2>
+        <form id="cq-form">
+          <label>Question<input id="cq-q" maxlength="140" required placeholder="Name something people bring to a potluck"></label>
+          <div class="cq-head"><span>Answer</span><span>Points</span><span></span></div>
+          <div id="cq-rows"></div>
+          <div class="row gap">
+            <button id="cq-add-row" class="btn ghost small" type="button">+ Answer</button>
+            <button class="btn small gold" type="submit">Add question</button>
+          </div>
+          <p id="cq-error" class="error" role="alert"></p>
+        </form>
+        <ul id="cq-list" class="cq-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME (board + bonus) -->
+  <section id="v-game" class="view" hidden>
+    <div class="game-grid">
+      <div class="stage">
+        <div class="q-banner">
+          <div class="q-meta">
+            <span id="q-cat" class="chip"></span>
+            <span id="q-round" class="chip mono"></span>
+            <span id="q-mult" class="chip mult" hidden>&times;2 POINTS</span>
+          </div>
+          <h2 id="q-text" class="q-text"></h2>
+        </div>
+
+        <div class="status-row">
+          <p id="status" class="status"></p>
+          <div id="timer" class="timer" hidden>
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <circle class="t-bg" cx="22" cy="22" r="19"/>
+              <circle id="timer-arc" class="t-arc" cx="22" cy="22" r="19"/>
+            </svg>
+            <span id="timer-num" class="mono"></span>
+          </div>
+        </div>
+
+        <div id="vs" class="vs" hidden></div>
+
+        <div class="board-wrap">
+          <div class="sunburst" aria-hidden="true"></div>
+          <div id="marquee" class="marquee">
+            <div id="board" class="board" role="list" aria-label="Answer board"></div>
+          </div>
+        </div>
+
+        <div id="under-board" class="under-board">
+          <div id="strikes" class="strikes" aria-label="Strikes"></div>
+          <div class="pot">POT <b id="pot" class="mono"></b></div>
+        </div>
+
+        <div id="bonus-panel" class="bonus-panel" hidden>
+          <div id="chips" class="chips"></div>
+          <div id="bet-area" class="bet-area" hidden>
+            <form id="bet-form" class="bet-form">
+              <label for="bet-range">Your secret bet (RB$)</label>
+              <div class="bet-row">
+                <input id="bet-range" type="range" min="0" step="1">
+                <input id="bet-num" type="number" min="0" step="1" class="mono">
+                <button class="btn gold" type="submit">Lock bet</button>
+              </div>
+            </form>
+            <p id="bet-note" class="muted"></p>
+          </div>
+          <div id="bguess-area" class="bguess-area" hidden>
+            <h3>Your team&rsquo;s guesses</h3>
+            <ol id="bguess-list" class="bguess-list"></ol>
+            <form id="bguess-form" class="answer-form" hidden>
+              <input id="bguess-input" maxlength="60" autocomplete="off" placeholder="Type a bonus guess" aria-label="Bonus guess">
+              <button class="btn gold" type="submit">Send</button>
+            </form>
+            <p id="bguess-note" class="muted"></p>
+            <ul id="bother" class="bother"></ul>
+          </div>
+          <ul id="bresults" class="bresults" hidden></ul>
+        </div>
+
+        <div class="action">
+          <button id="buzz" class="buzz" type="button" hidden disabled>
+            <span class="buzz-label">BUZZ</span><span class="buzz-sub">Space / tap</span>
+          </button>
+          <form id="answer-form" class="answer-form" hidden>
+            <input id="answer-input" maxlength="60" autocomplete="off" placeholder="Type your answer" aria-label="Your answer">
+            <button class="btn gold" type="submit">Answer</button>
+          </form>
+          <p id="typing" class="typing"></p>
+        </div>
+      </div>
+
+      <aside class="side" aria-label="Scoreboard">
+        <h2 class="side-title">The Ridge Climb</h2>
+        <svg id="climb" class="climb" viewBox="0 0 400 150" aria-hidden="true">
+          <defs>
+            <linearGradient id="ridgeFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3b1d5e"/><stop offset="1" stop-color="#160a29"/>
+            </linearGradient>
+          </defs>
+          <path class="ridge-shape" d="M0 150 L0 138 L40 128 L70 132 L110 108 L140 116 L180 88 L215 96 L250 66 L280 74 L320 40 L345 48 L380 14 L400 22 L400 150 Z"/>
+          <path id="ridge-path" class="ridge-line" d="M6 136 L40 128 L70 132 L110 108 L140 116 L180 88 L215 96 L250 66 L280 74 L320 40 L345 48 L380 14"/>
+          <g id="climbers"></g>
+        </svg>
+        <ol id="scores" class="scores"></ol>
+      </aside>
+    </div>
+
+    <div id="hostbar" class="hostbar" hidden>
+      <span class="hostbar-label">HOST</span>
+      <button id="h-pause" class="btn small ghost" type="button">Pause</button>
+      <button id="h-skip" class="btn small ghost" type="button">Skip question</button>
+      <button id="h-accept" class="btn small gold" type="button">Accept anyway</button>
+      <button id="h-next" class="btn small gold" type="button">Next</button>
+      <button id="h-end" class="btn small danger" type="button">End game</button>
+      <details class="h-players">
+        <summary>Players</summary>
+        <ul id="h-roster" class="roster compact"></ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- GAME OVER -->
+  <section id="v-over" class="view" hidden>
+    <div class="over-burst" aria-hidden="true"></div>
+    <h1 class="title">Summit <span>reached</span></h1>
+    <div id="podium" class="podium"></div>
+    <div id="mvps" class="mvps"></div>
+    <ol id="final-list" class="final-list"></ol>
+    <div class="over-actions">
+      <button id="again-btn" class="btn big gold" type="button" hidden>Play again</button>
+      <p id="again-hint" class="muted"></p>
+    </div>
+  </section>
+</main>
+
+<div id="stamp" class="stamp" aria-hidden="true">&#x2715;</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="live" class="sr-only" aria-live="assertive"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/fx.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
