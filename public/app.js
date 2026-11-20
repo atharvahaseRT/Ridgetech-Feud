@@ -149,7 +149,21 @@
   $('join-code').addEventListener('input', (e) => { e.target.value = e.target.value.toUpperCase(); });
 
   socket.on('connect', () => { show($('conn'), false); rejoin(); });
-  socket.on('disconnect', () => { if (session) show($('conn'), true); });
+  socket.on('disconnect', (reason) => {
+    if (session) show($('conn'), true);
+    // Server-initiated disconnects (kick / room closed) don't auto-reconnect; reconnect so the
+    // landing page can create or join another room.
+    if (reason === 'io server disconnect') socket.connect();
+  });
+  socket.on('roomClosed', () => {
+    const wasHost = !!(S && S.you && S.you.isHost);
+    show($('conn'), false);
+    $('join-code').value = ''; // the closed room's code is dead
+    leaveRoom(wasHost ? 'You closed the room.' : 'The host closed the room. Thanks for playing!');
+  });
+  $('close-room').addEventListener('click', () => {
+    if (confirm('Close this room for everyone? All players will be sent back to the start screen.')) cmd('host:closeRoom');
+  });
 
   socket.on('state', (st) => {
     offset = st.serverNow - Date.now();
@@ -185,6 +199,7 @@
     document.body.classList.toggle('night', !!ph && ph.indexOf('bonus') === 0);
     show($('hdr-code'), !!S);
     if (S) setText($('hdr-code'), S.code);
+    show($('close-room'), !!(S && S.you && S.you.isHost));
     renderRoundChip();
     if (view !== 'lobby' && $('cq-dialog').open) $('cq-dialog').close();
     if (view !== 'game') closeSheet();

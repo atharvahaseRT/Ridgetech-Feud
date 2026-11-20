@@ -6,3 +6,4 @@ Built by 4 subagents (server, client, questions, question audit) + lead integrat
 Deviations: pause allowed in team_naming/round_end; acting captain shown when captain disconnected; distinct error when no bonus-capable question; gameClock null at game over.
 Lead fixes: empty-guess toast now says "ran out of time".
 Tech debt: phone landscape (844x390) is cramped but usable; client-reported buzz timing still spoofable.
+- Added (user request): host "Close room" button (header, every phase, confirm) → `host:closeRoom` (ADR-003). Players land on start screen with "The host closed the room." Also fixed: after any server-initiated disconnect (kick/close) the client reconnects so it can join or create a new room (previously a kicked player's socket stayed dead).

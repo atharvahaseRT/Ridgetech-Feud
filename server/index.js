@@ -46,6 +46,17 @@ function broadcast(room) {
   for (const s of socketsIn(room.code)) s.emit('state', game.snapshotFor(room, s.data.playerId));
 }
 
+function closeRoom(room) {
+  for (const s of socketsIn(room.code)) {
+    s.emit('roomClosed');
+    s.data.code = s.data.playerId = null;
+    s.leave(room.code);
+    s.disconnect(true);
+  }
+  game.dispose(room);
+  rooms.delete(room.code);
+}
+
 function newCode() {
   let code;
   do {
@@ -110,6 +121,15 @@ io.on('connection', (socket) => {
     if (!res.ok) return res;
     attach(socket, room, res.player);
     return { ok: true, playerId: res.player.id, token: newToken };
+  });
+
+  // Host closes the room for everyone: notify, disconnect all sockets, forget the room.
+  on('host:closeRoom', () => {
+    const room = rooms.get(socket.data.code);
+    if (!room || !socket.data.playerId) return { ok: false, error: 'Not in a room' };
+    if (room.hostId !== socket.data.playerId) return { ok: false, error: 'Host only' };
+    setImmediate(() => closeRoom(room)); // let the ack reach the host before sockets drop
+    return { ok: true };
   });
 
   for (const event of GAME_EVENTS) {
