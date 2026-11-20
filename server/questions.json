@@ -1,0 +1,8703 @@
+[
+  {
+    "id": "q001",
+    "category": "office",
+    "q": "Name something people secretly do while on mute in a meeting",
+    "answers": [
+      {
+        "text": "Eat",
+        "points": 30,
+        "aliases": [
+          "snack",
+          "snacking",
+          "eating"
+        ]
+      },
+      {
+        "text": "Check phone",
+        "points": 18,
+        "aliases": [
+          "scroll",
+          "texting"
+        ]
+      },
+      {
+        "text": "Swear",
+        "points": 12,
+        "aliases": [
+          "curse",
+          "cuss"
+        ]
+      },
+      {
+        "text": "Use the bathroom",
+        "points": 10,
+        "aliases": [
+          "pee",
+          "toilet"
+        ]
+      },
+      {
+        "text": "Online shop",
+        "points": 8,
+        "aliases": [
+          "shopping",
+          "shop"
+        ]
+      },
+      {
+        "text": "Sing",
+        "points": 7,
+        "aliases": [
+          "singing"
+        ]
+      },
+      {
+        "text": "Burp",
+        "points": 5,
+        "aliases": [
+          "belch"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q002",
+    "category": "office",
+    "q": "Name something you'd find in an office break room",
+    "answers": [
+      {
+        "text": "Coffee maker",
+        "points": 30,
+        "aliases": [
+          "coffee machine",
+          "coffee",
+          "coffee pot"
+        ]
+      },
+      {
+        "text": "Fridge",
+        "points": 22,
+        "aliases": [
+          "refrigerator"
+        ]
+      },
+      {
+        "text": "Microwave",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Snacks",
+        "points": 10,
+        "aliases": [
+          "snack drawer"
+        ]
+      },
+      {
+        "text": "Vending machine",
+        "points": 8,
+        "aliases": [
+          "vending"
+        ]
+      },
+      {
+        "text": "Water cooler",
+        "points": 6,
+        "aliases": [
+          "water dispenser"
+        ]
+      },
+      {
+        "text": "Sink",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q003",
+    "category": "office",
+    "q": "Name a reason you'd be late to work",
+    "answers": [
+      {
+        "text": "Traffic",
+        "points": 36,
+        "aliases": []
+      },
+      {
+        "text": "Overslept",
+        "points": 24,
+        "aliases": [
+          "slept in",
+          "alarm",
+          "woke up late"
+        ]
+      },
+      {
+        "text": "Kids",
+        "points": 10,
+        "aliases": [
+          "children",
+          "school drop off"
+        ]
+      },
+      {
+        "text": "Car trouble",
+        "points": 8,
+        "aliases": [
+          "flat tire",
+          "car broke down"
+        ]
+      },
+      {
+        "text": "Weather",
+        "points": 7,
+        "aliases": [
+          "snow",
+          "rain"
+        ]
+      },
+      {
+        "text": "Lost keys",
+        "points": 5,
+        "aliases": [
+          "keys",
+          "couldn't find keys"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q004",
+    "category": "office",
+    "q": "Name something coworkers argue about in the office",
+    "answers": [
+      {
+        "text": "Thermostat",
+        "points": 32,
+        "aliases": [
+          "temperature",
+          "ac",
+          "heat",
+          "air conditioning"
+        ]
+      },
+      {
+        "text": "Parking",
+        "points": 15,
+        "aliases": [
+          "parking spots"
+        ]
+      },
+      {
+        "text": "Dirty dishes",
+        "points": 13,
+        "aliases": [
+          "dishes"
+        ]
+      },
+      {
+        "text": "Stolen lunch",
+        "points": 12,
+        "aliases": [
+          "lunch",
+          "food in the fridge"
+        ]
+      },
+      {
+        "text": "Music",
+        "points": 8,
+        "aliases": [
+          "playlist"
+        ]
+      },
+      {
+        "text": "Meeting rooms",
+        "points": 6,
+        "aliases": [
+          "conference room"
+        ]
+      },
+      {
+        "text": "Printer",
+        "points": 5,
+        "aliases": [
+          "copier"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q005",
+    "category": "office",
+    "q": "Name an excuse for missing a meeting",
+    "answers": [
+      {
+        "text": "Sick",
+        "points": 28,
+        "aliases": [
+          "ill",
+          "not feeling well"
+        ]
+      },
+      {
+        "text": "Double booked",
+        "points": 20,
+        "aliases": [
+          "another meeting",
+          "scheduling conflict"
+        ]
+      },
+      {
+        "text": "Forgot",
+        "points": 16,
+        "aliases": [
+          "didn't know"
+        ]
+      },
+      {
+        "text": "Internet down",
+        "points": 10,
+        "aliases": [
+          "bad wifi",
+          "connection"
+        ]
+      },
+      {
+        "text": "Appointment",
+        "points": 8,
+        "aliases": [
+          "doctor",
+          "dentist"
+        ]
+      },
+      {
+        "text": "Family emergency",
+        "points": 6,
+        "aliases": [
+          "emergency"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q006",
+    "category": "office",
+    "q": "Name something people \"borrow\" from the office and never return",
+    "answers": [
+      {
+        "text": "Pens",
+        "points": 34,
+        "aliases": []
+      },
+      {
+        "text": "Sticky notes",
+        "points": 16,
+        "aliases": [
+          "post-its",
+          "post it notes"
+        ]
+      },
+      {
+        "text": "Printer paper",
+        "points": 12,
+        "aliases": [
+          "paper"
+        ]
+      },
+      {
+        "text": "Snacks",
+        "points": 10,
+        "aliases": [
+          "food"
+        ]
+      },
+      {
+        "text": "Stapler",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Tape",
+        "points": 6,
+        "aliases": [
+          "scotch tape"
+        ]
+      },
+      {
+        "text": "Coffee pods",
+        "points": 5,
+        "aliases": [
+          "k-cups",
+          "coffee"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q007",
+    "category": "office",
+    "q": "Name a phrase that's way overused in work emails",
+    "answers": [
+      {
+        "text": "Circle back",
+        "points": 22,
+        "aliases": [
+          "circling back"
+        ]
+      },
+      {
+        "text": "Per my last email",
+        "points": 20,
+        "aliases": [
+          "as per my last email"
+        ]
+      },
+      {
+        "text": "Touch base",
+        "points": 16,
+        "aliases": [
+          "touching base"
+        ]
+      },
+      {
+        "text": "ASAP",
+        "points": 12,
+        "aliases": [
+          "as soon as possible"
+        ]
+      },
+      {
+        "text": "Synergy",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Bandwidth",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Hope this finds you well",
+        "points": 6,
+        "aliases": [
+          "hope you're well"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q008",
+    "category": "office",
+    "q": "Name something that happens at every office holiday party",
+    "answers": [
+      {
+        "text": "Someone gets drunk",
+        "points": 30,
+        "aliases": [
+          "drunk",
+          "drinking",
+          "wasted"
+        ]
+      },
+      {
+        "text": "Bad dancing",
+        "points": 18,
+        "aliases": [
+          "dancing",
+          "dance"
+        ]
+      },
+      {
+        "text": "Secret Santa",
+        "points": 14,
+        "aliases": [
+          "gift exchange",
+          "white elephant"
+        ]
+      },
+      {
+        "text": "Ugly sweaters",
+        "points": 10,
+        "aliases": [
+          "ugly sweater",
+          "sweater"
+        ]
+      },
+      {
+        "text": "Boss speech",
+        "points": 8,
+        "aliases": [
+          "speech",
+          "speeches"
+        ]
+      },
+      {
+        "text": "Karaoke",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Awkward small talk",
+        "points": 5,
+        "aliases": [
+          "small talk"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q009",
+    "category": "office",
+    "q": "Name something people keep on their desk",
+    "answers": [
+      {
+        "text": "Photos",
+        "points": 28,
+        "aliases": [
+          "pictures",
+          "family photo",
+          "picture frame"
+        ]
+      },
+      {
+        "text": "Plant",
+        "points": 18,
+        "aliases": [
+          "succulent"
+        ]
+      },
+      {
+        "text": "Coffee mug",
+        "points": 15,
+        "aliases": [
+          "mug",
+          "cup"
+        ]
+      },
+      {
+        "text": "Water bottle",
+        "points": 12,
+        "aliases": [
+          "water"
+        ]
+      },
+      {
+        "text": "Snacks",
+        "points": 9,
+        "aliases": [
+          "candy"
+        ]
+      },
+      {
+        "text": "Calendar",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Stress ball",
+        "points": 5,
+        "aliases": [
+          "fidget toy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q010",
+    "category": "office",
+    "q": "Name a sound that drives you nuts in an open-plan office",
+    "answers": [
+      {
+        "text": "Loud chewing",
+        "points": 28,
+        "aliases": [
+          "chewing",
+          "eating",
+          "crunching"
+        ]
+      },
+      {
+        "text": "Phone ringing",
+        "points": 18,
+        "aliases": [
+          "ringtone",
+          "phone"
+        ]
+      },
+      {
+        "text": "Loud talker",
+        "points": 15,
+        "aliases": [
+          "talking",
+          "yelling"
+        ]
+      },
+      {
+        "text": "Typing",
+        "points": 12,
+        "aliases": [
+          "keyboard",
+          "clicking"
+        ]
+      },
+      {
+        "text": "Whistling",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Sniffling",
+        "points": 7,
+        "aliases": [
+          "sniffing",
+          "nose blowing"
+        ]
+      },
+      {
+        "text": "Humming",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q011",
+    "category": "office",
+    "q": "Name something you'd do on your last day of work",
+    "answers": [
+      {
+        "text": "Say goodbye",
+        "points": 26,
+        "aliases": [
+          "goodbyes",
+          "farewell"
+        ]
+      },
+      {
+        "text": "Clean out desk",
+        "points": 20,
+        "aliases": [
+          "pack up",
+          "clean desk",
+          "pack desk"
+        ]
+      },
+      {
+        "text": "Leave early",
+        "points": 15,
+        "aliases": [
+          "go home early"
+        ]
+      },
+      {
+        "text": "Eat cake",
+        "points": 12,
+        "aliases": [
+          "cake",
+          "party"
+        ]
+      },
+      {
+        "text": "Take supplies",
+        "points": 9,
+        "aliases": [
+          "steal supplies",
+          "steal stuff"
+        ]
+      },
+      {
+        "text": "Tell boss off",
+        "points": 7,
+        "aliases": [
+          "quit dramatically"
+        ]
+      },
+      {
+        "text": "Slack off",
+        "points": 6,
+        "aliases": [
+          "do nothing",
+          "nothing"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q012",
+    "category": "office",
+    "q": "Name a reason someone might get called into HR",
+    "answers": [
+      {
+        "text": "Complaint",
+        "points": 24,
+        "aliases": [
+          "someone complained"
+        ]
+      },
+      {
+        "text": "Being late",
+        "points": 18,
+        "aliases": [
+          "tardiness",
+          "late"
+        ]
+      },
+      {
+        "text": "Bad joke",
+        "points": 14,
+        "aliases": [
+          "inappropriate joke",
+          "joke"
+        ]
+      },
+      {
+        "text": "Promotion",
+        "points": 10,
+        "aliases": [
+          "raise"
+        ]
+      },
+      {
+        "text": "Getting fired",
+        "points": 9,
+        "aliases": [
+          "fired",
+          "layoffs"
+        ]
+      },
+      {
+        "text": "Dress code",
+        "points": 8,
+        "aliases": [
+          "outfit",
+          "clothes"
+        ]
+      },
+      {
+        "text": "Office romance",
+        "points": 7,
+        "aliases": [
+          "dating a coworker"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q013",
+    "category": "office",
+    "q": "Name a snack that shows up at work meetings",
+    "answers": [
+      {
+        "text": "Donuts",
+        "points": 34,
+        "aliases": [
+          "doughnuts"
+        ]
+      },
+      {
+        "text": "Bagels",
+        "points": 20,
+        "aliases": []
+      },
+      {
+        "text": "Cookies",
+        "points": 14,
+        "aliases": []
+      },
+      {
+        "text": "Pizza",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Fruit",
+        "points": 8,
+        "aliases": [
+          "fruit tray"
+        ]
+      },
+      {
+        "text": "Muffins",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Pastries",
+        "points": 4,
+        "aliases": [
+          "croissant",
+          "danish"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q014",
+    "category": "office",
+    "q": "Name something you'd hate to accidentally \"reply all\" to",
+    "answers": [
+      {
+        "text": "Boss rant",
+        "points": 26,
+        "aliases": [
+          "complaining about boss",
+          "insulting boss"
+        ]
+      },
+      {
+        "text": "Gossip",
+        "points": 20,
+        "aliases": [
+          "rumors"
+        ]
+      },
+      {
+        "text": "Love note",
+        "points": 14,
+        "aliases": [
+          "flirting",
+          "flirty message"
+        ]
+      },
+      {
+        "text": "Salary",
+        "points": 10,
+        "aliases": [
+          "pay",
+          "paycheck"
+        ]
+      },
+      {
+        "text": "Job search",
+        "points": 9,
+        "aliases": [
+          "resume",
+          "interview"
+        ]
+      },
+      {
+        "text": "Selfie",
+        "points": 8,
+        "aliases": [
+          "photos",
+          "pics"
+        ]
+      },
+      {
+        "text": "Medical stuff",
+        "points": 5,
+        "aliases": [
+          "health",
+          "doctor"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q015",
+    "category": "tech",
+    "q": "Name something people do while waiting for their computer to update",
+    "answers": [
+      {
+        "text": "Get coffee",
+        "points": 30,
+        "aliases": [
+          "coffee",
+          "make coffee"
+        ]
+      },
+      {
+        "text": "Check phone",
+        "points": 22,
+        "aliases": [
+          "phone",
+          "scroll"
+        ]
+      },
+      {
+        "text": "Complain",
+        "points": 12,
+        "aliases": [
+          "curse",
+          "swear"
+        ]
+      },
+      {
+        "text": "Take a nap",
+        "points": 10,
+        "aliases": [
+          "sleep",
+          "nap"
+        ]
+      },
+      {
+        "text": "Snack",
+        "points": 9,
+        "aliases": [
+          "eat"
+        ]
+      },
+      {
+        "text": "Bathroom break",
+        "points": 7,
+        "aliases": [
+          "bathroom",
+          "pee"
+        ]
+      },
+      {
+        "text": "Stare at screen",
+        "points": 5,
+        "aliases": [
+          "watch progress bar",
+          "stare"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q016",
+    "category": "tech",
+    "q": "Name a password that's way too easy to guess",
+    "answers": [
+      {
+        "text": "123456",
+        "points": 30,
+        "aliases": [
+          "1234",
+          "12345",
+          "one two three"
+        ]
+      },
+      {
+        "text": "Password",
+        "points": 25,
+        "aliases": [
+          "password123"
+        ]
+      },
+      {
+        "text": "Birthday",
+        "points": 15,
+        "aliases": [
+          "birth date",
+          "birthdate"
+        ]
+      },
+      {
+        "text": "Pet's name",
+        "points": 10,
+        "aliases": [
+          "dog name",
+          "pet"
+        ]
+      },
+      {
+        "text": "Your name",
+        "points": 8,
+        "aliases": [
+          "own name",
+          "first name"
+        ]
+      },
+      {
+        "text": "Qwerty",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q017",
+    "category": "tech",
+    "q": "Name a reason your phone battery dies fast",
+    "answers": [
+      {
+        "text": "Games",
+        "points": 24,
+        "aliases": [
+          "gaming",
+          "playing games"
+        ]
+      },
+      {
+        "text": "Social media",
+        "points": 22,
+        "aliases": [
+          "tiktok",
+          "instagram",
+          "scrolling"
+        ]
+      },
+      {
+        "text": "Old battery",
+        "points": 15,
+        "aliases": [
+          "old phone",
+          "bad battery"
+        ]
+      },
+      {
+        "text": "Brightness",
+        "points": 12,
+        "aliases": [
+          "bright screen",
+          "screen brightness"
+        ]
+      },
+      {
+        "text": "Videos",
+        "points": 10,
+        "aliases": [
+          "streaming",
+          "youtube",
+          "netflix"
+        ]
+      },
+      {
+        "text": "GPS",
+        "points": 7,
+        "aliases": [
+          "maps",
+          "location"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q018",
+    "category": "tech",
+    "q": "Name a piece of tech that makes people want to scream",
+    "answers": [
+      {
+        "text": "Printer",
+        "points": 38,
+        "aliases": []
+      },
+      {
+        "text": "Wifi",
+        "points": 20,
+        "aliases": [
+          "router",
+          "internet"
+        ]
+      },
+      {
+        "text": "Phone",
+        "points": 12,
+        "aliases": [
+          "smartphone",
+          "cell phone",
+          "mobile"
+        ]
+      },
+      {
+        "text": "Laptop",
+        "points": 8,
+        "aliases": [
+          "computer",
+          "pc"
+        ]
+      },
+      {
+        "text": "Smart speaker",
+        "points": 7,
+        "aliases": [
+          "alexa",
+          "siri"
+        ]
+      },
+      {
+        "text": "TV remote",
+        "points": 6,
+        "aliases": [
+          "remote"
+        ]
+      },
+      {
+        "text": "Self checkout",
+        "points": 5,
+        "aliases": [
+          "self-checkout machine"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q019",
+    "category": "tech",
+    "q": "Name an app people open first thing in the morning",
+    "answers": [
+      {
+        "text": "Instagram",
+        "points": 22,
+        "aliases": [
+          "insta",
+          "ig"
+        ]
+      },
+      {
+        "text": "Email",
+        "points": 18,
+        "aliases": [
+          "gmail",
+          "outlook",
+          "mail"
+        ]
+      },
+      {
+        "text": "Weather",
+        "points": 14,
+        "aliases": []
+      },
+      {
+        "text": "TikTok",
+        "points": 13,
+        "aliases": []
+      },
+      {
+        "text": "Text messages",
+        "points": 11,
+        "aliases": [
+          "messages",
+          "texts",
+          "imessage"
+        ]
+      },
+      {
+        "text": "News",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Alarm",
+        "points": 6,
+        "aliases": [
+          "clock"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q020",
+    "category": "tech",
+    "q": "Name the first thing IT tells you to try",
+    "answers": [
+      {
+        "text": "Restart it",
+        "points": 50,
+        "aliases": [
+          "restart",
+          "reboot",
+          "turn it off and on",
+          "turn it off and on again"
+        ]
+      },
+      {
+        "text": "Unplug it",
+        "points": 14,
+        "aliases": [
+          "unplug",
+          "plug it back in"
+        ]
+      },
+      {
+        "text": "Update",
+        "points": 10,
+        "aliases": [
+          "install updates",
+          "software update"
+        ]
+      },
+      {
+        "text": "Clear cache",
+        "points": 8,
+        "aliases": [
+          "clear cookies",
+          "cache"
+        ]
+      },
+      {
+        "text": "Check wifi",
+        "points": 7,
+        "aliases": [
+          "check internet",
+          "internet connection"
+        ]
+      },
+      {
+        "text": "Reset password",
+        "points": 6,
+        "aliases": [
+          "password"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q021",
+    "category": "tech",
+    "q": "Name something you'd buy at an electronics store",
+    "answers": [
+      {
+        "text": "TV",
+        "points": 28,
+        "aliases": [
+          "television"
+        ]
+      },
+      {
+        "text": "Headphones",
+        "points": 20,
+        "aliases": [
+          "earbuds",
+          "airpods"
+        ]
+      },
+      {
+        "text": "Phone",
+        "points": 15,
+        "aliases": [
+          "cellphone",
+          "smartphone"
+        ]
+      },
+      {
+        "text": "Laptop",
+        "points": 13,
+        "aliases": [
+          "computer"
+        ]
+      },
+      {
+        "text": "Video game",
+        "points": 8,
+        "aliases": [
+          "games",
+          "console"
+        ]
+      },
+      {
+        "text": "Charger",
+        "points": 6,
+        "aliases": [
+          "cable",
+          "charging cable"
+        ]
+      },
+      {
+        "text": "Batteries",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q022",
+    "category": "tech",
+    "q": "Name a reason someone would chuck their phone across the room",
+    "answers": [
+      {
+        "text": "Lost a game",
+        "points": 25,
+        "aliases": [
+          "losing a game",
+          "game"
+        ]
+      },
+      {
+        "text": "Bad text",
+        "points": 20,
+        "aliases": [
+          "breakup text",
+          "mean text"
+        ]
+      },
+      {
+        "text": "Frozen screen",
+        "points": 15,
+        "aliases": [
+          "freezing",
+          "frozen",
+          "lag"
+        ]
+      },
+      {
+        "text": "No signal",
+        "points": 12,
+        "aliases": [
+          "slow internet",
+          "wifi",
+          "bad signal"
+        ]
+      },
+      {
+        "text": "Spider",
+        "points": 10,
+        "aliases": [
+          "bug"
+        ]
+      },
+      {
+        "text": "Spam call",
+        "points": 8,
+        "aliases": [
+          "robocall",
+          "telemarketer"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q023",
+    "category": "tech",
+    "q": "Name something you'd hate for your boss to see in your browser history",
+    "answers": [
+      {
+        "text": "Job search",
+        "points": 28,
+        "aliases": [
+          "job listings",
+          "job hunting",
+          "linkedin",
+          "indeed"
+        ]
+      },
+      {
+        "text": "Shopping",
+        "points": 18,
+        "aliases": [
+          "online shopping",
+          "amazon"
+        ]
+      },
+      {
+        "text": "Social media",
+        "points": 14,
+        "aliases": [
+          "facebook",
+          "instagram"
+        ]
+      },
+      {
+        "text": "Dating apps",
+        "points": 12,
+        "aliases": [
+          "dating site",
+          "tinder"
+        ]
+      },
+      {
+        "text": "Weird searches",
+        "points": 9,
+        "aliases": [
+          "weird google searches"
+        ]
+      },
+      {
+        "text": "Games",
+        "points": 7,
+        "aliases": [
+          "gaming"
+        ]
+      },
+      {
+        "text": "Vacation planning",
+        "points": 5,
+        "aliases": [
+          "flights",
+          "travel"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q024",
+    "category": "tech",
+    "q": "Name something people ask a smart speaker to do",
+    "answers": [
+      {
+        "text": "Play music",
+        "points": 40,
+        "aliases": [
+          "music",
+          "songs"
+        ]
+      },
+      {
+        "text": "Weather",
+        "points": 18,
+        "aliases": [
+          "forecast"
+        ]
+      },
+      {
+        "text": "Set a timer",
+        "points": 13,
+        "aliases": [
+          "timer"
+        ]
+      },
+      {
+        "text": "Alarm",
+        "points": 9,
+        "aliases": [
+          "wake me up"
+        ]
+      },
+      {
+        "text": "Answer questions",
+        "points": 7,
+        "aliases": [
+          "trivia",
+          "questions"
+        ]
+      },
+      {
+        "text": "Tell a joke",
+        "points": 5,
+        "aliases": [
+          "jokes"
+        ]
+      },
+      {
+        "text": "Shopping list",
+        "points": 4,
+        "aliases": [
+          "grocery list"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q025",
+    "category": "tech",
+    "q": "Name something that drives you crazy about video calls",
+    "answers": [
+      {
+        "text": "Lag",
+        "points": 26,
+        "aliases": [
+          "frozen",
+          "freezing",
+          "bad connection",
+          "glitch"
+        ]
+      },
+      {
+        "text": "Echo",
+        "points": 15,
+        "aliases": [
+          "feedback"
+        ]
+      },
+      {
+        "text": "On mute",
+        "points": 14,
+        "aliases": [
+          "you're on mute",
+          "muted"
+        ]
+      },
+      {
+        "text": "Barking dogs",
+        "points": 10,
+        "aliases": [
+          "dog",
+          "pets"
+        ]
+      },
+      {
+        "text": "Interrupting",
+        "points": 9,
+        "aliases": [
+          "interruptions",
+          "cut off"
+        ]
+      },
+      {
+        "text": "Camera on",
+        "points": 8,
+        "aliases": [
+          "webcam",
+          "having to be on camera"
+        ]
+      },
+      {
+        "text": "Too long",
+        "points": 6,
+        "aliases": [
+          "long meetings"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q026",
+    "category": "tech",
+    "q": "Name a website people waste time on at work",
+    "answers": [
+      {
+        "text": "YouTube",
+        "points": 26,
+        "aliases": []
+      },
+      {
+        "text": "Reddit",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Amazon",
+        "points": 14,
+        "aliases": [
+          "online shopping"
+        ]
+      },
+      {
+        "text": "Facebook",
+        "points": 12,
+        "aliases": [
+          "fb"
+        ]
+      },
+      {
+        "text": "Instagram",
+        "points": 10,
+        "aliases": [
+          "insta"
+        ]
+      },
+      {
+        "text": "News",
+        "points": 8,
+        "aliases": [
+          "news sites"
+        ]
+      },
+      {
+        "text": "Sports",
+        "points": 6,
+        "aliases": [
+          "espn"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q027",
+    "category": "tech",
+    "q": "Name a gadget people always forget to charge",
+    "answers": [
+      {
+        "text": "Phone",
+        "points": 34,
+        "aliases": [
+          "cellphone",
+          "smartphone",
+          "mobile"
+        ]
+      },
+      {
+        "text": "Laptop",
+        "points": 18,
+        "aliases": [
+          "computer"
+        ]
+      },
+      {
+        "text": "Headphones",
+        "points": 14,
+        "aliases": [
+          "earbuds",
+          "airpods"
+        ]
+      },
+      {
+        "text": "Smartwatch",
+        "points": 10,
+        "aliases": [
+          "watch",
+          "apple watch"
+        ]
+      },
+      {
+        "text": "Electric toothbrush",
+        "points": 8,
+        "aliases": [
+          "toothbrush"
+        ]
+      },
+      {
+        "text": "Tablet",
+        "points": 6,
+        "aliases": [
+          "ipad"
+        ]
+      },
+      {
+        "text": "Electric car",
+        "points": 5,
+        "aliases": [
+          "ev",
+          "tesla"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q028",
+    "category": "food",
+    "q": "Name a food that's messy to eat on a first date",
+    "answers": [
+      {
+        "text": "Spaghetti",
+        "points": 32,
+        "aliases": [
+          "pasta",
+          "noodles"
+        ]
+      },
+      {
+        "text": "Ribs",
+        "points": 18,
+        "aliases": [
+          "bbq ribs"
+        ]
+      },
+      {
+        "text": "Wings",
+        "points": 14,
+        "aliases": [
+          "chicken wings",
+          "buffalo wings"
+        ]
+      },
+      {
+        "text": "Tacos",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Burger",
+        "points": 9,
+        "aliases": [
+          "hamburger",
+          "cheeseburger"
+        ]
+      },
+      {
+        "text": "Crab legs",
+        "points": 6,
+        "aliases": [
+          "lobster",
+          "crab"
+        ]
+      },
+      {
+        "text": "Soup",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q029",
+    "category": "food",
+    "q": "Name a pizza topping people fight about",
+    "answers": [
+      {
+        "text": "Pineapple",
+        "points": 52,
+        "aliases": []
+      },
+      {
+        "text": "Anchovies",
+        "points": 16,
+        "aliases": [
+          "fish"
+        ]
+      },
+      {
+        "text": "Olives",
+        "points": 9,
+        "aliases": [
+          "black olives"
+        ]
+      },
+      {
+        "text": "Mushrooms",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Jalapenos",
+        "points": 5,
+        "aliases": [
+          "hot peppers",
+          "peppers"
+        ]
+      },
+      {
+        "text": "Onions",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q030",
+    "category": "food",
+    "q": "Name a food you eat at the movies",
+    "answers": [
+      {
+        "text": "Popcorn",
+        "points": 54,
+        "aliases": []
+      },
+      {
+        "text": "Candy",
+        "points": 15,
+        "aliases": [
+          "sweets"
+        ]
+      },
+      {
+        "text": "Nachos",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Hot dog",
+        "points": 7,
+        "aliases": [
+          "hotdog"
+        ]
+      },
+      {
+        "text": "Pretzel",
+        "points": 5,
+        "aliases": [
+          "soft pretzel"
+        ]
+      },
+      {
+        "text": "Ice cream",
+        "points": 3,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q031",
+    "category": "food",
+    "q": "Name a food that makes you gassy",
+    "answers": [
+      {
+        "text": "Beans",
+        "points": 46,
+        "aliases": [
+          "baked beans"
+        ]
+      },
+      {
+        "text": "Broccoli",
+        "points": 14,
+        "aliases": []
+      },
+      {
+        "text": "Cabbage",
+        "points": 9,
+        "aliases": []
+      },
+      {
+        "text": "Onions",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Eggs",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Dairy",
+        "points": 5,
+        "aliases": [
+          "cheese",
+          "milk"
+        ]
+      },
+      {
+        "text": "Chili",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q032",
+    "category": "food",
+    "q": "Name something you put ketchup on",
+    "answers": [
+      {
+        "text": "Fries",
+        "points": 40,
+        "aliases": [
+          "french fries"
+        ]
+      },
+      {
+        "text": "Burger",
+        "points": 22,
+        "aliases": [
+          "hamburger",
+          "cheeseburger"
+        ]
+      },
+      {
+        "text": "Hot dog",
+        "points": 12,
+        "aliases": [
+          "hotdog"
+        ]
+      },
+      {
+        "text": "Eggs",
+        "points": 8,
+        "aliases": [
+          "scrambled eggs"
+        ]
+      },
+      {
+        "text": "Hash browns",
+        "points": 6,
+        "aliases": [
+          "potatoes",
+          "tater tots"
+        ]
+      },
+      {
+        "text": "Meatloaf",
+        "points": 5,
+        "aliases": []
+      },
+      {
+        "text": "Mac and cheese",
+        "points": 3,
+        "aliases": [
+          "mac n cheese"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q033",
+    "category": "food",
+    "q": "Name the worst thing to microwave in the office kitchen",
+    "answers": [
+      {
+        "text": "Fish",
+        "points": 52,
+        "aliases": [
+          "salmon",
+          "tuna"
+        ]
+      },
+      {
+        "text": "Popcorn",
+        "points": 15,
+        "aliases": [
+          "burnt popcorn"
+        ]
+      },
+      {
+        "text": "Broccoli",
+        "points": 9,
+        "aliases": [
+          "brussels sprouts"
+        ]
+      },
+      {
+        "text": "Eggs",
+        "points": 8,
+        "aliases": [
+          "hard boiled eggs"
+        ]
+      },
+      {
+        "text": "Curry",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Leftovers",
+        "points": 5,
+        "aliases": [
+          "old leftovers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q034",
+    "category": "food",
+    "q": "Name a breakfast food",
+    "answers": [
+      {
+        "text": "Eggs",
+        "points": 30,
+        "aliases": [
+          "scrambled eggs",
+          "omelet"
+        ]
+      },
+      {
+        "text": "Pancakes",
+        "points": 20,
+        "aliases": [
+          "hotcakes",
+          "flapjacks"
+        ]
+      },
+      {
+        "text": "Bacon",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Cereal",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Waffles",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Toast",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Oatmeal",
+        "points": 4,
+        "aliases": [
+          "porridge",
+          "oats"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q035",
+    "category": "food",
+    "q": "Name a food people eat when they're sad",
+    "answers": [
+      {
+        "text": "Ice cream",
+        "points": 42,
+        "aliases": [
+          "gelato"
+        ]
+      },
+      {
+        "text": "Chocolate",
+        "points": 20,
+        "aliases": [
+          "candy"
+        ]
+      },
+      {
+        "text": "Pizza",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Chips",
+        "points": 8,
+        "aliases": [
+          "potato chips"
+        ]
+      },
+      {
+        "text": "Mac and cheese",
+        "points": 6,
+        "aliases": [
+          "mac n cheese",
+          "macaroni"
+        ]
+      },
+      {
+        "text": "Cookies",
+        "points": 5,
+        "aliases": [
+          "cookie dough"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q036",
+    "category": "food",
+    "q": "Name something people order at a drive-thru",
+    "answers": [
+      {
+        "text": "Burger",
+        "points": 32,
+        "aliases": [
+          "hamburger",
+          "cheeseburger"
+        ]
+      },
+      {
+        "text": "Fries",
+        "points": 25,
+        "aliases": [
+          "french fries"
+        ]
+      },
+      {
+        "text": "Coffee",
+        "points": 12,
+        "aliases": [
+          "latte"
+        ]
+      },
+      {
+        "text": "Chicken nuggets",
+        "points": 10,
+        "aliases": [
+          "nuggets",
+          "chicken tenders"
+        ]
+      },
+      {
+        "text": "Milkshake",
+        "points": 7,
+        "aliases": [
+          "shake"
+        ]
+      },
+      {
+        "text": "Soda",
+        "points": 5,
+        "aliases": [
+          "pop",
+          "coke",
+          "soft drink"
+        ]
+      },
+      {
+        "text": "Taco",
+        "points": 3,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q037",
+    "category": "food",
+    "q": "Name a food that smells bad but tastes good",
+    "answers": [
+      {
+        "text": "Cheese",
+        "points": 30,
+        "aliases": [
+          "blue cheese",
+          "stinky cheese"
+        ]
+      },
+      {
+        "text": "Fish",
+        "points": 15,
+        "aliases": [
+          "seafood"
+        ]
+      },
+      {
+        "text": "Garlic",
+        "points": 13,
+        "aliases": []
+      },
+      {
+        "text": "Onions",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Eggs",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Kimchi",
+        "points": 6,
+        "aliases": [
+          "sauerkraut"
+        ]
+      },
+      {
+        "text": "Brussels sprouts",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q038",
+    "category": "food",
+    "q": "Name something you'd find at a backyard BBQ",
+    "answers": [
+      {
+        "text": "Burgers",
+        "points": 30,
+        "aliases": [
+          "hamburgers"
+        ]
+      },
+      {
+        "text": "Hot dogs",
+        "points": 24,
+        "aliases": [
+          "franks",
+          "wieners"
+        ]
+      },
+      {
+        "text": "Ribs",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Corn on the cob",
+        "points": 9,
+        "aliases": [
+          "corn"
+        ]
+      },
+      {
+        "text": "Potato salad",
+        "points": 8,
+        "aliases": [
+          "coleslaw"
+        ]
+      },
+      {
+        "text": "Beer",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Chips",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q039",
+    "category": "food",
+    "q": "Name a spicy food",
+    "answers": [
+      {
+        "text": "Hot wings",
+        "points": 25,
+        "aliases": [
+          "wings",
+          "buffalo wings"
+        ]
+      },
+      {
+        "text": "Jalapenos",
+        "points": 18,
+        "aliases": [
+          "jalapeno peppers",
+          "peppers"
+        ]
+      },
+      {
+        "text": "Hot sauce",
+        "points": 14,
+        "aliases": [
+          "sriracha",
+          "tabasco"
+        ]
+      },
+      {
+        "text": "Salsa",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Curry",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Chili",
+        "points": 9,
+        "aliases": []
+      },
+      {
+        "text": "Tacos",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q040",
+    "category": "food",
+    "q": "Name a food you would never share, not even with your partner",
+    "answers": [
+      {
+        "text": "Fries",
+        "points": 25,
+        "aliases": [
+          "french fries"
+        ]
+      },
+      {
+        "text": "Pizza",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Chocolate",
+        "points": 15,
+        "aliases": [
+          "candy"
+        ]
+      },
+      {
+        "text": "Cake",
+        "points": 12,
+        "aliases": [
+          "cheesecake",
+          "dessert"
+        ]
+      },
+      {
+        "text": "Ice cream",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Steak",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "The last bite",
+        "points": 5,
+        "aliases": [
+          "last bite"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q041",
+    "category": "school",
+    "q": "Name an excuse for not doing your homework",
+    "answers": [
+      {
+        "text": "Dog ate it",
+        "points": 42,
+        "aliases": [
+          "my dog ate it",
+          "dog"
+        ]
+      },
+      {
+        "text": "Forgot",
+        "points": 20,
+        "aliases": [
+          "left it at home"
+        ]
+      },
+      {
+        "text": "Sick",
+        "points": 12,
+        "aliases": [
+          "was sick",
+          "ill"
+        ]
+      },
+      {
+        "text": "Too busy",
+        "points": 8,
+        "aliases": [
+          "busy",
+          "practice"
+        ]
+      },
+      {
+        "text": "Computer crashed",
+        "points": 6,
+        "aliases": [
+          "printer broke",
+          "computer broke"
+        ]
+      },
+      {
+        "text": "Didn't understand",
+        "points": 5,
+        "aliases": [
+          "didn't get it",
+          "too hard"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q042",
+    "category": "school",
+    "q": "Name something you'd find in a school cafeteria",
+    "answers": [
+      {
+        "text": "Pizza",
+        "points": 25,
+        "aliases": []
+      },
+      {
+        "text": "Trays",
+        "points": 18,
+        "aliases": [
+          "lunch trays"
+        ]
+      },
+      {
+        "text": "Chocolate milk",
+        "points": 15,
+        "aliases": [
+          "milk"
+        ]
+      },
+      {
+        "text": "Lunch lady",
+        "points": 12,
+        "aliases": [
+          "cafeteria worker"
+        ]
+      },
+      {
+        "text": "Chicken nuggets",
+        "points": 10,
+        "aliases": [
+          "nuggets"
+        ]
+      },
+      {
+        "text": "Mystery meat",
+        "points": 8,
+        "aliases": [
+          "meatloaf"
+        ]
+      },
+      {
+        "text": "Food fight",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q043",
+    "category": "school",
+    "q": "Name a school subject lots of people hated",
+    "answers": [
+      {
+        "text": "Math",
+        "points": 45,
+        "aliases": [
+          "algebra",
+          "geometry",
+          "calculus"
+        ]
+      },
+      {
+        "text": "Science",
+        "points": 14,
+        "aliases": [
+          "chemistry",
+          "biology",
+          "physics"
+        ]
+      },
+      {
+        "text": "History",
+        "points": 12,
+        "aliases": [
+          "social studies"
+        ]
+      },
+      {
+        "text": "English",
+        "points": 10,
+        "aliases": [
+          "reading",
+          "writing",
+          "literature"
+        ]
+      },
+      {
+        "text": "Gym",
+        "points": 8,
+        "aliases": [
+          "pe",
+          "physical education"
+        ]
+      },
+      {
+        "text": "Foreign language",
+        "points": 6,
+        "aliases": [
+          "spanish",
+          "french"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q044",
+    "category": "school",
+    "q": "Name something a kid might bring for show and tell",
+    "answers": [
+      {
+        "text": "Pet",
+        "points": 30,
+        "aliases": [
+          "dog",
+          "cat",
+          "hamster"
+        ]
+      },
+      {
+        "text": "Toy",
+        "points": 22,
+        "aliases": [
+          "action figure",
+          "doll"
+        ]
+      },
+      {
+        "text": "Rock",
+        "points": 10,
+        "aliases": [
+          "crystal"
+        ]
+      },
+      {
+        "text": "Trophy",
+        "points": 9,
+        "aliases": [
+          "medal"
+        ]
+      },
+      {
+        "text": "Photo",
+        "points": 8,
+        "aliases": [
+          "picture"
+        ]
+      },
+      {
+        "text": "Little sibling",
+        "points": 6,
+        "aliases": [
+          "baby brother",
+          "little sister"
+        ]
+      },
+      {
+        "text": "Souvenir",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q045",
+    "category": "school",
+    "q": "Name something students do when the teacher leaves the room",
+    "answers": [
+      {
+        "text": "Talk",
+        "points": 28,
+        "aliases": [
+          "chat",
+          "gossip"
+        ]
+      },
+      {
+        "text": "Use phone",
+        "points": 20,
+        "aliases": [
+          "phone",
+          "text"
+        ]
+      },
+      {
+        "text": "Throw stuff",
+        "points": 14,
+        "aliases": [
+          "paper airplanes",
+          "throw paper"
+        ]
+      },
+      {
+        "text": "Copy answers",
+        "points": 10,
+        "aliases": [
+          "cheat",
+          "copy homework"
+        ]
+      },
+      {
+        "text": "Sleep",
+        "points": 8,
+        "aliases": [
+          "nap"
+        ]
+      },
+      {
+        "text": "Dance",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Sneak out",
+        "points": 5,
+        "aliases": [
+          "leave"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q046",
+    "category": "school",
+    "q": "Name something you need for the first day of school",
+    "answers": [
+      {
+        "text": "Backpack",
+        "points": 30,
+        "aliases": [
+          "bookbag",
+          "school bag"
+        ]
+      },
+      {
+        "text": "Pencils",
+        "points": 20,
+        "aliases": [
+          "pens"
+        ]
+      },
+      {
+        "text": "Notebook",
+        "points": 15,
+        "aliases": [
+          "paper",
+          "binder"
+        ]
+      },
+      {
+        "text": "First day outfit",
+        "points": 12,
+        "aliases": [
+          "new clothes",
+          "outfit"
+        ]
+      },
+      {
+        "text": "Lunch",
+        "points": 8,
+        "aliases": [
+          "lunchbox"
+        ]
+      },
+      {
+        "text": "Calculator",
+        "points": 5,
+        "aliases": []
+      },
+      {
+        "text": "Sneakers",
+        "points": 4,
+        "aliases": [
+          "new shoes",
+          "shoes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q047",
+    "category": "school",
+    "q": "Name something that happens at a high school dance",
+    "answers": [
+      {
+        "text": "Slow dancing",
+        "points": 25,
+        "aliases": [
+          "slow dance"
+        ]
+      },
+      {
+        "text": "Standing by the wall",
+        "points": 15,
+        "aliases": [
+          "wallflower",
+          "standing around"
+        ]
+      },
+      {
+        "text": "Spiked punch",
+        "points": 12,
+        "aliases": [
+          "punch"
+        ]
+      },
+      {
+        "text": "Kissing",
+        "points": 11,
+        "aliases": [
+          "making out",
+          "kiss"
+        ]
+      },
+      {
+        "text": "Chaperones",
+        "points": 10,
+        "aliases": [
+          "teachers watching"
+        ]
+      },
+      {
+        "text": "Bad DJ",
+        "points": 8,
+        "aliases": [
+          "dj",
+          "music"
+        ]
+      },
+      {
+        "text": "Pictures",
+        "points": 6,
+        "aliases": [
+          "photos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q048",
+    "category": "school",
+    "q": "Name something you'd find in a teacher's desk",
+    "answers": [
+      {
+        "text": "Red pen",
+        "points": 24,
+        "aliases": [
+          "pens"
+        ]
+      },
+      {
+        "text": "Confiscated phones",
+        "points": 18,
+        "aliases": [
+          "phones",
+          "confiscated stuff"
+        ]
+      },
+      {
+        "text": "Candy",
+        "points": 15,
+        "aliases": [
+          "snacks"
+        ]
+      },
+      {
+        "text": "Apple",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Grade book",
+        "points": 9,
+        "aliases": [
+          "gradebook",
+          "grades"
+        ]
+      },
+      {
+        "text": "Stapler",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Tissues",
+        "points": 6,
+        "aliases": [
+          "kleenex"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q049",
+    "category": "school",
+    "q": "Name a reason a student gets sent to the principal's office",
+    "answers": [
+      {
+        "text": "Fighting",
+        "points": 36,
+        "aliases": [
+          "fight"
+        ]
+      },
+      {
+        "text": "Talking back",
+        "points": 18,
+        "aliases": [
+          "disrespect",
+          "mouthing off"
+        ]
+      },
+      {
+        "text": "Cheating",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Skipping class",
+        "points": 10,
+        "aliases": [
+          "cutting class",
+          "ditching"
+        ]
+      },
+      {
+        "text": "Swearing",
+        "points": 8,
+        "aliases": [
+          "cursing",
+          "bad language"
+        ]
+      },
+      {
+        "text": "Phone",
+        "points": 6,
+        "aliases": [
+          "using phone"
+        ]
+      },
+      {
+        "text": "Prank",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q050",
+    "category": "school",
+    "q": "Name a school club or team",
+    "answers": [
+      {
+        "text": "Football",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Chess club",
+        "points": 16,
+        "aliases": [
+          "chess"
+        ]
+      },
+      {
+        "text": "Drama",
+        "points": 14,
+        "aliases": [
+          "theater",
+          "theatre"
+        ]
+      },
+      {
+        "text": "Band",
+        "points": 13,
+        "aliases": [
+          "marching band"
+        ]
+      },
+      {
+        "text": "Debate",
+        "points": 11,
+        "aliases": []
+      },
+      {
+        "text": "Basketball",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Yearbook",
+        "points": 8,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q051",
+    "category": "school",
+    "q": "Name something you'd find in a high school locker",
+    "answers": [
+      {
+        "text": "Books",
+        "points": 28,
+        "aliases": [
+          "textbooks"
+        ]
+      },
+      {
+        "text": "Gym clothes",
+        "points": 20,
+        "aliases": [
+          "gym bag",
+          "smelly clothes"
+        ]
+      },
+      {
+        "text": "Photos",
+        "points": 12,
+        "aliases": [
+          "pictures",
+          "posters"
+        ]
+      },
+      {
+        "text": "Mirror",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Old lunch",
+        "points": 9,
+        "aliases": [
+          "snacks",
+          "food"
+        ]
+      },
+      {
+        "text": "Hoodie",
+        "points": 7,
+        "aliases": [
+          "jacket",
+          "coat"
+        ]
+      },
+      {
+        "text": "Trash",
+        "points": 4,
+        "aliases": [
+          "garbage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q052",
+    "category": "school",
+    "q": "Name something kids look forward to at school",
+    "answers": [
+      {
+        "text": "Recess",
+        "points": 32,
+        "aliases": [
+          "break"
+        ]
+      },
+      {
+        "text": "Lunch",
+        "points": 25,
+        "aliases": []
+      },
+      {
+        "text": "Field trips",
+        "points": 15,
+        "aliases": [
+          "field trip"
+        ]
+      },
+      {
+        "text": "Snow day",
+        "points": 10,
+        "aliases": [
+          "no school"
+        ]
+      },
+      {
+        "text": "Summer break",
+        "points": 8,
+        "aliases": [
+          "summer",
+          "vacation"
+        ]
+      },
+      {
+        "text": "Pizza party",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q053",
+    "category": "relationships",
+    "q": "Name something that could ruin a first date",
+    "answers": [
+      {
+        "text": "Bad breath",
+        "points": 28,
+        "aliases": [
+          "breath",
+          "stinky breath"
+        ]
+      },
+      {
+        "text": "Talking about your ex",
+        "points": 22,
+        "aliases": [
+          "ex",
+          "mentioning ex"
+        ]
+      },
+      {
+        "text": "Showing up late",
+        "points": 14,
+        "aliases": [
+          "late",
+          "being late"
+        ]
+      },
+      {
+        "text": "On their phone",
+        "points": 10,
+        "aliases": [
+          "phone",
+          "texting"
+        ]
+      },
+      {
+        "text": "Rude to waiter",
+        "points": 9,
+        "aliases": [
+          "rude",
+          "rudeness"
+        ]
+      },
+      {
+        "text": "Food in teeth",
+        "points": 7,
+        "aliases": [
+          "spinach in teeth"
+        ]
+      },
+      {
+        "text": "Splitting the bill",
+        "points": 4,
+        "aliases": [
+          "bill",
+          "check"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q054",
+    "category": "relationships",
+    "q": "Name a place people meet their partner",
+    "answers": [
+      {
+        "text": "Dating app",
+        "points": 30,
+        "aliases": [
+          "online",
+          "tinder",
+          "internet",
+          "apps"
+        ]
+      },
+      {
+        "text": "Bar",
+        "points": 20,
+        "aliases": [
+          "club"
+        ]
+      },
+      {
+        "text": "Work",
+        "points": 15,
+        "aliases": [
+          "office",
+          "job"
+        ]
+      },
+      {
+        "text": "School",
+        "points": 12,
+        "aliases": [
+          "college",
+          "class"
+        ]
+      },
+      {
+        "text": "Through friends",
+        "points": 10,
+        "aliases": [
+          "friends",
+          "mutual friends"
+        ]
+      },
+      {
+        "text": "Gym",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q055",
+    "category": "relationships",
+    "q": "Name something couples fight about",
+    "answers": [
+      {
+        "text": "Money",
+        "points": 34,
+        "aliases": [
+          "finances",
+          "bills"
+        ]
+      },
+      {
+        "text": "Chores",
+        "points": 20,
+        "aliases": [
+          "housework",
+          "dishes"
+        ]
+      },
+      {
+        "text": "In-laws",
+        "points": 12,
+        "aliases": [
+          "family",
+          "mother in law"
+        ]
+      },
+      {
+        "text": "Phones",
+        "points": 10,
+        "aliases": [
+          "screen time"
+        ]
+      },
+      {
+        "text": "Toilet seat",
+        "points": 8,
+        "aliases": [
+          "seat left up"
+        ]
+      },
+      {
+        "text": "Where to eat",
+        "points": 7,
+        "aliases": [
+          "dinner",
+          "restaurant"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q056",
+    "category": "relationships",
+    "q": "Name a pet name couples call each other",
+    "answers": [
+      {
+        "text": "Babe",
+        "points": 30,
+        "aliases": [
+          "baby"
+        ]
+      },
+      {
+        "text": "Honey",
+        "points": 22,
+        "aliases": [
+          "hun",
+          "hon"
+        ]
+      },
+      {
+        "text": "Sweetie",
+        "points": 14,
+        "aliases": [
+          "sweetheart"
+        ]
+      },
+      {
+        "text": "Love",
+        "points": 12,
+        "aliases": [
+          "my love"
+        ]
+      },
+      {
+        "text": "Boo",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Pumpkin",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Sugar",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q057",
+    "category": "relationships",
+    "q": "Name a sign your date is going badly",
+    "answers": [
+      {
+        "text": "Checking phone",
+        "points": 26,
+        "aliases": [
+          "on their phone",
+          "phone"
+        ]
+      },
+      {
+        "text": "Awkward silence",
+        "points": 20,
+        "aliases": [
+          "silence",
+          "no conversation"
+        ]
+      },
+      {
+        "text": "Yawning",
+        "points": 14,
+        "aliases": [
+          "yawn",
+          "bored"
+        ]
+      },
+      {
+        "text": "Fake emergency",
+        "points": 12,
+        "aliases": [
+          "emergency call",
+          "bailout call"
+        ]
+      },
+      {
+        "text": "Asks for the bill",
+        "points": 9,
+        "aliases": [
+          "bill",
+          "wants to leave"
+        ]
+      },
+      {
+        "text": "No eye contact",
+        "points": 7,
+        "aliases": [
+          "eye contact"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q058",
+    "category": "relationships",
+    "q": "Name something people do to impress a date",
+    "answers": [
+      {
+        "text": "Dress up",
+        "points": 28,
+        "aliases": [
+          "dress nice",
+          "nice clothes"
+        ]
+      },
+      {
+        "text": "Pay the bill",
+        "points": 20,
+        "aliases": [
+          "pay",
+          "pick up the check"
+        ]
+      },
+      {
+        "text": "Cologne",
+        "points": 12,
+        "aliases": [
+          "perfume",
+          "smell nice"
+        ]
+      },
+      {
+        "text": "Bring flowers",
+        "points": 10,
+        "aliases": [
+          "flowers"
+        ]
+      },
+      {
+        "text": "Fancy restaurant",
+        "points": 9,
+        "aliases": [
+          "fancy dinner"
+        ]
+      },
+      {
+        "text": "Open the door",
+        "points": 7,
+        "aliases": [
+          "open doors",
+          "chivalry"
+        ]
+      },
+      {
+        "text": "Cook",
+        "points": 5,
+        "aliases": [
+          "cook dinner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q059",
+    "category": "relationships",
+    "q": "Name something annoying about a roommate",
+    "answers": [
+      {
+        "text": "Dirty dishes",
+        "points": 30,
+        "aliases": [
+          "dishes"
+        ]
+      },
+      {
+        "text": "Loud",
+        "points": 16,
+        "aliases": [
+          "noise",
+          "noisy",
+          "loud music"
+        ]
+      },
+      {
+        "text": "Eats your food",
+        "points": 15,
+        "aliases": [
+          "steals food",
+          "food"
+        ]
+      },
+      {
+        "text": "Messy",
+        "points": 12,
+        "aliases": [
+          "mess",
+          "slob"
+        ]
+      },
+      {
+        "text": "Late rent",
+        "points": 9,
+        "aliases": [
+          "rent",
+          "doesn't pay"
+        ]
+      },
+      {
+        "text": "Overnight guests",
+        "points": 8,
+        "aliases": [
+          "guests"
+        ]
+      },
+      {
+        "text": "Bathroom hog",
+        "points": 5,
+        "aliases": [
+          "hogs bathroom",
+          "long showers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q060",
+    "category": "relationships",
+    "q": "Name something people do after a breakup",
+    "answers": [
+      {
+        "text": "Cry",
+        "points": 32,
+        "aliases": [
+          "crying",
+          "sob"
+        ]
+      },
+      {
+        "text": "Eat ice cream",
+        "points": 18,
+        "aliases": [
+          "ice cream",
+          "junk food",
+          "comfort food"
+        ]
+      },
+      {
+        "text": "Block them",
+        "points": 12,
+        "aliases": [
+          "unfollow",
+          "block number"
+        ]
+      },
+      {
+        "text": "New haircut",
+        "points": 10,
+        "aliases": [
+          "haircut",
+          "change hair"
+        ]
+      },
+      {
+        "text": "Go out drinking",
+        "points": 9,
+        "aliases": [
+          "drink",
+          "party"
+        ]
+      },
+      {
+        "text": "Rebound",
+        "points": 7,
+        "aliases": [
+          "date someone new",
+          "dating apps"
+        ]
+      },
+      {
+        "text": "Burn photos",
+        "points": 4,
+        "aliases": [
+          "delete photos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q061",
+    "category": "relationships",
+    "q": "Name something your in-laws might quietly judge",
+    "answers": [
+      {
+        "text": "Cooking",
+        "points": 32,
+        "aliases": [
+          "food",
+          "your cooking"
+        ]
+      },
+      {
+        "text": "Housekeeping",
+        "points": 20,
+        "aliases": [
+          "cleaning",
+          "messy house"
+        ]
+      },
+      {
+        "text": "Parenting",
+        "points": 15,
+        "aliases": [
+          "kids",
+          "raising kids"
+        ]
+      },
+      {
+        "text": "Clothes",
+        "points": 10,
+        "aliases": [
+          "outfit",
+          "how you dress"
+        ]
+      },
+      {
+        "text": "Job",
+        "points": 8,
+        "aliases": [
+          "career",
+          "work"
+        ]
+      },
+      {
+        "text": "Car",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q062",
+    "category": "relationships",
+    "q": "Name a terrible gift to give your partner",
+    "answers": [
+      {
+        "text": "Vacuum",
+        "points": 25,
+        "aliases": [
+          "vacuum cleaner",
+          "appliance"
+        ]
+      },
+      {
+        "text": "Gym membership",
+        "points": 20,
+        "aliases": [
+          "gym",
+          "workout"
+        ]
+      },
+      {
+        "text": "Socks",
+        "points": 13,
+        "aliases": []
+      },
+      {
+        "text": "Nothing",
+        "points": 12,
+        "aliases": [
+          "no gift",
+          "forgot"
+        ]
+      },
+      {
+        "text": "Gift card",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Bathroom scale",
+        "points": 8,
+        "aliases": [
+          "scale"
+        ]
+      },
+      {
+        "text": "Regift",
+        "points": 5,
+        "aliases": [
+          "used gift",
+          "re-gift"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q063",
+    "category": "relationships",
+    "q": "Name something couples do on their anniversary",
+    "answers": [
+      {
+        "text": "Dinner",
+        "points": 34,
+        "aliases": [
+          "fancy dinner",
+          "eat out"
+        ]
+      },
+      {
+        "text": "Gifts",
+        "points": 18,
+        "aliases": [
+          "exchange gifts",
+          "presents"
+        ]
+      },
+      {
+        "text": "Getaway",
+        "points": 12,
+        "aliases": [
+          "trip",
+          "vacation",
+          "weekend away"
+        ]
+      },
+      {
+        "text": "Flowers",
+        "points": 10,
+        "aliases": [
+          "roses"
+        ]
+      },
+      {
+        "text": "Card",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Movie",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Go dancing",
+        "points": 4,
+        "aliases": [
+          "dance"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q064",
+    "category": "relationships",
+    "q": "Name the most awkward place to run into your ex",
+    "answers": [
+      {
+        "text": "Grocery store",
+        "points": 26,
+        "aliases": [
+          "supermarket",
+          "store"
+        ]
+      },
+      {
+        "text": "Wedding",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Gym",
+        "points": 14,
+        "aliases": []
+      },
+      {
+        "text": "Bar",
+        "points": 12,
+        "aliases": [
+          "club"
+        ]
+      },
+      {
+        "text": "Work",
+        "points": 10,
+        "aliases": [
+          "job",
+          "office"
+        ]
+      },
+      {
+        "text": "On a date",
+        "points": 8,
+        "aliases": [
+          "date"
+        ]
+      },
+      {
+        "text": "Family party",
+        "points": 5,
+        "aliases": [
+          "family event"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q065",
+    "category": "relationships",
+    "q": "Name something you'd do if you forgot your partner's birthday",
+    "answers": [
+      {
+        "text": "Lie",
+        "points": 25,
+        "aliases": [
+          "pretend",
+          "fake it"
+        ]
+      },
+      {
+        "text": "Apologize",
+        "points": 20,
+        "aliases": [
+          "say sorry"
+        ]
+      },
+      {
+        "text": "Buy flowers",
+        "points": 15,
+        "aliases": [
+          "flowers"
+        ]
+      },
+      {
+        "text": "Last-minute gift",
+        "points": 12,
+        "aliases": [
+          "gas station gift",
+          "rush shopping"
+        ]
+      },
+      {
+        "text": "Fake surprise party",
+        "points": 10,
+        "aliases": [
+          "surprise"
+        ]
+      },
+      {
+        "text": "Take them to dinner",
+        "points": 8,
+        "aliases": [
+          "dinner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q066",
+    "category": "pop-culture",
+    "q": "Name a superhero",
+    "answers": [
+      {
+        "text": "Spider-Man",
+        "points": 25,
+        "aliases": [
+          "spiderman",
+          "spidey"
+        ]
+      },
+      {
+        "text": "Batman",
+        "points": 22,
+        "aliases": []
+      },
+      {
+        "text": "Superman",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Iron Man",
+        "points": 12,
+        "aliases": [
+          "ironman"
+        ]
+      },
+      {
+        "text": "Wonder Woman",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Captain America",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Hulk",
+        "points": 4,
+        "aliases": [
+          "the hulk"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q067",
+    "category": "pop-culture",
+    "q": "Name a famous wizard",
+    "answers": [
+      {
+        "text": "Harry Potter",
+        "points": 40,
+        "aliases": [
+          "harry"
+        ]
+      },
+      {
+        "text": "Gandalf",
+        "points": 25,
+        "aliases": []
+      },
+      {
+        "text": "Merlin",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Dumbledore",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Voldemort",
+        "points": 4,
+        "aliases": []
+      },
+      {
+        "text": "Wizard of Oz",
+        "points": 3,
+        "aliases": [
+          "oz"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q068",
+    "category": "pop-culture",
+    "q": "Name a movie genre people love",
+    "answers": [
+      {
+        "text": "Comedy",
+        "points": 28,
+        "aliases": [
+          "funny"
+        ]
+      },
+      {
+        "text": "Action",
+        "points": 22,
+        "aliases": []
+      },
+      {
+        "text": "Horror",
+        "points": 18,
+        "aliases": [
+          "scary"
+        ]
+      },
+      {
+        "text": "Romance",
+        "points": 10,
+        "aliases": [
+          "rom com",
+          "romantic comedy"
+        ]
+      },
+      {
+        "text": "Sci-fi",
+        "points": 8,
+        "aliases": [
+          "science fiction"
+        ]
+      },
+      {
+        "text": "Drama",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Animated",
+        "points": 4,
+        "aliases": [
+          "cartoons",
+          "animation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q069",
+    "category": "pop-culture",
+    "q": "Name a type of TV show people binge-watch",
+    "answers": [
+      {
+        "text": "True crime",
+        "points": 25,
+        "aliases": [
+          "crime",
+          "murder mystery"
+        ]
+      },
+      {
+        "text": "Reality",
+        "points": 22,
+        "aliases": [
+          "reality tv"
+        ]
+      },
+      {
+        "text": "Sitcom",
+        "points": 15,
+        "aliases": [
+          "comedy"
+        ]
+      },
+      {
+        "text": "Drama",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Cooking shows",
+        "points": 9,
+        "aliases": [
+          "cooking",
+          "baking shows"
+        ]
+      },
+      {
+        "text": "Anime",
+        "points": 7,
+        "aliases": [
+          "cartoons"
+        ]
+      },
+      {
+        "text": "Documentaries",
+        "points": 5,
+        "aliases": [
+          "documentary"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q070",
+    "category": "pop-culture",
+    "q": "Name a famous cartoon animal",
+    "answers": [
+      {
+        "text": "Mickey Mouse",
+        "points": 30,
+        "aliases": [
+          "mickey"
+        ]
+      },
+      {
+        "text": "Bugs Bunny",
+        "points": 22,
+        "aliases": [
+          "bugs"
+        ]
+      },
+      {
+        "text": "Scooby-Doo",
+        "points": 14,
+        "aliases": [
+          "scooby",
+          "scooby doo"
+        ]
+      },
+      {
+        "text": "Garfield",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Tom and Jerry",
+        "points": 9,
+        "aliases": [
+          "tom",
+          "jerry"
+        ]
+      },
+      {
+        "text": "Snoopy",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Donald Duck",
+        "points": 5,
+        "aliases": [
+          "donald"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q071",
+    "category": "pop-culture",
+    "q": "Name a reason someone goes viral online",
+    "answers": [
+      {
+        "text": "Funny video",
+        "points": 26,
+        "aliases": [
+          "funny",
+          "comedy"
+        ]
+      },
+      {
+        "text": "Dancing",
+        "points": 18,
+        "aliases": [
+          "dance",
+          "tiktok dance"
+        ]
+      },
+      {
+        "text": "Pets",
+        "points": 15,
+        "aliases": [
+          "cat video",
+          "dog video"
+        ]
+      },
+      {
+        "text": "Epic fail",
+        "points": 12,
+        "aliases": [
+          "fail",
+          "falling"
+        ]
+      },
+      {
+        "text": "Drama",
+        "points": 10,
+        "aliases": [
+          "fight",
+          "beef",
+          "scandal"
+        ]
+      },
+      {
+        "text": "Prank",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Cooking",
+        "points": 5,
+        "aliases": [
+          "recipe"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q072",
+    "category": "pop-culture",
+    "q": "Name a monster from scary movies",
+    "answers": [
+      {
+        "text": "Vampire",
+        "points": 25,
+        "aliases": [
+          "dracula"
+        ]
+      },
+      {
+        "text": "Zombie",
+        "points": 22,
+        "aliases": []
+      },
+      {
+        "text": "Werewolf",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Ghost",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Clown",
+        "points": 10,
+        "aliases": [
+          "killer clown"
+        ]
+      },
+      {
+        "text": "Frankenstein",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Mummy",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q073",
+    "category": "pop-culture",
+    "q": "Name something celebrities are famous for having",
+    "answers": [
+      {
+        "text": "Money",
+        "points": 25,
+        "aliases": [
+          "rich",
+          "wealth"
+        ]
+      },
+      {
+        "text": "Mansion",
+        "points": 18,
+        "aliases": [
+          "big house"
+        ]
+      },
+      {
+        "text": "Bodyguards",
+        "points": 14,
+        "aliases": [
+          "security"
+        ]
+      },
+      {
+        "text": "Fancy cars",
+        "points": 12,
+        "aliases": [
+          "sports car",
+          "cars"
+        ]
+      },
+      {
+        "text": "Plastic surgery",
+        "points": 10,
+        "aliases": [
+          "botox",
+          "surgery"
+        ]
+      },
+      {
+        "text": "Private jet",
+        "points": 8,
+        "aliases": [
+          "jet",
+          "plane"
+        ]
+      },
+      {
+        "text": "Drama",
+        "points": 6,
+        "aliases": [
+          "scandals"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q074",
+    "category": "pop-culture",
+    "q": "Name a fairy tale character",
+    "answers": [
+      {
+        "text": "Cinderella",
+        "points": 28,
+        "aliases": []
+      },
+      {
+        "text": "Snow White",
+        "points": 20,
+        "aliases": []
+      },
+      {
+        "text": "Red Riding Hood",
+        "points": 14,
+        "aliases": [
+          "little red riding hood"
+        ]
+      },
+      {
+        "text": "Goldilocks",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Sleeping Beauty",
+        "points": 9,
+        "aliases": []
+      },
+      {
+        "text": "Rapunzel",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Pinocchio",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q075",
+    "category": "pop-culture",
+    "q": "Name something every action movie has",
+    "answers": [
+      {
+        "text": "Explosions",
+        "points": 34,
+        "aliases": [
+          "explosion",
+          "blowing stuff up"
+        ]
+      },
+      {
+        "text": "Car chase",
+        "points": 22,
+        "aliases": [
+          "chase"
+        ]
+      },
+      {
+        "text": "Guns",
+        "points": 14,
+        "aliases": [
+          "shootout",
+          "shooting"
+        ]
+      },
+      {
+        "text": "Hero",
+        "points": 10,
+        "aliases": [
+          "good guy"
+        ]
+      },
+      {
+        "text": "Villain",
+        "points": 8,
+        "aliases": [
+          "bad guy"
+        ]
+      },
+      {
+        "text": "Fight scene",
+        "points": 6,
+        "aliases": [
+          "fist fight",
+          "fighting"
+        ]
+      },
+      {
+        "text": "One-liners",
+        "points": 4,
+        "aliases": [
+          "catchphrase"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q076",
+    "category": "pop-culture",
+    "q": "Name a board game",
+    "answers": [
+      {
+        "text": "Monopoly",
+        "points": 34,
+        "aliases": []
+      },
+      {
+        "text": "Scrabble",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Clue",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Chess",
+        "points": 11,
+        "aliases": []
+      },
+      {
+        "text": "Checkers",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Sorry",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Candy Land",
+        "points": 6,
+        "aliases": [
+          "candyland"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q077",
+    "category": "pop-culture",
+    "q": "Name something people dress up as for Halloween",
+    "answers": [
+      {
+        "text": "Witch",
+        "points": 25,
+        "aliases": []
+      },
+      {
+        "text": "Ghost",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Vampire",
+        "points": 16,
+        "aliases": [
+          "dracula"
+        ]
+      },
+      {
+        "text": "Superhero",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Zombie",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Pirate",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Cat",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q078",
+    "category": "hypothetical",
+    "q": "If you won the lottery, what's the first thing you'd buy?",
+    "answers": [
+      {
+        "text": "House",
+        "points": 38,
+        "aliases": [
+          "home",
+          "mansion"
+        ]
+      },
+      {
+        "text": "Car",
+        "points": 25,
+        "aliases": [
+          "new car",
+          "sports car"
+        ]
+      },
+      {
+        "text": "Vacation",
+        "points": 12,
+        "aliases": [
+          "trip",
+          "travel"
+        ]
+      },
+      {
+        "text": "Boat",
+        "points": 8,
+        "aliases": [
+          "yacht"
+        ]
+      },
+      {
+        "text": "Pay off debt",
+        "points": 6,
+        "aliases": [
+          "bills",
+          "debt"
+        ]
+      },
+      {
+        "text": "Island",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q079",
+    "category": "hypothetical",
+    "q": "If you were invisible for a day, what would you do?",
+    "answers": [
+      {
+        "text": "Spy on people",
+        "points": 28,
+        "aliases": [
+          "spy",
+          "eavesdrop"
+        ]
+      },
+      {
+        "text": "Rob a bank",
+        "points": 20,
+        "aliases": [
+          "steal",
+          "rob"
+        ]
+      },
+      {
+        "text": "Prank people",
+        "points": 15,
+        "aliases": [
+          "pranks",
+          "scare people"
+        ]
+      },
+      {
+        "text": "Sneak into a concert",
+        "points": 10,
+        "aliases": [
+          "concert",
+          "free shows"
+        ]
+      },
+      {
+        "text": "Skip work",
+        "points": 9,
+        "aliases": [
+          "skip"
+        ]
+      },
+      {
+        "text": "Free food",
+        "points": 8,
+        "aliases": [
+          "steal food"
+        ]
+      },
+      {
+        "text": "Hide",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q080",
+    "category": "hypothetical",
+    "q": "Name a superpower you'd want",
+    "answers": [
+      {
+        "text": "Flying",
+        "points": 34,
+        "aliases": [
+          "fly",
+          "flight"
+        ]
+      },
+      {
+        "text": "Invisibility",
+        "points": 22,
+        "aliases": [
+          "invisible"
+        ]
+      },
+      {
+        "text": "Teleportation",
+        "points": 14,
+        "aliases": [
+          "teleport"
+        ]
+      },
+      {
+        "text": "Mind reading",
+        "points": 10,
+        "aliases": [
+          "read minds",
+          "telepathy"
+        ]
+      },
+      {
+        "text": "Super strength",
+        "points": 8,
+        "aliases": [
+          "strength"
+        ]
+      },
+      {
+        "text": "Time travel",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Healing",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q081",
+    "category": "hypothetical",
+    "q": "If you were stranded on a desert island, name something you'd want with you",
+    "answers": [
+      {
+        "text": "Water",
+        "points": 22,
+        "aliases": []
+      },
+      {
+        "text": "Food",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Knife",
+        "points": 14,
+        "aliases": [
+          "pocket knife"
+        ]
+      },
+      {
+        "text": "Phone",
+        "points": 12,
+        "aliases": [
+          "cellphone"
+        ]
+      },
+      {
+        "text": "Lighter",
+        "points": 10,
+        "aliases": [
+          "matches",
+          "fire"
+        ]
+      },
+      {
+        "text": "Partner",
+        "points": 8,
+        "aliases": [
+          "spouse",
+          "wife",
+          "husband",
+          "significant other"
+        ]
+      },
+      {
+        "text": "Book",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q082",
+    "category": "hypothetical",
+    "q": "If animals could talk, which one would be the rudest?",
+    "answers": [
+      {
+        "text": "Cat",
+        "points": 42,
+        "aliases": [
+          "kitty"
+        ]
+      },
+      {
+        "text": "Goose",
+        "points": 15,
+        "aliases": [
+          "geese"
+        ]
+      },
+      {
+        "text": "Parrot",
+        "points": 10,
+        "aliases": [
+          "bird"
+        ]
+      },
+      {
+        "text": "Monkey",
+        "points": 8,
+        "aliases": [
+          "chimp"
+        ]
+      },
+      {
+        "text": "Llama",
+        "points": 6,
+        "aliases": [
+          "camel"
+        ]
+      },
+      {
+        "text": "Seagull",
+        "points": 5,
+        "aliases": []
+      },
+      {
+        "text": "Chihuahua",
+        "points": 4,
+        "aliases": [
+          "small dog"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q083",
+    "category": "hypothetical",
+    "q": "Name something you'd do if you were the boss for a day",
+    "answers": [
+      {
+        "text": "Give raises",
+        "points": 30,
+        "aliases": [
+          "raise everyone",
+          "raise"
+        ]
+      },
+      {
+        "text": "Free lunch",
+        "points": 18,
+        "aliases": [
+          "catered lunch",
+          "pizza party"
+        ]
+      },
+      {
+        "text": "Day off",
+        "points": 15,
+        "aliases": [
+          "send everyone home",
+          "go home early"
+        ]
+      },
+      {
+        "text": "Fire someone",
+        "points": 12,
+        "aliases": [
+          "fire people"
+        ]
+      },
+      {
+        "text": "Cancel meetings",
+        "points": 10,
+        "aliases": [
+          "no meetings"
+        ]
+      },
+      {
+        "text": "Take a nap",
+        "points": 6,
+        "aliases": [
+          "sleep",
+          "nap"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q084",
+    "category": "hypothetical",
+    "q": "If you could eat only one food forever, what would it be?",
+    "answers": [
+      {
+        "text": "Pizza",
+        "points": 40,
+        "aliases": []
+      },
+      {
+        "text": "Tacos",
+        "points": 14,
+        "aliases": []
+      },
+      {
+        "text": "Pasta",
+        "points": 12,
+        "aliases": [
+          "spaghetti"
+        ]
+      },
+      {
+        "text": "Burgers",
+        "points": 10,
+        "aliases": [
+          "hamburger"
+        ]
+      },
+      {
+        "text": "Sushi",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Fried chicken",
+        "points": 7,
+        "aliases": [
+          "chicken"
+        ]
+      },
+      {
+        "text": "Steak",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q085",
+    "category": "hypothetical",
+    "q": "If you could be any animal for a day, which would you pick?",
+    "answers": [
+      {
+        "text": "Bird",
+        "points": 30,
+        "aliases": [
+          "eagle",
+          "hawk"
+        ]
+      },
+      {
+        "text": "Cat",
+        "points": 20,
+        "aliases": [
+          "house cat"
+        ]
+      },
+      {
+        "text": "Dog",
+        "points": 18,
+        "aliases": [
+          "puppy"
+        ]
+      },
+      {
+        "text": "Dolphin",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Lion",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Sloth",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Fish",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q086",
+    "category": "hypothetical",
+    "q": "If you could time travel, name a time you'd visit",
+    "answers": [
+      {
+        "text": "Dinosaurs",
+        "points": 30,
+        "aliases": [
+          "dinosaur times",
+          "jurassic"
+        ]
+      },
+      {
+        "text": "The future",
+        "points": 22,
+        "aliases": [
+          "future"
+        ]
+      },
+      {
+        "text": "Your childhood",
+        "points": 12,
+        "aliases": [
+          "childhood",
+          "being a kid",
+          "high school"
+        ]
+      },
+      {
+        "text": "Ancient Egypt",
+        "points": 10,
+        "aliases": [
+          "egypt",
+          "pyramids"
+        ]
+      },
+      {
+        "text": "The 80s",
+        "points": 8,
+        "aliases": [
+          "1980s",
+          "eighties"
+        ]
+      },
+      {
+        "text": "Medieval times",
+        "points": 6,
+        "aliases": [
+          "castles",
+          "middle ages"
+        ]
+      },
+      {
+        "text": "Wild West",
+        "points": 5,
+        "aliases": [
+          "cowboy times"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q087",
+    "category": "hypothetical",
+    "q": "Name something you'd do in a zombie apocalypse",
+    "answers": [
+      {
+        "text": "Run",
+        "points": 28,
+        "aliases": [
+          "run away",
+          "flee"
+        ]
+      },
+      {
+        "text": "Hide",
+        "points": 20,
+        "aliases": [
+          "hide out",
+          "bunker"
+        ]
+      },
+      {
+        "text": "Get weapons",
+        "points": 15,
+        "aliases": [
+          "gun",
+          "weapon"
+        ]
+      },
+      {
+        "text": "Stock up on food",
+        "points": 12,
+        "aliases": [
+          "food",
+          "supplies"
+        ]
+      },
+      {
+        "text": "Find family",
+        "points": 8,
+        "aliases": [
+          "family"
+        ]
+      },
+      {
+        "text": "Give up",
+        "points": 6,
+        "aliases": [
+          "die",
+          "quit"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q088",
+    "category": "hypothetical",
+    "q": "If you could keep only one app on your phone, what would it be?",
+    "answers": [
+      {
+        "text": "Text messages",
+        "points": 25,
+        "aliases": [
+          "messages",
+          "texting",
+          "imessage"
+        ]
+      },
+      {
+        "text": "YouTube",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Instagram",
+        "points": 14,
+        "aliases": []
+      },
+      {
+        "text": "TikTok",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Maps",
+        "points": 9,
+        "aliases": [
+          "google maps",
+          "gps"
+        ]
+      },
+      {
+        "text": "Music",
+        "points": 7,
+        "aliases": [
+          "spotify"
+        ]
+      },
+      {
+        "text": "Phone calls",
+        "points": 5,
+        "aliases": [
+          "phone"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q089",
+    "category": "hypothetical",
+    "q": "If your pet could talk, name something it would complain about",
+    "answers": [
+      {
+        "text": "Food",
+        "points": 30,
+        "aliases": [
+          "not enough food",
+          "feed me",
+          "treats"
+        ]
+      },
+      {
+        "text": "Baths",
+        "points": 18,
+        "aliases": [
+          "bath",
+          "bathing"
+        ]
+      },
+      {
+        "text": "Vet",
+        "points": 14,
+        "aliases": [
+          "veterinarian",
+          "doctor"
+        ]
+      },
+      {
+        "text": "Being alone",
+        "points": 12,
+        "aliases": [
+          "left alone",
+          "alone"
+        ]
+      },
+      {
+        "text": "Walks",
+        "points": 9,
+        "aliases": [
+          "more walks"
+        ]
+      },
+      {
+        "text": "Other pets",
+        "points": 7,
+        "aliases": [
+          "the cat"
+        ]
+      },
+      {
+        "text": "Costumes",
+        "points": 5,
+        "aliases": [
+          "sweaters",
+          "clothes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q090",
+    "category": "hypothetical",
+    "q": "If you had a robot butler, name a chore you'd make it do",
+    "answers": [
+      {
+        "text": "Laundry",
+        "points": 28,
+        "aliases": [
+          "wash clothes",
+          "folding"
+        ]
+      },
+      {
+        "text": "Dishes",
+        "points": 25,
+        "aliases": [
+          "wash dishes"
+        ]
+      },
+      {
+        "text": "Clean the toilet",
+        "points": 15,
+        "aliases": [
+          "bathroom",
+          "toilet",
+          "scrub toilet"
+        ]
+      },
+      {
+        "text": "Cooking",
+        "points": 12,
+        "aliases": [
+          "cook",
+          "make dinner"
+        ]
+      },
+      {
+        "text": "Vacuuming",
+        "points": 8,
+        "aliases": [
+          "vacuum"
+        ]
+      },
+      {
+        "text": "Take out trash",
+        "points": 7,
+        "aliases": [
+          "trash",
+          "garbage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q091",
+    "category": "cheeky",
+    "q": "Name something you hope nobody hears you do in a public bathroom",
+    "answers": [
+      {
+        "text": "Fart",
+        "points": 42,
+        "aliases": [
+          "toot",
+          "pass gas",
+          "gas"
+        ]
+      },
+      {
+        "text": "Poop",
+        "points": 22,
+        "aliases": [
+          "number two",
+          "plop"
+        ]
+      },
+      {
+        "text": "Grunt",
+        "points": 10,
+        "aliases": [
+          "groan"
+        ]
+      },
+      {
+        "text": "Phone call",
+        "points": 8,
+        "aliases": [
+          "talk on the phone"
+        ]
+      },
+      {
+        "text": "Sneeze",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Sing",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q092",
+    "category": "cheeky",
+    "q": "Name something people do in the shower besides washing",
+    "answers": [
+      {
+        "text": "Sing",
+        "points": 40,
+        "aliases": [
+          "singing"
+        ]
+      },
+      {
+        "text": "Pee",
+        "points": 20,
+        "aliases": [
+          "urinate"
+        ]
+      },
+      {
+        "text": "Think",
+        "points": 14,
+        "aliases": [
+          "deep thoughts"
+        ]
+      },
+      {
+        "text": "Cry",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Practice arguments",
+        "points": 6,
+        "aliases": [
+          "talk to myself",
+          "argue"
+        ]
+      },
+      {
+        "text": "Brush teeth",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q093",
+    "category": "cheeky",
+    "q": "Name something you'd be embarrassed for coworkers to see on your phone",
+    "answers": [
+      {
+        "text": "Selfies",
+        "points": 24,
+        "aliases": [
+          "photos",
+          "pics"
+        ]
+      },
+      {
+        "text": "Dating app",
+        "points": 20,
+        "aliases": [
+          "tinder"
+        ]
+      },
+      {
+        "text": "Search history",
+        "points": 14,
+        "aliases": [
+          "google searches",
+          "browser history"
+        ]
+      },
+      {
+        "text": "Texts",
+        "points": 12,
+        "aliases": [
+          "messages"
+        ]
+      },
+      {
+        "text": "Playlist",
+        "points": 10,
+        "aliases": [
+          "music",
+          "songs"
+        ]
+      },
+      {
+        "text": "Screen time",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Bank balance",
+        "points": 6,
+        "aliases": [
+          "bank account"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q094",
+    "category": "cheeky",
+    "q": "Name something people blame on the dog",
+    "answers": [
+      {
+        "text": "Fart",
+        "points": 50,
+        "aliases": [
+          "gas",
+          "smell",
+          "toot"
+        ]
+      },
+      {
+        "text": "Mess",
+        "points": 14,
+        "aliases": [
+          "messy house"
+        ]
+      },
+      {
+        "text": "Missing food",
+        "points": 12,
+        "aliases": [
+          "eaten food",
+          "food"
+        ]
+      },
+      {
+        "text": "Broken stuff",
+        "points": 9,
+        "aliases": [
+          "broke something"
+        ]
+      },
+      {
+        "text": "Homework",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Muddy floor",
+        "points": 4,
+        "aliases": [
+          "mud",
+          "dirt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q095",
+    "category": "cheeky",
+    "q": "Name something you'd hate to run out of in the bathroom",
+    "answers": [
+      {
+        "text": "Toilet paper",
+        "points": 62,
+        "aliases": [
+          "tp",
+          "toilet tissue",
+          "bathroom tissue"
+        ]
+      },
+      {
+        "text": "Soap",
+        "points": 12,
+        "aliases": [
+          "hand soap"
+        ]
+      },
+      {
+        "text": "Air freshener",
+        "points": 8,
+        "aliases": [
+          "spray"
+        ]
+      },
+      {
+        "text": "Hot water",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Towels",
+        "points": 4,
+        "aliases": []
+      },
+      {
+        "text": "Shampoo",
+        "points": 3,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q096",
+    "category": "cheeky",
+    "q": "Name a reason someone takes forever in the bathroom",
+    "answers": [
+      {
+        "text": "On their phone",
+        "points": 32,
+        "aliases": [
+          "phone",
+          "scrolling"
+        ]
+      },
+      {
+        "text": "Pooping",
+        "points": 25,
+        "aliases": [
+          "number two",
+          "poop"
+        ]
+      },
+      {
+        "text": "Makeup",
+        "points": 12,
+        "aliases": [
+          "doing makeup"
+        ]
+      },
+      {
+        "text": "Hiding",
+        "points": 10,
+        "aliases": [
+          "avoiding people"
+        ]
+      },
+      {
+        "text": "Doing hair",
+        "points": 8,
+        "aliases": [
+          "hair"
+        ]
+      },
+      {
+        "text": "Upset stomach",
+        "points": 5,
+        "aliases": [
+          "sick",
+          "bad food"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q097",
+    "category": "cheeky",
+    "q": "Name something you'd do if you were sure no one was watching",
+    "answers": [
+      {
+        "text": "Pick nose",
+        "points": 30,
+        "aliases": [
+          "nose picking",
+          "pick your nose"
+        ]
+      },
+      {
+        "text": "Dance",
+        "points": 22,
+        "aliases": [
+          "dancing"
+        ]
+      },
+      {
+        "text": "Sing",
+        "points": 14,
+        "aliases": [
+          "singing"
+        ]
+      },
+      {
+        "text": "Fart",
+        "points": 12,
+        "aliases": [
+          "pass gas"
+        ]
+      },
+      {
+        "text": "Eat junk food",
+        "points": 8,
+        "aliases": [
+          "junk food"
+        ]
+      },
+      {
+        "text": "Talk to yourself",
+        "points": 6,
+        "aliases": [
+          "talk to myself"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q098",
+    "category": "cheeky",
+    "q": "Name something that's awkward to buy at the store",
+    "answers": [
+      {
+        "text": "Condoms",
+        "points": 25,
+        "aliases": [
+          "protection"
+        ]
+      },
+      {
+        "text": "Underwear",
+        "points": 18,
+        "aliases": [
+          "undies"
+        ]
+      },
+      {
+        "text": "Laxatives",
+        "points": 16,
+        "aliases": [
+          "stool softener"
+        ]
+      },
+      {
+        "text": "Pregnancy test",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Hemorrhoid cream",
+        "points": 9,
+        "aliases": []
+      },
+      {
+        "text": "Toilet paper",
+        "points": 6,
+        "aliases": [
+          "tp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q099",
+    "category": "cheeky",
+    "q": "Name something people do in their car when they think no one can see",
+    "answers": [
+      {
+        "text": "Sing",
+        "points": 34,
+        "aliases": [
+          "singing",
+          "car karaoke"
+        ]
+      },
+      {
+        "text": "Pick nose",
+        "points": 24,
+        "aliases": [
+          "nose picking"
+        ]
+      },
+      {
+        "text": "Eat",
+        "points": 12,
+        "aliases": [
+          "snack"
+        ]
+      },
+      {
+        "text": "Make out",
+        "points": 10,
+        "aliases": [
+          "kiss",
+          "kissing"
+        ]
+      },
+      {
+        "text": "Cry",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Talk to themselves",
+        "points": 6,
+        "aliases": [
+          "talk to myself"
+        ]
+      },
+      {
+        "text": "Do makeup",
+        "points": 4,
+        "aliases": [
+          "makeup"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q100",
+    "category": "cheeky",
+    "q": "Name something you'd be mortified to do during a big presentation",
+    "answers": [
+      {
+        "text": "Fart",
+        "points": 30,
+        "aliases": [
+          "pass gas",
+          "toot"
+        ]
+      },
+      {
+        "text": "Trip",
+        "points": 18,
+        "aliases": [
+          "fall",
+          "fall down"
+        ]
+      },
+      {
+        "text": "Forget what to say",
+        "points": 14,
+        "aliases": [
+          "blank",
+          "mind goes blank",
+          "forget"
+        ]
+      },
+      {
+        "text": "Burp",
+        "points": 10,
+        "aliases": [
+          "belch"
+        ]
+      },
+      {
+        "text": "Sweat through shirt",
+        "points": 9,
+        "aliases": [
+          "sweat",
+          "sweaty pits"
+        ]
+      },
+      {
+        "text": "Fly down",
+        "points": 8,
+        "aliases": [
+          "zipper down",
+          "open fly"
+        ]
+      },
+      {
+        "text": "Snort laugh",
+        "points": 5,
+        "aliases": [
+          "snort"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q101",
+    "category": "cheeky",
+    "q": "Name something you check in the mirror before a date",
+    "answers": [
+      {
+        "text": "Teeth",
+        "points": 28,
+        "aliases": [
+          "food in teeth"
+        ]
+      },
+      {
+        "text": "Hair",
+        "points": 26,
+        "aliases": []
+      },
+      {
+        "text": "Breath",
+        "points": 12,
+        "aliases": [
+          "smell breath"
+        ]
+      },
+      {
+        "text": "Outfit",
+        "points": 10,
+        "aliases": [
+          "clothes"
+        ]
+      },
+      {
+        "text": "Nose",
+        "points": 8,
+        "aliases": [
+          "boogers",
+          "nose hair"
+        ]
+      },
+      {
+        "text": "Makeup",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Zipper",
+        "points": 4,
+        "aliases": [
+          "fly"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q102",
+    "category": "cheeky",
+    "q": "Name something people swear they've never done",
+    "answers": [
+      {
+        "text": "Pick nose",
+        "points": 28,
+        "aliases": [
+          "nose picking"
+        ]
+      },
+      {
+        "text": "Fart",
+        "points": 22,
+        "aliases": []
+      },
+      {
+        "text": "Pee in the pool",
+        "points": 15,
+        "aliases": [
+          "peed in pool"
+        ]
+      },
+      {
+        "text": "Eat food off the floor",
+        "points": 10,
+        "aliases": [
+          "five second rule"
+        ]
+      },
+      {
+        "text": "Stalk an ex online",
+        "points": 9,
+        "aliases": [
+          "stalk ex",
+          "stalking"
+        ]
+      },
+      {
+        "text": "Lie about age",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Snoop on a phone",
+        "points": 5,
+        "aliases": [
+          "snoop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q103",
+    "category": "cheeky",
+    "q": "Name the worst place to get the hiccups",
+    "answers": [
+      {
+        "text": "Funeral",
+        "points": 25,
+        "aliases": []
+      },
+      {
+        "text": "Wedding",
+        "points": 18,
+        "aliases": [
+          "ceremony"
+        ]
+      },
+      {
+        "text": "Library",
+        "points": 14,
+        "aliases": []
+      },
+      {
+        "text": "Job interview",
+        "points": 12,
+        "aliases": [
+          "interview"
+        ]
+      },
+      {
+        "text": "Exam",
+        "points": 10,
+        "aliases": [
+          "test"
+        ]
+      },
+      {
+        "text": "First date",
+        "points": 8,
+        "aliases": [
+          "date"
+        ]
+      },
+      {
+        "text": "Movie theater",
+        "points": 6,
+        "aliases": [
+          "movies"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q104",
+    "category": "cheeky",
+    "q": "Name something you'd hate to hear your doctor say",
+    "answers": [
+      {
+        "text": "Oops",
+        "points": 34,
+        "aliases": [
+          "oh no",
+          "uh oh",
+          "whoops"
+        ]
+      },
+      {
+        "text": "Bend over",
+        "points": 18,
+        "aliases": [
+          "turn around"
+        ]
+      },
+      {
+        "text": "Cold hands",
+        "points": 12,
+        "aliases": [
+          "my hands are cold"
+        ]
+      },
+      {
+        "text": "That's weird",
+        "points": 10,
+        "aliases": [
+          "huh",
+          "that's strange"
+        ]
+      },
+      {
+        "text": "First time",
+        "points": 9,
+        "aliases": [
+          "never done this"
+        ]
+      },
+      {
+        "text": "Surgery",
+        "points": 7,
+        "aliases": [
+          "you need surgery"
+        ]
+      },
+      {
+        "text": "Bad news",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q105",
+    "category": "cheeky",
+    "q": "Name something you'd hate to find in a hotel bed",
+    "answers": [
+      {
+        "text": "Bed bugs",
+        "points": 34,
+        "aliases": [
+          "bugs",
+          "bedbugs"
+        ]
+      },
+      {
+        "text": "Hair",
+        "points": 22,
+        "aliases": [
+          "hairs"
+        ]
+      },
+      {
+        "text": "Stains",
+        "points": 15,
+        "aliases": [
+          "stain"
+        ]
+      },
+      {
+        "text": "A stranger",
+        "points": 10,
+        "aliases": [
+          "person",
+          "someone else"
+        ]
+      },
+      {
+        "text": "Crumbs",
+        "points": 8,
+        "aliases": [
+          "food"
+        ]
+      },
+      {
+        "text": "Used underwear",
+        "points": 6,
+        "aliases": [
+          "underwear",
+          "undies"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q106",
+    "category": "cheeky",
+    "q": "Name something people do while their date is in the bathroom",
+    "answers": [
+      {
+        "text": "Check phone",
+        "points": 34,
+        "aliases": [
+          "phone",
+          "text friends"
+        ]
+      },
+      {
+        "text": "Check breath",
+        "points": 15,
+        "aliases": [
+          "breath",
+          "mints",
+          "gum"
+        ]
+      },
+      {
+        "text": "Fix hair",
+        "points": 12,
+        "aliases": [
+          "hair",
+          "mirror"
+        ]
+      },
+      {
+        "text": "Peek at the bill",
+        "points": 10,
+        "aliases": [
+          "bill",
+          "look at bill"
+        ]
+      },
+      {
+        "text": "Steal their fries",
+        "points": 9,
+        "aliases": [
+          "eat their food",
+          "fries"
+        ]
+      },
+      {
+        "text": "Escape",
+        "points": 7,
+        "aliases": [
+          "leave",
+          "run away",
+          "sneak out"
+        ]
+      },
+      {
+        "text": "Order more drinks",
+        "points": 5,
+        "aliases": [
+          "drinks"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q107",
+    "category": "cheeky",
+    "q": "Name something embarrassing to get caught doing on a work webcam",
+    "answers": [
+      {
+        "text": "Picking nose",
+        "points": 26,
+        "aliases": [
+          "pick nose",
+          "nose picking"
+        ]
+      },
+      {
+        "text": "No pants",
+        "points": 22,
+        "aliases": [
+          "pajama pants",
+          "pajamas"
+        ]
+      },
+      {
+        "text": "Sleeping",
+        "points": 15,
+        "aliases": [
+          "nap",
+          "asleep"
+        ]
+      },
+      {
+        "text": "Eating",
+        "points": 12,
+        "aliases": [
+          "snacking"
+        ]
+      },
+      {
+        "text": "On the toilet",
+        "points": 10,
+        "aliases": [
+          "bathroom",
+          "toilet"
+        ]
+      },
+      {
+        "text": "Rolling eyes",
+        "points": 6,
+        "aliases": [
+          "eye roll",
+          "making faces"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q108",
+    "category": "cheeky",
+    "q": "Name a sound you don't want to hear from the next bathroom stall",
+    "answers": [
+      {
+        "text": "Farting",
+        "points": 34,
+        "aliases": [
+          "fart",
+          "gas",
+          "toot"
+        ]
+      },
+      {
+        "text": "Splash",
+        "points": 20,
+        "aliases": [
+          "plop"
+        ]
+      },
+      {
+        "text": "Grunting",
+        "points": 14,
+        "aliases": [
+          "grunt",
+          "straining"
+        ]
+      },
+      {
+        "text": "Phone call",
+        "points": 12,
+        "aliases": [
+          "talking on phone"
+        ]
+      },
+      {
+        "text": "Crying",
+        "points": 8,
+        "aliases": [
+          "sobbing"
+        ]
+      },
+      {
+        "text": "Chewing",
+        "points": 6,
+        "aliases": [
+          "eating",
+          "crunching"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q109",
+    "category": "cheeky",
+    "q": "Name something you secretly do when home alone",
+    "answers": [
+      {
+        "text": "Walk around naked",
+        "points": 28,
+        "aliases": [
+          "naked",
+          "no clothes",
+          "nude"
+        ]
+      },
+      {
+        "text": "Sing loudly",
+        "points": 22,
+        "aliases": [
+          "sing",
+          "singing"
+        ]
+      },
+      {
+        "text": "Dance",
+        "points": 15,
+        "aliases": [
+          "dancing"
+        ]
+      },
+      {
+        "text": "Eat junk food",
+        "points": 12,
+        "aliases": [
+          "junk food",
+          "snack"
+        ]
+      },
+      {
+        "text": "Nap",
+        "points": 8,
+        "aliases": [
+          "sleep"
+        ]
+      },
+      {
+        "text": "Fart freely",
+        "points": 6,
+        "aliases": [
+          "fart",
+          "pass gas"
+        ]
+      },
+      {
+        "text": "Talk to the pet",
+        "points": 4,
+        "aliases": [
+          "talk to dog"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q110",
+    "category": "cheeky",
+    "q": "Name something people do on a long flight that annoys everyone",
+    "answers": [
+      {
+        "text": "Recline seat",
+        "points": 25,
+        "aliases": [
+          "recline",
+          "lean back"
+        ]
+      },
+      {
+        "text": "Take shoes off",
+        "points": 18,
+        "aliases": [
+          "bare feet",
+          "feet",
+          "shoes off"
+        ]
+      },
+      {
+        "text": "Kick the seat",
+        "points": 14,
+        "aliases": [
+          "kicking seat"
+        ]
+      },
+      {
+        "text": "Snore",
+        "points": 12,
+        "aliases": [
+          "snoring"
+        ]
+      },
+      {
+        "text": "Fart",
+        "points": 10,
+        "aliases": [
+          "gas"
+        ]
+      },
+      {
+        "text": "Hog the armrest",
+        "points": 8,
+        "aliases": [
+          "armrest"
+        ]
+      },
+      {
+        "text": "Talk loudly",
+        "points": 5,
+        "aliases": [
+          "loud talking"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q111",
+    "category": "home",
+    "q": "Name something you'd find in a teenager's room",
+    "answers": [
+      {
+        "text": "Dirty laundry",
+        "points": 28,
+        "aliases": [
+          "laundry",
+          "dirty clothes"
+        ]
+      },
+      {
+        "text": "Dishes",
+        "points": 18,
+        "aliases": [
+          "plates",
+          "cups"
+        ]
+      },
+      {
+        "text": "Bad smell",
+        "points": 12,
+        "aliases": [
+          "stink",
+          "smell"
+        ]
+      },
+      {
+        "text": "Posters",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Video games",
+        "points": 9,
+        "aliases": [
+          "games",
+          "gaming console"
+        ]
+      },
+      {
+        "text": "Trash",
+        "points": 8,
+        "aliases": [
+          "garbage"
+        ]
+      },
+      {
+        "text": "Snacks",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q112",
+    "category": "home",
+    "q": "Name a household chore people hate",
+    "answers": [
+      {
+        "text": "Dishes",
+        "points": 28,
+        "aliases": [
+          "washing dishes"
+        ]
+      },
+      {
+        "text": "Laundry",
+        "points": 22,
+        "aliases": [
+          "folding laundry"
+        ]
+      },
+      {
+        "text": "Cleaning the toilet",
+        "points": 18,
+        "aliases": [
+          "bathroom",
+          "scrub toilet"
+        ]
+      },
+      {
+        "text": "Vacuuming",
+        "points": 10,
+        "aliases": [
+          "vacuum"
+        ]
+      },
+      {
+        "text": "Taking out trash",
+        "points": 8,
+        "aliases": [
+          "trash",
+          "garbage"
+        ]
+      },
+      {
+        "text": "Dusting",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Mopping",
+        "points": 4,
+        "aliases": [
+          "mop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q113",
+    "category": "home",
+    "q": "Name something people lose in the couch",
+    "answers": [
+      {
+        "text": "Remote",
+        "points": 40,
+        "aliases": [
+          "tv remote",
+          "remote control",
+          "clicker"
+        ]
+      },
+      {
+        "text": "Change",
+        "points": 18,
+        "aliases": [
+          "coins",
+          "money"
+        ]
+      },
+      {
+        "text": "Phone",
+        "points": 14,
+        "aliases": [
+          "cellphone"
+        ]
+      },
+      {
+        "text": "Keys",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Snacks",
+        "points": 7,
+        "aliases": [
+          "crumbs",
+          "food",
+          "chips"
+        ]
+      },
+      {
+        "text": "Pen",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q114",
+    "category": "home",
+    "q": "Name something in your fridge that's probably expired",
+    "answers": [
+      {
+        "text": "Milk",
+        "points": 38,
+        "aliases": []
+      },
+      {
+        "text": "Leftovers",
+        "points": 18,
+        "aliases": [
+          "takeout",
+          "old food"
+        ]
+      },
+      {
+        "text": "Condiments",
+        "points": 10,
+        "aliases": [
+          "ketchup",
+          "mustard",
+          "mayo"
+        ]
+      },
+      {
+        "text": "Yogurt",
+        "points": 9,
+        "aliases": []
+      },
+      {
+        "text": "Eggs",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Cheese",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Lettuce",
+        "points": 5,
+        "aliases": [
+          "salad",
+          "vegetables"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q115",
+    "category": "home",
+    "q": "Name something neighbors complain about",
+    "answers": [
+      {
+        "text": "Noise",
+        "points": 30,
+        "aliases": [
+          "loud music",
+          "loud"
+        ]
+      },
+      {
+        "text": "Barking dog",
+        "points": 22,
+        "aliases": [
+          "dog",
+          "dogs barking"
+        ]
+      },
+      {
+        "text": "Parking",
+        "points": 13,
+        "aliases": [
+          "blocking driveway"
+        ]
+      },
+      {
+        "text": "Messy yard",
+        "points": 10,
+        "aliases": [
+          "lawn",
+          "tall grass",
+          "weeds"
+        ]
+      },
+      {
+        "text": "Trash cans",
+        "points": 8,
+        "aliases": [
+          "garbage"
+        ]
+      },
+      {
+        "text": "Parties",
+        "points": 7,
+        "aliases": [
+          "party"
+        ]
+      },
+      {
+        "text": "Kids",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q116",
+    "category": "home",
+    "q": "Name something people do when they can't sleep",
+    "answers": [
+      {
+        "text": "Scroll phone",
+        "points": 30,
+        "aliases": [
+          "phone",
+          "social media"
+        ]
+      },
+      {
+        "text": "Watch TV",
+        "points": 22,
+        "aliases": [
+          "tv",
+          "netflix"
+        ]
+      },
+      {
+        "text": "Count sheep",
+        "points": 14,
+        "aliases": [
+          "counting sheep"
+        ]
+      },
+      {
+        "text": "Read",
+        "points": 10,
+        "aliases": [
+          "book"
+        ]
+      },
+      {
+        "text": "Midnight snack",
+        "points": 8,
+        "aliases": [
+          "eat",
+          "snack"
+        ]
+      },
+      {
+        "text": "Toss and turn",
+        "points": 6,
+        "aliases": [
+          "toss",
+          "turning"
+        ]
+      },
+      {
+        "text": "Warm milk",
+        "points": 4,
+        "aliases": [
+          "tea",
+          "drink milk"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q117",
+    "category": "home",
+    "q": "Name a noise you'd hear at 3am in a creepy house",
+    "answers": [
+      {
+        "text": "Creaking",
+        "points": 30,
+        "aliases": [
+          "creak",
+          "floor creaking",
+          "squeak"
+        ]
+      },
+      {
+        "text": "Footsteps",
+        "points": 20,
+        "aliases": [
+          "steps",
+          "walking"
+        ]
+      },
+      {
+        "text": "Wind",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Scratching",
+        "points": 11,
+        "aliases": [
+          "scratch"
+        ]
+      },
+      {
+        "text": "Whispers",
+        "points": 9,
+        "aliases": [
+          "whispering",
+          "voices"
+        ]
+      },
+      {
+        "text": "Door slam",
+        "points": 8,
+        "aliases": [
+          "door",
+          "door slamming"
+        ]
+      },
+      {
+        "text": "Dripping",
+        "points": 4,
+        "aliases": [
+          "drip",
+          "faucet"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q118",
+    "category": "home",
+    "q": "Name a room people hide the mess in when guests come over",
+    "answers": [
+      {
+        "text": "Bedroom",
+        "points": 40,
+        "aliases": []
+      },
+      {
+        "text": "Closet",
+        "points": 25,
+        "aliases": []
+      },
+      {
+        "text": "Garage",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Laundry room",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Bathroom",
+        "points": 6,
+        "aliases": [
+          "shower",
+          "tub"
+        ]
+      },
+      {
+        "text": "Basement",
+        "points": 5,
+        "aliases": []
+      },
+      {
+        "text": "Car",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q119",
+    "category": "home",
+    "q": "Name something in a junk drawer",
+    "answers": [
+      {
+        "text": "Batteries",
+        "points": 25,
+        "aliases": []
+      },
+      {
+        "text": "Rubber bands",
+        "points": 15,
+        "aliases": [
+          "hair ties"
+        ]
+      },
+      {
+        "text": "Pens",
+        "points": 14,
+        "aliases": [
+          "pencils"
+        ]
+      },
+      {
+        "text": "Takeout menus",
+        "points": 10,
+        "aliases": [
+          "menus"
+        ]
+      },
+      {
+        "text": "Tape",
+        "points": 9,
+        "aliases": [
+          "scotch tape"
+        ]
+      },
+      {
+        "text": "Spare keys",
+        "points": 8,
+        "aliases": [
+          "keys",
+          "random keys"
+        ]
+      },
+      {
+        "text": "Scissors",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q120",
+    "category": "home",
+    "q": "Name something people do to get ready for guests",
+    "answers": [
+      {
+        "text": "Clean",
+        "points": 40,
+        "aliases": [
+          "tidy up",
+          "cleaning"
+        ]
+      },
+      {
+        "text": "Cook",
+        "points": 18,
+        "aliases": [
+          "make food"
+        ]
+      },
+      {
+        "text": "Light candles",
+        "points": 10,
+        "aliases": [
+          "candles"
+        ]
+      },
+      {
+        "text": "Shower",
+        "points": 9,
+        "aliases": [
+          "get dressed"
+        ]
+      },
+      {
+        "text": "Hide the mess",
+        "points": 8,
+        "aliases": [
+          "stuff closet"
+        ]
+      },
+      {
+        "text": "Buy drinks",
+        "points": 6,
+        "aliases": [
+          "wine",
+          "beer"
+        ]
+      },
+      {
+        "text": "Fresh towels",
+        "points": 4,
+        "aliases": [
+          "towels"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q121",
+    "category": "home",
+    "q": "Name an animal you'd hate to find in your house",
+    "answers": [
+      {
+        "text": "Snake",
+        "points": 30,
+        "aliases": []
+      },
+      {
+        "text": "Rat",
+        "points": 22,
+        "aliases": [
+          "mouse",
+          "rodent",
+          "mice"
+        ]
+      },
+      {
+        "text": "Spider",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Raccoon",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Bat",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Cockroach",
+        "points": 6,
+        "aliases": [
+          "roach"
+        ]
+      },
+      {
+        "text": "Skunk",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q122",
+    "category": "home",
+    "q": "Name a household item people don't replace often enough",
+    "answers": [
+      {
+        "text": "Toothbrush",
+        "points": 30,
+        "aliases": []
+      },
+      {
+        "text": "Sponge",
+        "points": 20,
+        "aliases": [
+          "kitchen sponge"
+        ]
+      },
+      {
+        "text": "Pillow",
+        "points": 14,
+        "aliases": []
+      },
+      {
+        "text": "Mattress",
+        "points": 10,
+        "aliases": [
+          "bed"
+        ]
+      },
+      {
+        "text": "Towels",
+        "points": 9,
+        "aliases": []
+      },
+      {
+        "text": "Air filter",
+        "points": 8,
+        "aliases": [
+          "filter",
+          "furnace filter"
+        ]
+      },
+      {
+        "text": "Smoke alarm battery",
+        "points": 5,
+        "aliases": [
+          "smoke alarm",
+          "smoke detector"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q123",
+    "category": "home",
+    "q": "Name something you'd find in a garage",
+    "answers": [
+      {
+        "text": "Car",
+        "points": 30,
+        "aliases": []
+      },
+      {
+        "text": "Tools",
+        "points": 22,
+        "aliases": [
+          "toolbox",
+          "hammer"
+        ]
+      },
+      {
+        "text": "Bikes",
+        "points": 12,
+        "aliases": [
+          "bicycle"
+        ]
+      },
+      {
+        "text": "Lawn mower",
+        "points": 10,
+        "aliases": [
+          "mower"
+        ]
+      },
+      {
+        "text": "Boxes",
+        "points": 9,
+        "aliases": [
+          "storage",
+          "junk"
+        ]
+      },
+      {
+        "text": "Freezer",
+        "points": 6,
+        "aliases": [
+          "fridge",
+          "extra fridge"
+        ]
+      },
+      {
+        "text": "Paint",
+        "points": 5,
+        "aliases": [
+          "paint cans"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q124",
+    "category": "travel",
+    "q": "Name something people forget to pack",
+    "answers": [
+      {
+        "text": "Toothbrush",
+        "points": 30,
+        "aliases": []
+      },
+      {
+        "text": "Phone charger",
+        "points": 22,
+        "aliases": [
+          "charger"
+        ]
+      },
+      {
+        "text": "Underwear",
+        "points": 14,
+        "aliases": [
+          "undies"
+        ]
+      },
+      {
+        "text": "Socks",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Deodorant",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Passport",
+        "points": 7,
+        "aliases": [
+          "id"
+        ]
+      },
+      {
+        "text": "Sunscreen",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q125",
+    "category": "travel",
+    "q": "Name something annoying at the airport",
+    "answers": [
+      {
+        "text": "Security",
+        "points": 30,
+        "aliases": [
+          "security line",
+          "tsa"
+        ]
+      },
+      {
+        "text": "Delays",
+        "points": 24,
+        "aliases": [
+          "delayed flight",
+          "delay",
+          "cancellation"
+        ]
+      },
+      {
+        "text": "Long lines",
+        "points": 12,
+        "aliases": [
+          "lines",
+          "waiting"
+        ]
+      },
+      {
+        "text": "Lost luggage",
+        "points": 10,
+        "aliases": [
+          "lost bags",
+          "baggage"
+        ]
+      },
+      {
+        "text": "Expensive food",
+        "points": 8,
+        "aliases": [
+          "overpriced food"
+        ]
+      },
+      {
+        "text": "Crying babies",
+        "points": 6,
+        "aliases": [
+          "baby",
+          "screaming kids"
+        ]
+      },
+      {
+        "text": "Walking far",
+        "points": 4,
+        "aliases": [
+          "long walk",
+          "gate far away"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q126",
+    "category": "travel",
+    "q": "Name something you'd bring on a beach day",
+    "answers": [
+      {
+        "text": "Sunscreen",
+        "points": 30,
+        "aliases": [
+          "sunblock",
+          "spf"
+        ]
+      },
+      {
+        "text": "Towel",
+        "points": 25,
+        "aliases": [
+          "beach towel"
+        ]
+      },
+      {
+        "text": "Umbrella",
+        "points": 12,
+        "aliases": [
+          "beach umbrella"
+        ]
+      },
+      {
+        "text": "Cooler",
+        "points": 10,
+        "aliases": [
+          "drinks",
+          "ice chest"
+        ]
+      },
+      {
+        "text": "Sunglasses",
+        "points": 9,
+        "aliases": [
+          "shades"
+        ]
+      },
+      {
+        "text": "Snacks",
+        "points": 6,
+        "aliases": [
+          "food"
+        ]
+      },
+      {
+        "text": "Book",
+        "points": 4,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q127",
+    "category": "travel",
+    "q": "Name a souvenir people bring back from a trip",
+    "answers": [
+      {
+        "text": "T-shirt",
+        "points": 30,
+        "aliases": [
+          "shirt",
+          "tshirt"
+        ]
+      },
+      {
+        "text": "Magnet",
+        "points": 22,
+        "aliases": [
+          "fridge magnet"
+        ]
+      },
+      {
+        "text": "Keychain",
+        "points": 14,
+        "aliases": [
+          "key chain"
+        ]
+      },
+      {
+        "text": "Postcard",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Mug",
+        "points": 8,
+        "aliases": [
+          "coffee mug"
+        ]
+      },
+      {
+        "text": "Snow globe",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Shot glass",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q128",
+    "category": "travel",
+    "q": "Name something that can ruin a vacation",
+    "answers": [
+      {
+        "text": "Rain",
+        "points": 25,
+        "aliases": [
+          "bad weather",
+          "weather",
+          "storm"
+        ]
+      },
+      {
+        "text": "Getting sick",
+        "points": 22,
+        "aliases": [
+          "sick",
+          "food poisoning"
+        ]
+      },
+      {
+        "text": "Lost luggage",
+        "points": 14,
+        "aliases": [
+          "lost bags"
+        ]
+      },
+      {
+        "text": "Sunburn",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Bad hotel",
+        "points": 10,
+        "aliases": [
+          "dirty hotel",
+          "bed bugs"
+        ]
+      },
+      {
+        "text": "Family drama",
+        "points": 8,
+        "aliases": [
+          "fighting",
+          "arguing"
+        ]
+      },
+      {
+        "text": "Missed flight",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q129",
+    "category": "travel",
+    "q": "Name something people do on a road trip",
+    "answers": [
+      {
+        "text": "Sing along",
+        "points": 28,
+        "aliases": [
+          "singing",
+          "music"
+        ]
+      },
+      {
+        "text": "Snack",
+        "points": 20,
+        "aliases": [
+          "eat",
+          "snacks"
+        ]
+      },
+      {
+        "text": "Sleep",
+        "points": 14,
+        "aliases": [
+          "nap"
+        ]
+      },
+      {
+        "text": "Car games",
+        "points": 12,
+        "aliases": [
+          "i spy",
+          "games"
+        ]
+      },
+      {
+        "text": "Bathroom stops",
+        "points": 10,
+        "aliases": [
+          "pee breaks",
+          "potty breaks"
+        ]
+      },
+      {
+        "text": "Get lost",
+        "points": 8,
+        "aliases": [
+          "lost"
+        ]
+      },
+      {
+        "text": "Argue",
+        "points": 5,
+        "aliases": [
+          "fight"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q130",
+    "category": "travel",
+    "q": "Name something kids ask on a road trip",
+    "answers": [
+      {
+        "text": "Are we there yet",
+        "points": 55,
+        "aliases": [
+          "are we there yet?",
+          "there yet"
+        ]
+      },
+      {
+        "text": "I need to pee",
+        "points": 15,
+        "aliases": [
+          "bathroom",
+          "potty",
+          "pee"
+        ]
+      },
+      {
+        "text": "I'm hungry",
+        "points": 12,
+        "aliases": [
+          "hungry",
+          "snacks"
+        ]
+      },
+      {
+        "text": "I'm bored",
+        "points": 8,
+        "aliases": [
+          "bored"
+        ]
+      },
+      {
+        "text": "How much longer",
+        "points": 5,
+        "aliases": [
+          "how long"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q131",
+    "category": "travel",
+    "q": "Name a popular honeymoon destination",
+    "answers": [
+      {
+        "text": "Hawaii",
+        "points": 30,
+        "aliases": []
+      },
+      {
+        "text": "Paris",
+        "points": 18,
+        "aliases": [
+          "france"
+        ]
+      },
+      {
+        "text": "Mexico",
+        "points": 14,
+        "aliases": [
+          "cancun"
+        ]
+      },
+      {
+        "text": "Caribbean",
+        "points": 12,
+        "aliases": [
+          "jamaica",
+          "bahamas"
+        ]
+      },
+      {
+        "text": "Italy",
+        "points": 9,
+        "aliases": [
+          "rome",
+          "venice"
+        ]
+      },
+      {
+        "text": "Bali",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Disney World",
+        "points": 5,
+        "aliases": [
+          "disney",
+          "disneyland"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q132",
+    "category": "travel",
+    "q": "Name something you'd find in a hotel room",
+    "answers": [
+      {
+        "text": "Bed",
+        "points": 30,
+        "aliases": []
+      },
+      {
+        "text": "TV",
+        "points": 20,
+        "aliases": [
+          "television"
+        ]
+      },
+      {
+        "text": "Mini fridge",
+        "points": 12,
+        "aliases": [
+          "minibar",
+          "fridge"
+        ]
+      },
+      {
+        "text": "Towels",
+        "points": 11,
+        "aliases": []
+      },
+      {
+        "text": "Coffee maker",
+        "points": 9,
+        "aliases": [
+          "coffee machine"
+        ]
+      },
+      {
+        "text": "Ice bucket",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Tiny soaps",
+        "points": 5,
+        "aliases": [
+          "soap",
+          "shampoo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q133",
+    "category": "travel",
+    "q": "Name a reason you might miss a flight",
+    "answers": [
+      {
+        "text": "Traffic",
+        "points": 30,
+        "aliases": []
+      },
+      {
+        "text": "Overslept",
+        "points": 22,
+        "aliases": [
+          "slept in",
+          "alarm"
+        ]
+      },
+      {
+        "text": "Security line",
+        "points": 16,
+        "aliases": [
+          "security",
+          "tsa"
+        ]
+      },
+      {
+        "text": "Wrong terminal",
+        "points": 8,
+        "aliases": [
+          "wrong airport",
+          "wrong gate"
+        ]
+      },
+      {
+        "text": "Forgot passport",
+        "points": 7,
+        "aliases": [
+          "passport",
+          "id"
+        ]
+      },
+      {
+        "text": "Lost track of time",
+        "points": 6,
+        "aliases": [
+          "at the bar"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q134",
+    "category": "travel",
+    "q": "Name something you'd do on a long layover",
+    "answers": [
+      {
+        "text": "Eat",
+        "points": 30,
+        "aliases": [
+          "food",
+          "grab food"
+        ]
+      },
+      {
+        "text": "Shop",
+        "points": 15,
+        "aliases": [
+          "duty free",
+          "shopping"
+        ]
+      },
+      {
+        "text": "Nap",
+        "points": 14,
+        "aliases": [
+          "sleep"
+        ]
+      },
+      {
+        "text": "Airport bar",
+        "points": 12,
+        "aliases": [
+          "drink",
+          "bar"
+        ]
+      },
+      {
+        "text": "Charge phone",
+        "points": 10,
+        "aliases": [
+          "find outlet",
+          "charge"
+        ]
+      },
+      {
+        "text": "Walk around",
+        "points": 8,
+        "aliases": [
+          "explore"
+        ]
+      },
+      {
+        "text": "People watch",
+        "points": 5,
+        "aliases": [
+          "people watching"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q135",
+    "category": "travel",
+    "q": "Name something tourists do that annoys locals",
+    "answers": [
+      {
+        "text": "Walk slow",
+        "points": 28,
+        "aliases": [
+          "slow walking",
+          "walking slowly"
+        ]
+      },
+      {
+        "text": "Block the sidewalk",
+        "points": 18,
+        "aliases": [
+          "blocking the way",
+          "stopping"
+        ]
+      },
+      {
+        "text": "Take photos",
+        "points": 16,
+        "aliases": [
+          "selfies",
+          "pictures"
+        ]
+      },
+      {
+        "text": "Talk loud",
+        "points": 12,
+        "aliases": [
+          "loud",
+          "being loud"
+        ]
+      },
+      {
+        "text": "Ask for directions",
+        "points": 8,
+        "aliases": [
+          "directions"
+        ]
+      },
+      {
+        "text": "Bad driving",
+        "points": 6,
+        "aliases": [
+          "driving"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q136",
+    "category": "money",
+    "q": "Name something people splurge on",
+    "answers": [
+      {
+        "text": "Clothes",
+        "points": 25,
+        "aliases": [
+          "outfits"
+        ]
+      },
+      {
+        "text": "Shoes",
+        "points": 15,
+        "aliases": [
+          "sneakers"
+        ]
+      },
+      {
+        "text": "Vacation",
+        "points": 14,
+        "aliases": [
+          "travel",
+          "trip"
+        ]
+      },
+      {
+        "text": "Eating out",
+        "points": 12,
+        "aliases": [
+          "restaurants",
+          "dinner out"
+        ]
+      },
+      {
+        "text": "Gadgets",
+        "points": 10,
+        "aliases": [
+          "tech",
+          "electronics"
+        ]
+      },
+      {
+        "text": "Coffee",
+        "points": 8,
+        "aliases": [
+          "lattes"
+        ]
+      },
+      {
+        "text": "Car",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q137",
+    "category": "money",
+    "q": "Name a bill everyone hates paying",
+    "answers": [
+      {
+        "text": "Rent",
+        "points": 30,
+        "aliases": [
+          "mortgage",
+          "housing"
+        ]
+      },
+      {
+        "text": "Electric",
+        "points": 18,
+        "aliases": [
+          "electricity",
+          "power bill"
+        ]
+      },
+      {
+        "text": "Phone",
+        "points": 14,
+        "aliases": [
+          "cell phone bill"
+        ]
+      },
+      {
+        "text": "Internet",
+        "points": 12,
+        "aliases": [
+          "wifi",
+          "cable"
+        ]
+      },
+      {
+        "text": "Credit card",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Car payment",
+        "points": 8,
+        "aliases": [
+          "car loan"
+        ]
+      },
+      {
+        "text": "Student loans",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q138",
+    "category": "money",
+    "q": "Name something you'd buy if you found $100 on the street",
+    "answers": [
+      {
+        "text": "Food",
+        "points": 28,
+        "aliases": [
+          "dinner",
+          "lunch",
+          "pizza"
+        ]
+      },
+      {
+        "text": "Clothes",
+        "points": 18,
+        "aliases": [
+          "shoes"
+        ]
+      },
+      {
+        "text": "Lottery tickets",
+        "points": 12,
+        "aliases": [
+          "lottery",
+          "scratch-offs"
+        ]
+      },
+      {
+        "text": "Gas",
+        "points": 10,
+        "aliases": [
+          "gasoline",
+          "fill up tank"
+        ]
+      },
+      {
+        "text": "Drinks",
+        "points": 9,
+        "aliases": [
+          "beer",
+          "wine",
+          "booze"
+        ]
+      },
+      {
+        "text": "Video game",
+        "points": 7,
+        "aliases": [
+          "game"
+        ]
+      },
+      {
+        "text": "Nothing, save it",
+        "points": 6,
+        "aliases": [
+          "save it",
+          "savings"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q139",
+    "category": "money",
+    "q": "Name something people do to save money",
+    "answers": [
+      {
+        "text": "Coupons",
+        "points": 28,
+        "aliases": [
+          "clip coupons"
+        ]
+      },
+      {
+        "text": "Cook at home",
+        "points": 22,
+        "aliases": [
+          "cook",
+          "home cooking"
+        ]
+      },
+      {
+        "text": "Budget",
+        "points": 14,
+        "aliases": [
+          "make a budget"
+        ]
+      },
+      {
+        "text": "Buy generic",
+        "points": 10,
+        "aliases": [
+          "store brand"
+        ]
+      },
+      {
+        "text": "Cancel subscriptions",
+        "points": 9,
+        "aliases": [
+          "cancel streaming",
+          "subscriptions"
+        ]
+      },
+      {
+        "text": "Carpool",
+        "points": 6,
+        "aliases": [
+          "bus",
+          "public transit"
+        ]
+      },
+      {
+        "text": "Thrift shop",
+        "points": 5,
+        "aliases": [
+          "thrift store",
+          "second hand"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q140",
+    "category": "money",
+    "q": "Name something that's way overpriced",
+    "answers": [
+      {
+        "text": "Concert tickets",
+        "points": 22,
+        "aliases": [
+          "tickets"
+        ]
+      },
+      {
+        "text": "Movie popcorn",
+        "points": 20,
+        "aliases": [
+          "popcorn"
+        ]
+      },
+      {
+        "text": "Coffee",
+        "points": 15,
+        "aliases": [
+          "latte"
+        ]
+      },
+      {
+        "text": "Weddings",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Rent",
+        "points": 10,
+        "aliases": [
+          "housing"
+        ]
+      },
+      {
+        "text": "College",
+        "points": 9,
+        "aliases": [
+          "tuition",
+          "school"
+        ]
+      },
+      {
+        "text": "Airport food",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q141",
+    "category": "money",
+    "q": "Name something people grab on impulse at checkout",
+    "answers": [
+      {
+        "text": "Candy",
+        "points": 40,
+        "aliases": [
+          "chocolate",
+          "candy bar"
+        ]
+      },
+      {
+        "text": "Gum",
+        "points": 20,
+        "aliases": [
+          "chewing gum"
+        ]
+      },
+      {
+        "text": "Magazine",
+        "points": 12,
+        "aliases": [
+          "tabloid"
+        ]
+      },
+      {
+        "text": "Drinks",
+        "points": 10,
+        "aliases": [
+          "soda",
+          "water"
+        ]
+      },
+      {
+        "text": "Lip balm",
+        "points": 7,
+        "aliases": [
+          "chapstick"
+        ]
+      },
+      {
+        "text": "Batteries",
+        "points": 5,
+        "aliases": []
+      },
+      {
+        "text": "Lighter",
+        "points": 3,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q142",
+    "category": "money",
+    "q": "Name something people overspend on during the holidays",
+    "answers": [
+      {
+        "text": "Gifts",
+        "points": 40,
+        "aliases": [
+          "presents"
+        ]
+      },
+      {
+        "text": "Decorations",
+        "points": 18,
+        "aliases": [
+          "lights",
+          "decor"
+        ]
+      },
+      {
+        "text": "Food",
+        "points": 15,
+        "aliases": [
+          "holiday dinner"
+        ]
+      },
+      {
+        "text": "Travel",
+        "points": 10,
+        "aliases": [
+          "flights"
+        ]
+      },
+      {
+        "text": "Wrapping paper",
+        "points": 6,
+        "aliases": [
+          "wrapping"
+        ]
+      },
+      {
+        "text": "Tree",
+        "points": 5,
+        "aliases": [
+          "christmas tree"
+        ]
+      },
+      {
+        "text": "Ugly sweaters",
+        "points": 3,
+        "aliases": [
+          "sweater"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q143",
+    "category": "money",
+    "q": "Name a way people get money fast",
+    "answers": [
+      {
+        "text": "Sell stuff",
+        "points": 28,
+        "aliases": [
+          "sell things",
+          "garage sale",
+          "pawn"
+        ]
+      },
+      {
+        "text": "Borrow",
+        "points": 20,
+        "aliases": [
+          "ask parents",
+          "ask family",
+          "loan"
+        ]
+      },
+      {
+        "text": "Lottery",
+        "points": 12,
+        "aliases": [
+          "scratch-off"
+        ]
+      },
+      {
+        "text": "Gambling",
+        "points": 10,
+        "aliases": [
+          "casino",
+          "bet"
+        ]
+      },
+      {
+        "text": "Extra shifts",
+        "points": 9,
+        "aliases": [
+          "overtime",
+          "work more"
+        ]
+      },
+      {
+        "text": "Rideshare",
+        "points": 7,
+        "aliases": [
+          "drive uber",
+          "uber",
+          "delivery"
+        ]
+      },
+      {
+        "text": "Rob a bank",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q144",
+    "category": "money",
+    "q": "Name someone or something people tip for",
+    "answers": [
+      {
+        "text": "Haircut",
+        "points": 28,
+        "aliases": [
+          "barber",
+          "hairdresser",
+          "salon"
+        ]
+      },
+      {
+        "text": "Food delivery",
+        "points": 20,
+        "aliases": [
+          "delivery",
+          "pizza delivery"
+        ]
+      },
+      {
+        "text": "Restaurant",
+        "points": 18,
+        "aliases": [
+          "waiter",
+          "server"
+        ]
+      },
+      {
+        "text": "Bartender",
+        "points": 12,
+        "aliases": [
+          "drinks",
+          "bar"
+        ]
+      },
+      {
+        "text": "Taxi",
+        "points": 8,
+        "aliases": [
+          "uber",
+          "cab",
+          "rideshare"
+        ]
+      },
+      {
+        "text": "Valet",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q145",
+    "category": "money",
+    "q": "Name something you'd do with a big tax refund",
+    "answers": [
+      {
+        "text": "Pay bills",
+        "points": 30,
+        "aliases": [
+          "bills",
+          "pay off debt",
+          "debt"
+        ]
+      },
+      {
+        "text": "Vacation",
+        "points": 22,
+        "aliases": [
+          "trip",
+          "travel"
+        ]
+      },
+      {
+        "text": "Save it",
+        "points": 15,
+        "aliases": [
+          "savings",
+          "invest"
+        ]
+      },
+      {
+        "text": "Shopping",
+        "points": 12,
+        "aliases": [
+          "shop",
+          "clothes"
+        ]
+      },
+      {
+        "text": "Buy a car",
+        "points": 8,
+        "aliases": [
+          "car"
+        ]
+      },
+      {
+        "text": "Home repairs",
+        "points": 6,
+        "aliases": [
+          "fix house"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q146",
+    "category": "money",
+    "q": "Name something people are cheap about",
+    "answers": [
+      {
+        "text": "Tipping",
+        "points": 26,
+        "aliases": [
+          "tips",
+          "tip"
+        ]
+      },
+      {
+        "text": "Toilet paper",
+        "points": 15,
+        "aliases": [
+          "tp"
+        ]
+      },
+      {
+        "text": "Gas",
+        "points": 12,
+        "aliases": [
+          "gasoline"
+        ]
+      },
+      {
+        "text": "Gifts",
+        "points": 11,
+        "aliases": [
+          "presents"
+        ]
+      },
+      {
+        "text": "Coffee",
+        "points": 9,
+        "aliases": []
+      },
+      {
+        "text": "Haircuts",
+        "points": 7,
+        "aliases": [
+          "haircut"
+        ]
+      },
+      {
+        "text": "Streaming",
+        "points": 5,
+        "aliases": [
+          "sharing passwords",
+          "netflix password"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q147",
+    "category": "money",
+    "q": "Name something you'd find in a wallet",
+    "answers": [
+      {
+        "text": "Cash",
+        "points": 30,
+        "aliases": [
+          "money",
+          "bills"
+        ]
+      },
+      {
+        "text": "Credit card",
+        "points": 25,
+        "aliases": [
+          "debit card",
+          "card"
+        ]
+      },
+      {
+        "text": "Driver's license",
+        "points": 20,
+        "aliases": [
+          "license",
+          "id"
+        ]
+      },
+      {
+        "text": "Receipts",
+        "points": 10,
+        "aliases": [
+          "receipt"
+        ]
+      },
+      {
+        "text": "Photos",
+        "points": 7,
+        "aliases": [
+          "pictures"
+        ]
+      },
+      {
+        "text": "Coupons",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q148",
+    "category": "sports",
+    "q": "Name a sport you could play at a family reunion",
+    "answers": [
+      {
+        "text": "Volleyball",
+        "points": 22,
+        "aliases": []
+      },
+      {
+        "text": "Football",
+        "points": 20,
+        "aliases": [
+          "flag football",
+          "touch football"
+        ]
+      },
+      {
+        "text": "Cornhole",
+        "points": 18,
+        "aliases": [
+          "bean bag toss"
+        ]
+      },
+      {
+        "text": "Softball",
+        "points": 12,
+        "aliases": [
+          "baseball",
+          "kickball"
+        ]
+      },
+      {
+        "text": "Horseshoes",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Frisbee",
+        "points": 8,
+        "aliases": [
+          "ultimate frisbee"
+        ]
+      },
+      {
+        "text": "Tug of war",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q149",
+    "category": "sports",
+    "q": "Name something fans bring to a stadium",
+    "answers": [
+      {
+        "text": "Foam finger",
+        "points": 20,
+        "aliases": [
+          "giant hand"
+        ]
+      },
+      {
+        "text": "Signs",
+        "points": 18,
+        "aliases": [
+          "sign",
+          "poster"
+        ]
+      },
+      {
+        "text": "Jersey",
+        "points": 16,
+        "aliases": [
+          "team shirt"
+        ]
+      },
+      {
+        "text": "Face paint",
+        "points": 14,
+        "aliases": [
+          "paint"
+        ]
+      },
+      {
+        "text": "Binoculars",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Seat cushion",
+        "points": 6,
+        "aliases": [
+          "cushion"
+        ]
+      },
+      {
+        "text": "Snacks",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q150",
+    "category": "sports",
+    "q": "Name a reason a gym membership goes unused",
+    "answers": [
+      {
+        "text": "Too lazy",
+        "points": 30,
+        "aliases": [
+          "lazy",
+          "no motivation"
+        ]
+      },
+      {
+        "text": "No time",
+        "points": 25,
+        "aliases": [
+          "busy",
+          "too busy"
+        ]
+      },
+      {
+        "text": "Too expensive",
+        "points": 10,
+        "aliases": [
+          "cost",
+          "money"
+        ]
+      },
+      {
+        "text": "Too crowded",
+        "points": 9,
+        "aliases": [
+          "crowds",
+          "people"
+        ]
+      },
+      {
+        "text": "Injury",
+        "points": 8,
+        "aliases": [
+          "hurt",
+          "injured"
+        ]
+      },
+      {
+        "text": "Intimidated",
+        "points": 6,
+        "aliases": [
+          "embarrassed",
+          "shy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q151",
+    "category": "sports",
+    "q": "Name something fans yell at a sports game",
+    "answers": [
+      {
+        "text": "Let's go",
+        "points": 25,
+        "aliases": [
+          "go",
+          "go team"
+        ]
+      },
+      {
+        "text": "Boo",
+        "points": 18,
+        "aliases": [
+          "booing"
+        ]
+      },
+      {
+        "text": "Defense",
+        "points": 14,
+        "aliases": [
+          "de-fense"
+        ]
+      },
+      {
+        "text": "Bad call",
+        "points": 12,
+        "aliases": [
+          "ref",
+          "terrible call"
+        ]
+      },
+      {
+        "text": "Touchdown",
+        "points": 10,
+        "aliases": [
+          "goal"
+        ]
+      },
+      {
+        "text": "Swear words",
+        "points": 8,
+        "aliases": [
+          "curse",
+          "swearing"
+        ]
+      },
+      {
+        "text": "Down in front",
+        "points": 5,
+        "aliases": [
+          "sit down"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q152",
+    "category": "sports",
+    "q": "Name a sport that's fun to watch but terrible to play",
+    "answers": [
+      {
+        "text": "Hockey",
+        "points": 22,
+        "aliases": [
+          "ice hockey"
+        ]
+      },
+      {
+        "text": "Football",
+        "points": 20,
+        "aliases": []
+      },
+      {
+        "text": "Golf",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Boxing",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Rugby",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Gymnastics",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Curling",
+        "points": 6,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q153",
+    "category": "sports",
+    "q": "Name something people eat at a ballpark",
+    "answers": [
+      {
+        "text": "Hot dog",
+        "points": 45,
+        "aliases": [
+          "hotdog"
+        ]
+      },
+      {
+        "text": "Peanuts",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Nachos",
+        "points": 12,
+        "aliases": []
+      },
+      {
+        "text": "Popcorn",
+        "points": 8,
+        "aliases": [
+          "cracker jack"
+        ]
+      },
+      {
+        "text": "Pretzel",
+        "points": 7,
+        "aliases": []
+      },
+      {
+        "text": "Cotton candy",
+        "points": 5,
+        "aliases": []
+      },
+      {
+        "text": "Ice cream",
+        "points": 3,
+        "aliases": []
+      }
+    ]
+  },
+  {
+    "id": "q154",
+    "category": "sports",
+    "q": "Name an excuse for losing a game",
+    "answers": [
+      {
+        "text": "Bad ref",
+        "points": 26,
+        "aliases": [
+          "referee",
+          "refs",
+          "bad calls"
+        ]
+      },
+      {
+        "text": "Cheating",
+        "points": 20,
+        "aliases": [
+          "they cheated",
+          "cheaters"
+        ]
+      },
+      {
+        "text": "Injury",
+        "points": 15,
+        "aliases": [
+          "hurt"
+        ]
+      },
+      {
+        "text": "Bad luck",
+        "points": 12,
+        "aliases": [
+          "luck",
+          "unlucky"
+        ]
+      },
+      {
+        "text": "Weather",
+        "points": 10,
+        "aliases": [
+          "rain",
+          "sun in eyes"
+        ]
+      },
+      {
+        "text": "Tired",
+        "points": 8,
+        "aliases": [
+          "sleepy",
+          "didn't sleep"
+        ]
+      },
+      {
+        "text": "Equipment",
+        "points": 5,
+        "aliases": [
+          "bad shoes",
+          "broken racket"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q155",
+    "category": "sports",
+    "q": "Name a sport people play on vacation",
+    "answers": [
+      {
+        "text": "Golf",
+        "points": 26,
+        "aliases": []
+      },
+      {
+        "text": "Volleyball",
+        "points": 22,
+        "aliases": [
+          "beach volleyball"
+        ]
+      },
+      {
+        "text": "Tennis",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Swimming",
+        "points": 12,
+        "aliases": [
+          "swim"
+        ]
+      },
+      {
+        "text": "Surfing",
+        "points": 10,
+        "aliases": [
+          "surf"
+        ]
+      },
+      {
+        "text": "Snorkeling",
+        "points": 8,
+        "aliases": []
+      },
+      {
+        "text": "Skiing",
+        "points": 6,
+        "aliases": [
+          "ski"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q156",
+    "category": "sports",
+    "q": "Name something you'd see at the Olympics",
+    "answers": [
+      {
+        "text": "Medals",
+        "points": 30,
+        "aliases": [
+          "gold medal"
+        ]
+      },
+      {
+        "text": "Flags",
+        "points": 18,
+        "aliases": []
+      },
+      {
+        "text": "Torch",
+        "points": 14,
+        "aliases": [
+          "olympic flame",
+          "flame"
+        ]
+      },
+      {
+        "text": "Swimming",
+        "points": 10,
+        "aliases": []
+      },
+      {
+        "text": "Gymnastics",
+        "points": 9,
+        "aliases": []
+      },
+      {
+        "text": "Track",
+        "points": 7,
+        "aliases": [
+          "running",
+          "sprinting"
+        ]
+      },
+      {
+        "text": "Rings",
+        "points": 5,
+        "aliases": [
+          "olympic rings"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q157",
+    "category": "sports",
+    "q": "Name a sport played with a small ball",
+    "answers": [
+      {
+        "text": "Golf",
+        "points": 30,
+        "aliases": []
+      },
+      {
+        "text": "Tennis",
+        "points": 25,
+        "aliases": []
+      },
+      {
+        "text": "Baseball",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Ping pong",
+        "points": 12,
+        "aliases": [
+          "pingpong"
+        ]
+      },
+      {
+        "text": "Racquetball",
+        "points": 6,
+        "aliases": []
+      },
+      {
+        "text": "Squash",
+        "points": 4,
+        "aliases": []
+      },
+      {
+        "text": "Pool",
+        "points": 3,
+        "aliases": [
+          "billiards"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q158",
+    "category": "sports",
+    "q": "Name something an athlete does before a big game",
+    "answers": [
+      {
+        "text": "Stretch",
+        "points": 25,
+        "aliases": [
+          "warm up",
+          "stretching"
+        ]
+      },
+      {
+        "text": "Eat",
+        "points": 18,
+        "aliases": [
+          "big breakfast",
+          "pasta"
+        ]
+      },
+      {
+        "text": "Listen to music",
+        "points": 14,
+        "aliases": [
+          "music",
+          "headphones"
+        ]
+      },
+      {
+        "text": "Sleep",
+        "points": 12,
+        "aliases": [
+          "rest",
+          "nap"
+        ]
+      },
+      {
+        "text": "Lucky socks",
+        "points": 8,
+        "aliases": [
+          "superstition",
+          "lucky charm"
+        ]
+      },
+      {
+        "text": "Pep talk",
+        "points": 7,
+        "aliases": [
+          "huddle",
+          "team talk"
+        ]
+      },
+      {
+        "text": "Visualize",
+        "points": 5,
+        "aliases": [
+          "meditate"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q159",
+    "category": "sports",
+    "q": "Name something that happens at a kids' soccer game",
+    "answers": [
+      {
+        "text": "Orange slices",
+        "points": 22,
+        "aliases": [
+          "oranges",
+          "snacks"
+        ]
+      },
+      {
+        "text": "Parents yelling",
+        "points": 20,
+        "aliases": [
+          "yelling",
+          "screaming parents"
+        ]
+      },
+      {
+        "text": "Crying",
+        "points": 14,
+        "aliases": [
+          "kid cries"
+        ]
+      },
+      {
+        "text": "Daydreaming",
+        "points": 12,
+        "aliases": [
+          "not paying attention",
+          "picking grass"
+        ]
+      },
+      {
+        "text": "Everyone chases the ball",
+        "points": 10,
+        "aliases": [
+          "bunch ball",
+          "swarm"
+        ]
+      },
+      {
+        "text": "Participation trophies",
+        "points": 8,
+        "aliases": [
+          "trophies",
+          "trophy"
+        ]
+      },
+      {
+        "text": "Own goal",
+        "points": 5,
+        "aliases": [
+          "wrong goal"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q160",
+    "category": "sports",
+    "q": "Name something you need to go skiing",
+    "answers": [
+      {
+        "text": "Skis",
+        "points": 28,
+        "aliases": []
+      },
+      {
+        "text": "Jacket",
+        "points": 20,
+        "aliases": [
+          "coat",
+          "ski jacket"
+        ]
+      },
+      {
+        "text": "Goggles",
+        "points": 15,
+        "aliases": []
+      },
+      {
+        "text": "Gloves",
+        "points": 12,
+        "aliases": [
+          "mittens"
+        ]
+      },
+      {
+        "text": "Lift ticket",
+        "points": 10,
+        "aliases": [
+          "pass",
+          "ticket"
+        ]
+      },
+      {
+        "text": "Hat",
+        "points": 6,
+        "aliases": [
+          "beanie"
+        ]
+      },
+      {
+        "text": "Snow",
+        "points": 5,
+        "aliases": []
+      }
+    ]
+  }
+]
