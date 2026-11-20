@@ -18,3 +18,6 @@ New socket event `host:closeRoom` handled in `server/index.js` (it owns the room
 
 ## Consequences
 + Clean shutdown, frees memory immediately. − Irreversible for that room code (confirm dialog guards it).
+
+## Addendum (2026-11-20): player leave
+`player:leave` (any player) goes through game.js (`removePlayer`, shared with kick). If the host leaves, host passes immediately to the longest-connected remaining player (no 30 s grace — leaving is explicit). index.js detaches the leaver's sockets without disconnecting (so they can join/host again) and closes the room when the last player leaves. A removed current typer simply times out, as with kick.

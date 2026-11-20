@@ -624,4 +624,23 @@ label > input, label > select { margin-top: 4px; }
 
 /* host close-room button: icon only on phones */
 .close-room { border-color: rgba(230, 57, 70, 0.6); }
-@media (max-width: 767px) { .close-room .lbl { display: none; } }
+@media (max-width: 767px) { .close-room .lbl, .leave-room .lbl { display: none; } }
+
+/* ---- themed confirmation dialog (askConfirm) ---- */
+.confirm-modal { width: min(420px, calc(100vw - 32px)); padding: 0; overflow: hidden; text-align: center;
+  border: 2px solid var(--gold); box-shadow: 0 0 0 6px rgba(242, 193, 78, 0.12), 0 24px 60px rgba(0, 0, 0, 0.6);
+  background: radial-gradient(120% 90% at 50% 0%, #3a1d63 0%, #1b1035 70%); }
+.confirm-modal.danger { border-color: var(--red); box-shadow: 0 0 0 6px rgba(230, 57, 70, 0.14), 0 24px 60px rgba(0, 0, 0, 0.6); }
+.confirm-modal[open] { animation: cf-pop 0.18s ease-out; }
+.confirm-modal::backdrop { background: rgba(5, 3, 15, 0.72); backdrop-filter: blur(3px); }
+.confirm-inner { display: grid; gap: 10px; justify-items: center; padding: 26px 22px 20px; }
+.cf-icon { width: 64px; height: 64px; display: grid; place-items: center; font-size: 30px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 193, 78, 0.28), rgba(242, 193, 78, 0.06)); border: 2px solid var(--gold); }
+.confirm-modal.danger .cf-icon { background: radial-gradient(circle, rgba(230, 57, 70, 0.3), rgba(230, 57, 70, 0.06)); border-color: var(--red); }
+.cf-title { margin: 4px 0 0; font-family: var(--display); font-weight: 800; font-size: 1.7rem; letter-spacing: 0.02em; text-transform: uppercase; color: var(--gold); }
+.confirm-modal.danger .cf-title { color: #ff8a93; }
+.cf-body { margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.35; overflow-wrap: anywhere; }
+.cf-actions { display: flex; gap: 10px; width: 100%; margin-top: 10px; }
+.cf-actions .btn { flex: 1; padding: 10px 14px; font-size: 1.05rem; }
+@keyframes cf-pop { from { opacity: 0; transform: translateY(8px) scale(0.96); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .confirm-modal[open] { animation: none; } }
