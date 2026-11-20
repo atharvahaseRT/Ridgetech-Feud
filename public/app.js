@@ -929,7 +929,8 @@
     const first = lastGuessKey === null && !gotFirstState;
     lastGuessKey = k;
     if (!g || first) return;
-    toast((g.correct ? '✓ ' : '✕ ') + pname(g.playerId) + ': “' + g.text + '”', g.correct ? 'good' : 'bad');
+    const said = g.text ? ': “' + g.text + '”' : ' ran out of time ⏱';
+    toast((g.correct ? '✓ ' : '✕ ') + pname(g.playerId) + said, g.correct ? 'good' : 'bad');
   }
 
   function renderGame() {
