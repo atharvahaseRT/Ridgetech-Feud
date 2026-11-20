@@ -1,0 +1,2 @@
+# Security — v2-enhancements
+New inputs: team:name (captain-only, 1–24 chars, uniqueness), team:lock (captain-only), host:settings categories (known strings only, dedupe, non-empty) and gameMinutes (5/7/10). All validated server-side. Snapshot additions contain no hidden answers. Client still renders user text via textContent only (single static-SVG innerHTML). npm audit: 0 vulnerabilities. No new risks beyond v1 accepted ones.

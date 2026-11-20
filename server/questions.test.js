@@ -3,7 +3,10 @@ const assert = require('node:assert');
 const questions = require('./questions.json');
 
 test('question bank shape', () => {
-  assert.ok(Array.isArray(questions) && questions.length >= 150, 'need >= 150 questions');
+  assert.ok(Array.isArray(questions) && questions.length >= 240, 'need >= 240 questions');
+  const byCat = c => questions.filter(q => q.category === c).length;
+  assert.ok(byCat('culture-clash') >= 25, 'need >= 25 culture-clash questions');
+  assert.ok(byCat('remote-work') >= 15, 'need >= 15 remote-work questions');
   assert.strictEqual(new Set(questions.map(q => q.id)).size, questions.length, 'ids unique');
   assert.strictEqual(new Set(questions.map(q => q.q.toLowerCase())).size, questions.length, 'question text unique');
   assert.ok(questions.filter(q => q.answers.length >= 5).length >= 60, '>= 60 bonus-usable questions');

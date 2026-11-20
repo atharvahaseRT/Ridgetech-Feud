@@ -13,6 +13,11 @@ const QS = [
     { text: 'Cheddar', points: 30 }, { text: 'Brie', points: 25 }, { text: 'Gouda', points: 20 },
     { text: 'Mozzarella', points: 15 }, { text: 'Parmesan', points: 7 }, { text: 'Feta', points: 3 },
   ] },
+  // Filler so the bank meets the 15-question minimum; own category so tests can deselect it.
+  ...Array.from({ length: 12 }, (_, i) => ({ id: 'f' + i, category: 'filler', q: 'Filler question ' + i, answers: [
+    { text: 'Fillanswer' + i + 'a', points: 40 }, { text: 'Fillanswer' + i + 'b', points: 30 },
+    { text: 'Fillanswer' + i + 'c', points: 20 }, { text: 'Fillanswer' + i + 'd', points: 10 },
+  ] })),
 ];
 const ALL_TEXTS = QS.flatMap((q) => q.answers.map((a) => a.text));
 
@@ -59,7 +64,19 @@ function bad(res) { assert.strictEqual(res.ok, false); return res; }
 const unrevealed = (room) => room.round.answers.filter((a) => !a.revealed).map((a) => a.text);
 const teamOf = (room, id) => room.players.find((p) => p.id === id).teamId;
 const typer = (room) => snapshotFor(room, room.hostId).round.currentTyperId;
-const toGo = (clock) => clock.advance(5000); // 3 s countdown + up to 2 s random delay
+const toGo = (clock) => clock.advance(3500); // 2 s countdown + 0.5-1.5 s random delay
+const clockLeft = (room) => { const s = snapshotFor(room, room.hostId); return s.gameClock.endsAt - s.serverNow; };
+// host:start then skip team naming -> round 1 faceoff.
+function begin(room) {
+  ok(handle(room, room.hostId, 'host:start', {}));
+  assert.strictEqual(room.phase, 'team_naming');
+  ok(handle(room, room.hostId, 'host:next', {}));
+  assert.strictEqual(room.phase, 'faceoff');
+}
+function advanceUntil(clock, pred, maxMs = 600000) {
+  for (let t = 0; t < maxMs && !pred(); t += 250) clock.advance(250);
+  assert.ok(pred(), 'condition never reached');
+}
 
 // Faceoff: player at index `who` buzzes first and hits -> their team controls.
 function winFaceoff(room, clock, who = 0) {
@@ -82,11 +99,12 @@ function assertNoHiddenLeaks(room) {
 }
 
 test('full game: faceoff fairness, play, steal, scoring, bonus, game over', () => {
-  const { room, clock, ids, events } = setup(4, { rounds: 3, teamCount: 2 });
-  ok(handle(room, ids[0], 'host:start', {}));
+  const { room, clock, ids, events } = setup(4, { gameMinutes: 5, teamCount: 2 });
+  begin(room);
   assert.strictEqual(room.teams.length, 2);
   assert.deepStrictEqual(room.teams.map((t) => t.playerIds.length), [2, 2]);
-  assert.strictEqual(room.phase, 'faceoff');
+  assert.strictEqual(room.round.isFinal, false);
+  assert.strictEqual(snapshotFor(room, ids[0]).round.total, null);
   assert.ok(events.some((e) => e.type === 'start') && events.some((e) => e.type === 'teams'));
   assertNoHiddenLeaks(room);
 
@@ -141,14 +159,14 @@ test('full game: faceoff fairness, play, steal, scoring, bonus, game over', () =
   assert.strictEqual(score(control), 0);
   assert.ok(events.some((e) => e.type === 'stealResult' && e.data.success === true));
 
-  // ---- Round 2: nobody buzzes (10 s fallback), steal fails ----
+  // ---- Round 2: nobody buzzes (8 s fallback), steal fails ----
   bad(handle(room, ids[1], 'host:next', {}));
   ok(handle(room, room.hostId, 'host:next', {}));
   assert.strictEqual(room.round.number, 2);
   assert.strictEqual(room.round.multiplier, 1);
   const before = room.teams.map((t) => t.score);
   toGo(clock);
-  clock.advance(10000);
+  clock.advance(8000);
   const w = room.round.faceoff.buzzWinnerId;
   assert.ok(room.round.faceoff.playerIds.includes(w));
   ok(handle(room, w, 'answer', { text: unrevealed(room)[0] }));
@@ -164,8 +182,10 @@ test('full game: faceoff fairness, play, steal, scoring, bonus, game over', () =
   const pot2 = room.round.pot;
   room.teams.forEach((t, i) => assert.strictEqual(t.score, before[i] + (t.id === control2 ? pot2 : 0)));
 
-  // ---- Round 3 (last): x2 multiplier, control clears the board ----
+  // ---- Round 3: < 165 s left -> final x2 round, control clears the board ----
+  room.clock.endsAt = clock.now() + 120000;
   ok(handle(room, room.hostId, 'host:next', {}));
+  assert.strictEqual(room.round.isFinal, true);
   assert.strictEqual(room.round.multiplier, 2);
   const before3 = room.teams.map((t) => t.score);
   const control3 = winFaceoff(room, clock);
@@ -235,10 +255,13 @@ test('non-host cannot use host controls; validation', () => {
     'host:resume', 'host:skip', 'host:accept', 'host:kick', 'host:end', 'host:playAgain']) {
     assert.strictEqual(handle(room, ids[1], t, { playerId: ids[2] }).error, 'Host only');
   }
-  bad(handle(room, ids[0], 'host:settings', { answerSeconds: 5 }));
+  assert.deepStrictEqual(room.settings, { teamCount: 'auto', gameMinutes: 7, categories: ['zoo', 'gems', 'space', 'music', 'food', 'filler'] });
+  bad(handle(room, ids[0], 'host:settings', { gameMinutes: 6 }));
+  bad(handle(room, ids[0], 'host:settings', { gameMinutes: '7' }));
   bad(handle(room, ids[0], 'host:settings', { teamCount: 5 }));
-  bad(handle(room, ids[0], 'host:settings', { rounds: '4' }));
-  ok(handle(room, ids[0], 'host:settings', { teamCount: 3, rounds: 8 }));
+  ok(handle(room, ids[0], 'host:settings', { teamCount: 3, gameMinutes: 10, answerSeconds: 5, rounds: 8 })); // unknown keys ignored
+  assert.deepStrictEqual(snapshotFor(room, ids[1]).settings.gameMinutes, 10);
+  assert.strictEqual(snapshotFor(room, ids[1]).settings.teamCount, 3);
   bad(handle(room, ids[0], 'nope', {}));
   bad(handle(room, 'ghost', 'buzz', {}));
   bad(handle(room, ids[0], 'host:settings', 'string'));
@@ -260,16 +283,16 @@ test('non-host cannot use host controls; validation', () => {
 });
 
 test('custom questions are mixed into the deck without repeats', () => {
-  const { room, ids } = setup(2, { rounds: 5 });
+  const { room, ids } = setup(2);
   ok(handle(room, ids[0], 'host:addQuestion', { q: 'Name a custom thing', answers: [{ text: 'Alpha', points: 60 }, { text: 'Beta', points: 40 }] }));
-  ok(handle(room, ids[0], 'host:start', {}));
+  begin(room);
   const seen = [];
-  for (let r = 0; r < 5; r++) {
+  const n = QS.length; // all regular questions + 1 custom - 1 bonus
+  for (let r = 0; r < n; r++) {
     seen.push(room.round.question);
-    ok(handle(room, ids[0], 'host:end', {}));
-    if (r < 4) { room.phase = 'round_end'; room.round.number = r + 1; ok(handle(room, ids[0], 'host:next', {})); }
+    if (r < n - 1) ok(handle(room, ids[0], 'host:skip', {}));
   }
-  assert.strictEqual(new Set(seen).size, 5);
+  assert.strictEqual(new Set(seen).size, n);
   assert.ok(seen.includes('Name a custom thing'));
   assert.ok(!seen.includes('Name a cheese'));
 });
@@ -278,6 +301,7 @@ test('team count auto, mid-game join goes to smallest team', () => {
   for (const [n, teams] of [[2, 2], [8, 2], [9, 3], [18, 3], [19, 4]]) {
     const { room, ids } = setup(n);
     ok(handle(room, ids[0], 'host:start', {}));
+    assert.strictEqual(room.phase, 'team_naming');
     assert.strictEqual(room.teams.length, teams, `${n} players`);
     assert.deepStrictEqual(room.teams.map((t) => t.name), ['Ridge Runners', 'Summit Seekers', 'Peak Performers', 'Basecamp Bandits'].slice(0, teams));
   }
@@ -290,8 +314,8 @@ test('team count auto, mid-game join goes to smallest team', () => {
 });
 
 test('pause/resume preserves remaining time', () => {
-  const { room, clock, ids } = setup(4, { answerSeconds: 20 });
-  ok(handle(room, ids[0], 'host:start', {}));
+  const { room, clock, ids } = setup(4);
+  begin(room);
   winFaceoff(room, clock);
   const t = typer(room);
   clock.advance(5000);
@@ -301,10 +325,10 @@ test('pause/resume preserves remaining time', () => {
   clock.advance(60000);
   const snap = snapshotFor(room, ids[0]);
   assert.strictEqual(snap.paused, true);
-  assert.strictEqual(snap.timer.endsAt - snap.serverNow, 15000);
+  assert.strictEqual(snap.timer.endsAt - snap.serverNow, 7000);
   assert.strictEqual(room.round.strikes, 0);
   ok(handle(room, room.hostId, 'host:resume', {}));
-  clock.advance(14999);
+  clock.advance(6999);
   assert.strictEqual(room.round.strikes, 0);
   clock.advance(1);
   assert.strictEqual(room.round.strikes, 1);
@@ -313,7 +337,7 @@ test('pause/resume preserves remaining time', () => {
 
 test('reconnect by token keeps team; host passes after 30 s', () => {
   const { room, clock, ids, events } = setup(4);
-  ok(handle(room, ids[0], 'host:start', {}));
+  begin(room);
   const team = teamOf(room, ids[2]);
   disconnect(room, ids[2]);
   assert.strictEqual(room.players.find((p) => p.id === ids[2]).connected, false);
@@ -332,7 +356,7 @@ test('reconnect by token keeps team; host passes after 30 s', () => {
 
 test('host accept, skip and kick', () => {
   const { room, clock, ids, events } = setup(4);
-  ok(handle(room, ids[0], 'host:start', {}));
+  begin(room);
   winFaceoff(room, clock);
   const t = typer(room);
   const target = unrevealed(room)[0];
@@ -362,4 +386,237 @@ test('host accept, skip and kick', () => {
   bad(handle(room, ids[3], 'buzz', { reactionMs: 200 }));
   ok(handle(room, room.hostId, 'host:end', {}));
   assert.strictEqual(room.phase, 'game_over');
+});
+
+// ---------- v2: team naming ----------
+
+test('team naming: captain only, uniqueness, repeatable until locked, lock-all advances', () => {
+  const { room, ids, events } = setup(4, { teamCount: 2 });
+  bad(handle(room, ids[0], 'team:name', { name: 'Early' })); // lobby
+  ok(handle(room, ids[0], 'host:start', {}));
+  assert.strictEqual(room.phase, 'team_naming');
+  assert.strictEqual(snapshotFor(room, ids[0]).gameClock, null); // naming time doesn't count
+  const [ta, tb] = room.teams;
+  const snapTeams = snapshotFor(room, ids[0]).teams;
+  assert.strictEqual(snapTeams[0].captainId, ta.playerIds[0]);
+  assert.strictEqual(snapTeams[0].nameLocked, false);
+  const capA = ta.playerIds[0];
+  const capB = tb.playerIds[0];
+
+  bad(handle(room, ta.playerIds[1], 'team:name', { name: 'Not Captain' }));
+  bad(handle(room, ta.playerIds[1], 'team:lock', {}));
+  bad(handle(room, capA, 'team:name', { name: '   ' }));
+  bad(handle(room, capA, 'team:name', { name: 'x'.repeat(25) }));
+  ok(handle(room, capA, 'team:name', { name: '  Chai & Chill  ' }));
+  assert.deepStrictEqual(events.at(-1), { id: events.at(-1).id, type: 'teamName', data: { teamId: ta.id, name: 'Chai & Chill' } });
+  assert.strictEqual(snapshotFor(room, capB).teams[0].name, 'Chai & Chill');
+  bad(handle(room, capB, 'team:name', { name: 'CHAI & chill' })); // taken, case-insensitive
+  ok(handle(room, capA, 'team:name', { name: 'Mate Masters' })); // repeatable
+  ok(handle(room, capB, 'team:name', { name: 'Chai & Chill' })); // freed up
+  ok(handle(room, capA, 'team:lock', {}));
+  assert.strictEqual(events.at(-1).type, 'teamLocked');
+  bad(handle(room, capA, 'team:name', { name: 'Too Late' }));
+  bad(handle(room, capA, 'team:lock', {}));
+  assert.strictEqual(room.phase, 'team_naming');
+  ok(handle(room, capB, 'team:lock', {}));
+  assert.strictEqual(room.phase, 'faceoff');
+  assert.strictEqual(room.round.number, 1);
+  assert.ok(events.some((e) => e.type === 'namingDone'));
+  assert.deepStrictEqual(room.teams.map((t) => t.name), ['Mate Masters', 'Chai & Chill']);
+  assert.strictEqual(clockLeft(room), 7 * 60000);
+  bad(handle(room, capA, 'team:name', { name: 'Again' }));
+});
+
+test('team naming: timer expiry and host:next start round 1; disconnected captain falls back', () => {
+  const a = setup(4, { teamCount: 2 });
+  ok(handle(a.room, a.ids[0], 'host:start', {}));
+  const team = a.room.teams[0];
+  const [cap, mate] = team.playerIds;
+  disconnect(a.room, cap);
+  assert.strictEqual(snapshotFor(a.room, mate).teams[0].captainId, mate);
+  ok(handle(a.room, mate, 'team:name', { name: 'Gaucho Gang' }));
+  reconnect(a.room, a.room.players.find((p) => p.id === cap).token);
+  bad(handle(a.room, mate, 'team:name', { name: 'Back Off' }));
+  a.clock.advance(29999);
+  assert.strictEqual(a.room.phase, 'team_naming');
+  a.clock.advance(1);
+  assert.strictEqual(a.room.phase, 'faceoff');
+  assert.ok(a.room.teams.every((t) => t.nameLocked));
+  assert.strictEqual(team.name, 'Gaucho Gang');
+  assert.deepStrictEqual(a.room.teams.slice(1).map((t) => t.name), ['Summit Seekers']); // unnamed -> default
+
+  const b = setup(3);
+  ok(handle(b.room, b.ids[0], 'host:start', {}));
+  bad(handle(b.room, b.ids[1], 'host:next', {}));
+  ok(handle(b.room, b.room.hostId, 'host:next', {}));
+  assert.strictEqual(b.room.phase, 'faceoff');
+  b.clock.advance(30000); // stale naming timer must not restart round 1
+  assert.strictEqual(b.room.round.number, 1);
+});
+
+// ---------- v2: game clock ----------
+
+test('clock: 5-min game of timeouts flags a final x2 round, then bonus', () => {
+  const { room, clock } = setup(4, { gameMinutes: 5, teamCount: 2 });
+  begin(room);
+  const rounds = [];
+  advanceUntil(clock, () => {
+    if (room.round && room.phase === 'faceoff' && rounds.at(-1)?.number !== room.round.number) {
+      rounds.push({ number: room.round.number, isFinal: room.round.isFinal, multiplier: room.round.multiplier, left: clockLeft(room) });
+    }
+    return room.phase === 'bonus_bet';
+  });
+  assert.strictEqual(rounds[0].isFinal, false);
+  const final = rounds.at(-1);
+  assert.ok(rounds.length >= 2);
+  assert.strictEqual(final.isFinal, true);
+  assert.strictEqual(final.multiplier, 2);
+  assert.ok(final.left < 165000 && final.left >= 90000);
+  assert.ok(rounds.slice(0, -1).every((r) => !r.isFinal && r.multiplier === 1 && r.left >= 165000));
+});
+
+test('clock: < 90 s left after a round goes straight to bonus (round never interrupted)', () => {
+  const { room, clock } = setup(4, { gameMinutes: 5, teamCount: 2 });
+  begin(room);
+  advanceUntil(clock, () => room.round?.number === 2);
+  assert.strictEqual(room.round.isFinal, false);
+  clock.advance(60000);
+  ok(handle(room, room.hostId, 'host:skip', {})); // restart round 2 late: stays non-final
+  assert.strictEqual(room.round.isFinal, false);
+  advanceUntil(clock, () => room.phase === 'round_end');
+  assert.ok(clockLeft(room) < 90000);
+  ok(handle(room, room.hostId, 'host:next', {}));
+  assert.strictEqual(room.phase, 'bonus_bet');
+});
+
+test('clock: hits 0 mid-round without interrupting; pause freezes clock', () => {
+  const { room, clock } = setup(4, { gameMinutes: 5, teamCount: 2 });
+  begin(room);
+  assert.deepStrictEqual(snapshotFor(room, room.hostId).gameClock.durationMs, 300000);
+  clock.advance(1000);
+  assert.strictEqual(clockLeft(room), 299000);
+  ok(handle(room, room.hostId, 'host:pause', {}));
+  clock.advance(60000);
+  assert.strictEqual(clockLeft(room), 299000);
+  ok(handle(room, room.hostId, 'host:resume', {}));
+  clock.advance(1000);
+  assert.strictEqual(clockLeft(room), 298000);
+  room.clock.endsAt = clock.now() + 1000;
+  const n = room.round.number;
+  clock.advance(2000);
+  assert.strictEqual(clockLeft(room), 0);
+  assert.strictEqual(room.round.number, n);
+  assert.ok(['faceoff', 'play', 'steal'].includes(room.phase));
+});
+
+test('clock: hard cap of 12 rounds, 12th is final', () => {
+  const { room } = setup(4, { gameMinutes: 10, teamCount: 2 });
+  begin(room);
+  room.round.number = 10;
+  ok(handle(room, room.hostId, 'host:end', {}));
+  room.phase = 'round_end';
+  room.clock = { durationMs: 600000, endsAt: room.now() + 600000, remainingMs: null };
+  ok(handle(room, room.hostId, 'host:next', {}));
+  assert.strictEqual(room.round.number, 11);
+  assert.strictEqual(room.round.isFinal, false);
+  room.phase = 'round_end';
+  ok(handle(room, room.hostId, 'host:next', {}));
+  assert.strictEqual(room.round.number, 12);
+  assert.strictEqual(room.round.isFinal, true);
+  room.phase = 'round_end';
+  ok(handle(room, room.hostId, 'host:next', {}));
+  assert.strictEqual(room.phase, 'bonus_bet');
+});
+
+// ---------- v2: turn info / round_end ----------
+
+test('nextTyperId predicts the actual next typer, skipping disconnected; activeTeamId', () => {
+  const { room, clock, ids } = setup(6, { teamCount: 2 });
+  begin(room);
+  const control = winFaceoff(room, clock);
+  const teamIdx = room.teams.findIndex((t) => t.id === control);
+  const snap = () => snapshotFor(room, ids[0]);
+  assert.strictEqual(snap().round.activeTeamId, control);
+  const cur = typer(room);
+  const next = snap().teams[teamIdx].nextTyperId;
+  assert.ok(next && next !== cur);
+  ok(handle(room, cur, 'answer', { text: 'zzz' }));
+  assert.strictEqual(typer(room), next);
+  const predicted = snap().teams[teamIdx].nextTyperId;
+  disconnect(room, predicted);
+  const skipped = snap().teams[teamIdx].nextTyperId;
+  assert.notStrictEqual(skipped, predicted);
+  ok(handle(room, typer(room), 'answer', { text: 'zzz2' }));
+  assert.strictEqual(typer(room), skipped);
+  ok(handle(room, typer(room), 'answer', { text: 'zzz3' }));
+  assert.strictEqual(room.phase, 'steal');
+  assert.strictEqual(snap().round.activeTeamId, null);
+});
+
+test('round_end auto-advances after 5 s; early host:next does not double-advance', () => {
+  const { room, clock } = setup(4, { teamCount: 2 });
+  begin(room);
+  winFaceoff(room, clock);
+  while (room.phase === 'play') ok(handle(room, typer(room), 'answer', { text: unrevealed(room)[0] }));
+  assert.strictEqual(room.phase, 'round_end');
+  assert.strictEqual(snapshotFor(room, room.hostId).timer.duration, 5000);
+  clock.advance(4999);
+  assert.strictEqual(room.phase, 'round_end');
+  clock.advance(1);
+  assert.strictEqual(room.round.number, 2);
+  assert.strictEqual(room.phase, 'faceoff');
+
+  winFaceoff(room, clock);
+  while (room.phase === 'play') ok(handle(room, typer(room), 'answer', { text: unrevealed(room)[0] }));
+  ok(handle(room, room.hostId, 'host:next', {}));
+  assert.strictEqual(room.round.number, 3);
+  clock.advance(5000);
+  assert.strictEqual(room.round.number, 3);
+});
+
+test('playAgain resets naming and clock', () => {
+  const { room, ids } = setup(4, { teamCount: 2 });
+  begin(room);
+  ok(handle(room, room.hostId, 'host:end', {}));
+  ok(handle(room, room.hostId, 'host:playAgain', {}));
+  assert.strictEqual(snapshotFor(room, ids[0]).gameClock, null);
+  ok(handle(room, room.hostId, 'host:start', {}));
+  assert.strictEqual(room.phase, 'team_naming');
+  assert.ok(room.teams.every((t) => !t.nameLocked && t.captainId));
+  assert.strictEqual(snapshotFor(room, ids[0]).gameClock, null);
+});
+
+// ---------- v2: categories ----------
+
+test('categories: validation, counts, too-small selection rejects start', () => {
+  const { room, ids } = setup(4);
+  assert.deepStrictEqual(snapshotFor(room, ids[1]).categoryCounts, { zoo: 1, gems: 1, space: 1, music: 1, food: 1, filler: 12 });
+  bad(handle(room, ids[0], 'host:settings', { categories: [] }));
+  bad(handle(room, ids[0], 'host:settings', { categories: ['zoo', 'nope'] }));
+  bad(handle(room, ids[0], 'host:settings', { categories: 'zoo' }));
+  bad(handle(room, ids[0], 'host:settings', { categories: [1] }));
+  ok(handle(room, ids[0], 'host:settings', { categories: ['zoo', 'zoo', 'food', 'filler'] }));
+  assert.deepStrictEqual(room.settings.categories, ['zoo', 'food', 'filler']);
+  const res = bad(handle(room, ids[0], 'host:start', {})); // 14 questions
+  assert.strictEqual(res.error, 'Selected categories have only 14 questions — pick more (min 15)');
+  ok(handle(room, ids[0], 'host:settings', { categories: ['zoo', 'gems', 'space', 'music', 'filler'] })); // 16, but no bonus question
+  assert.match(bad(handle(room, ids[0], 'host:start', {})).error, /bonus/);
+  ok(handle(room, ids[0], 'host:addQuestion', { q: 'Name a custom thing', answers: [{ text: 'Alpha', points: 60 }, { text: 'Beta', points: 40 }] }));
+  ok(handle(room, ids[0], 'host:settings', { categories: ['zoo', 'food', 'filler'] })); // 14 + 1 custom = 15
+  ok(handle(room, ids[0], 'host:start', {}));
+});
+
+test('categories: unselected categories never appear in a full game', () => {
+  const { room, clock, ids } = setup(4, { teamCount: 2, gameMinutes: 10 });
+  ok(handle(room, ids[0], 'host:addQuestion', { q: 'Name a custom thing', answers: [{ text: 'Alpha', points: 60 }, { text: 'Beta', points: 40 }] }));
+  ok(handle(room, ids[0], 'host:settings', { categories: ['zoo', 'food', 'filler'] }));
+  begin(room);
+  const cats = new Set();
+  advanceUntil(clock, () => {
+    if (room.round && ['faceoff', 'play', 'steal', 'round_end'].includes(room.phase)) cats.add(room.round.category);
+    return room.phase === 'bonus_bet';
+  });
+  assert.ok(cats.size >= 2);
+  for (const c of cats) assert.ok(['zoo', 'filler', 'custom'].includes(c), c);
+  assert.strictEqual(room.bonus.question, 'Name a cheese');
 });

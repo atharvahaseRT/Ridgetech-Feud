@@ -1,2 +1,2 @@
-# Handoff → DevOps/SRE / Owner
-Code complete on branch feat/ridgetech-feud, PR to main. Railway: create service from GitHub repo, branch main, generate domain. Runbook in decisions/sre. Don't merge during live games.
+# Handoff → Owner
+v2 on branch feat/enhancements-v2 (PR). Merge when no game is live; Railway redeploys. Reviews in .10x/reviews/2026-11-20-v2-*.
