@@ -15,7 +15,8 @@ const ALL_GONE_MS = 15 * 60 * 1000;
 const IDLE_MS = 3 * 60 * 60 * 1000;
 const GAME_EVENTS = [
   'host:settings', 'host:addQuestion', 'host:removeQuestion', 'host:start', 'host:next', 'host:pause', 'host:resume',
-  'host:skip', 'host:accept', 'host:kick', 'host:end', 'host:playAgain', 'buzz', 'answer', 'bonus:bet', 'bonus:answer',
+  'host:skip', 'host:accept', 'host:kick', 'host:end', 'host:playAgain', 'team:name', 'team:lock', 'buzz', 'answer',
+  'bonus:bet', 'bonus:answer',
 ];
 
 let questions;

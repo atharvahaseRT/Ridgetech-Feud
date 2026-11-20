@@ -5,17 +5,27 @@ const { match, closest } = require('./matcher');
 
 const TEAM_NAMES = ['Ridge Runners', 'Summit Seekers', 'Peak Performers', 'Basecamp Bandits'];
 const TEAM_COLORS = ['#ff6b35', '#2ec4b6', '#e9c46a', '#c77dff'];
-const SETTING_RANGES = { answerSeconds: [10, 60], stealSeconds: [5, 30], bonusSeconds: [30, 120], rounds: [3, 8] };
-const COUNTDOWN_MS = 3000;
+const GAME_MINUTES = [5, 7, 10];
+// Fixed timers (v2 spec §2, ADR-002).
+const TEAM_NAMING_MS = 30000;
+const COUNTDOWN_MS = 2000;
 const BUZZ_WINDOW_MS = 250;
-const NO_BUZZ_MS = 10000;
+const NO_BUZZ_MS = 8000;
+const ANSWER_MS = 12000;
+const STEAL_MS = 8000;
+const ROUND_END_AUTO_MS = 5000;
 const FALSE_START_MS = 1000;
-const BET_MS = 30000;
+const BET_MS = 15000;
 const BET_REVEAL_MS = 3000;
+const BONUS_MS = 30000;
+const BONUS_RESERVE_MS = 90000;
+const FINAL_ROUND_THRESHOLD_MS = 165000;
+const MAX_ROUNDS = 12;
+const MIN_DECK = 15;
 const HOST_GRACE_MS = 30000;
 const MAX_PLAYERS = 30;
 const MAX_CUSTOM = 50;
-const TIMED_PHASES = ['faceoff', 'play', 'steal', 'bonus_bet', 'bonus_play'];
+const TIMED_PHASES = ['team_naming', 'faceoff', 'play', 'steal', 'round_end', 'bonus_bet', 'bonus_play'];
 const ROUND_PHASES = ['faceoff', 'play', 'steal'];
 
 const OK = { ok: true };
@@ -30,14 +40,16 @@ function defaultSchedule(ms, fn) {
 }
 
 function createRoom({ code, questions = [], now = Date.now, schedule = defaultSchedule, onChange = () => {}, random = Math.random }) {
+  const categoryCounts = {};
+  for (const q of questions) categoryCounts[q.category] = (categoryCounts[q.category] || 0) + 1;
   return {
-    code, questions, now, schedule, onChange, random,
+    code, questions, now, schedule, onChange, random, categoryCounts,
     phase: 'lobby', paused: false, hostId: null,
-    settings: { teamCount: 'auto', answerSeconds: 20, stealSeconds: 15, bonusSeconds: 60, rounds: 5 },
+    settings: { teamCount: 'auto', gameMinutes: 7, categories: Object.keys(categoryCounts) },
     players: [], teams: [], pairs: [],
     customQuestions: [], nextCustomId: 1, nextPlayerId: 1,
-    deck: [], bonusQuestion: null, round: null, bonus: null,
-    timer: null, undo: null,
+    pool: [], deck: [], bonusQuestion: null, round: null, bonus: null,
+    timer: null, clock: null, undo: null,
     lastEvent: null, eventId: 0, updatedAt: now(),
   };
 }
@@ -61,17 +73,39 @@ function shuffle(room, arr) {
   return arr;
 }
 
-// Next player in a team rotation, skipping disconnected players (falls back to anyone).
-function take(room, team, key) {
+// Index of the next player in a team rotation, skipping disconnected players (falls back to anyone).
+function rotationIdx(room, team, key) {
   const ids = team.playerIds;
-  if (!ids.length) return null;
+  if (!ids.length) return -1;
   for (let k = 0; k < ids.length; k++) {
     const i = (team[key] + k) % ids.length;
-    if (byId(room, ids[i])?.connected) { team[key] = i + 1; return ids[i]; }
+    if (byId(room, ids[i])?.connected) return i;
   }
-  const i = team[key] % ids.length;
+  return team[key] % ids.length;
+}
+
+function take(room, team, key) {
+  const i = rotationIdx(room, team, key);
+  if (i < 0) return null;
   team[key] = i + 1;
-  return ids[i];
+  return team.playerIds[i];
+}
+
+// Same rotation as take() without advancing it, so "up next" can't drift from who actually types.
+function peek(room, team, key) {
+  const i = rotationIdx(room, team, key);
+  return i < 0 ? null : team.playerIds[i];
+}
+
+// Captain is fixed at the draw; while they're disconnected the next connected teammate acts for them.
+function actingCaptain(room, team) {
+  const ids = team.playerIds;
+  const start = Math.max(0, ids.indexOf(team.captainId));
+  for (let k = 0; k < ids.length; k++) {
+    const id = ids[(start + k) % ids.length];
+    if (byId(room, id)?.connected) return id;
+  }
+  return ids.includes(team.captainId) ? team.captainId : ids[0] ?? null;
 }
 
 const cleanText = (s, max) => (typeof s === 'string' && s.trim().length >= 1 && s.trim().length <= max ? s.trim() : null);
@@ -98,6 +132,19 @@ function setTimer(room, ms, fn, visible = true) {
 function clearTimer(room) {
   if (room.timer?.cancel) room.timer.cancel();
   room.timer = null;
+}
+
+// ---------- game clock (informational; never interrupts a round) ----------
+
+function startClock(room) {
+  const durationMs = room.settings.gameMinutes * 60000;
+  room.clock = { durationMs, endsAt: room.now() + durationMs, remainingMs: room.paused ? durationMs : null };
+}
+
+function clockRemaining(room) {
+  const c = room.clock;
+  if (!c) return 0;
+  return c.remainingMs !== null ? c.remainingMs : Math.max(0, c.endsAt - room.now());
 }
 
 // ---------- players ----------
@@ -158,52 +205,79 @@ function teamCountFor(room) {
   return Math.min(count, n);
 }
 
+// Built-in questions from the selected categories + all custom questions.
+const poolFor = (room) => [...room.customQuestions, ...room.questions.filter((q) => room.settings.categories.includes(q.category))];
+
 function startGame(room) {
   const count = teamCountFor(room);
   room.teams = Array.from({ length: count }, (_, i) => ({
     id: 't' + (i + 1), name: TEAM_NAMES[i], color: TEAM_COLORS[i], score: 0, playerIds: [], typerIdx: 0, faceoffIdx: 0,
+    captainId: null, nameLocked: false,
   }));
   shuffle(room, [...room.players]).forEach((p, i) => {
     const team = room.teams[i % count];
     team.playerIds.push(p.id);
     p.teamId = team.id;
   });
+  for (const t of room.teams) t.captainId = t.playerIds[0];
   room.pairs = [];
   for (let a = 0; a < count; a++) for (let b = a + 1; b < count; b++) room.pairs.push([a, b]);
 
-  const all = shuffle(room, [...room.customQuestions, ...room.questions]);
+  room.pool = poolFor(room);
+  const all = shuffle(room, [...room.pool]);
   const bi = all.findIndex((q) => q.answers.length >= 5);
   room.bonusQuestion = bi >= 0 ? all.splice(bi, 1)[0] : null;
   room.deck = all;
   room.bonus = null;
+  room.round = null;
+  room.clock = null;
+  room.phase = 'team_naming';
+  setTimer(room, TEAM_NAMING_MS, () => finishNaming(room));
   emit(room, 'start');
   emit(room, 'teams', { teams: room.teams.map((t) => ({ id: t.id, playerIds: [...t.playerIds] })) });
-  startRound(room, 1);
+}
+
+function finishNaming(room) {
+  clearTimer(room);
+  for (const t of room.teams) t.nameLocked = true;
+  emit(room, 'namingDone');
+  startClock(room);
+  startRound(room, 1, false);
+}
+
+// Clock-driven scheduling: < 90 s left -> bonus; < 165 s left -> final x2 round; hard cap 12 rounds.
+function nextRound(room) {
+  const r = room.round;
+  room.undo = null;
+  const rem = clockRemaining(room);
+  if (r.isFinal || r.number >= MAX_ROUNDS || rem < BONUS_RESERVE_MS) return startBonus(room);
+  const number = r.number + 1;
+  startRound(room, number, number === MAX_ROUNDS || rem < FINAL_ROUND_THRESHOLD_MS);
 }
 
 function drawQuestion(room) {
   if (!room.deck.length) {
     // ponytail: bank exhausted -> reshuffle everything; repeats only once all questions are used.
-    room.deck = shuffle(room, [...room.customQuestions, ...room.questions].filter((q) => q !== room.bonusQuestion));
+    room.deck = shuffle(room, room.pool.filter((q) => q !== room.bonusQuestion));
   }
   return room.deck.pop();
 }
 
-function startRound(room, number) {
+function startRound(room, number, isFinal) {
   const q = drawQuestion(room);
   if (!q) return startBonus(room);
   const [ta, tb] = room.pairs[(number - 1) % room.pairs.length].map((i) => room.teams[i]);
   room.phase = 'faceoff';
   room.undo = null;
   room.round = {
-    number, total: room.settings.rounds, multiplier: number === room.settings.rounds ? 2 : 1,
+    number, total: null, isFinal, multiplier: isFinal ? 2 : 1,
     category: q.category || 'custom', question: q.q,
     answers: [...q.answers].sort((a, b) => b.points - a.points).map((a) => ({ text: a.text, points: a.points, aliases: a.aliases || [], revealed: false, missed: false })),
     strikes: 0, pot: 0, controlTeamId: null,
     faceoff: { playerIds: [take(room, ta, 'faceoffIdx'), take(room, tb, 'faceoffIdx')], teamIds: [ta.id, tb.id], status: 'countdown', buzzWinnerId: null, answeringId: null },
     typerId: null, steal: null, lastGuess: null, buzzes: [], penalties: {},
   };
-  setTimer(room, COUNTDOWN_MS, () => setTimer(room, 500 + room.random() * 1500, () => faceoffGo(room), false));
+  setTimer(room, COUNTDOWN_MS, () => setTimer(room, 500 + room.random() * 1000, () => faceoffGo(room), false));
   emit(room, 'countdown', { round: number });
 }
 
@@ -226,7 +300,7 @@ function faceoffAnswerer(room, playerId) {
   r.faceoff.status = 'answering';
   r.faceoff.answeringId = playerId;
   r.typerId = playerId;
-  setTimer(room, room.settings.answerSeconds * 1000, () => applyAnswer(room, playerId, ''));
+  setTimer(room, ANSWER_MS, () => applyAnswer(room, playerId, ''));
 }
 
 function startPlay(room, teamId) {
@@ -243,7 +317,7 @@ function nextTyper(room) {
   const team = teamById(room, r.controlTeamId);
   r.typerId = team ? take(room, team, 'typerIdx') : null;
   const id = r.typerId;
-  setTimer(room, room.settings.answerSeconds * 1000, () => applyAnswer(room, id, ''));
+  setTimer(room, ANSWER_MS, () => applyAnswer(room, id, ''));
 }
 
 function startSteal(room) {
@@ -252,7 +326,7 @@ function startSteal(room) {
   r.typerId = null;
   r.buzzes = [];
   r.steal = { teamIds: room.teams.filter((t) => t.id !== r.controlTeamId).map((t) => t.id), status: 'go', stealerId: null, stealerTeamId: null };
-  setTimer(room, room.settings.stealSeconds * 1000, () => {
+  setTimer(room, STEAL_MS, () => {
     emit(room, 'stealResult', { teamId: null, success: false, correct: false });
     endRound(room, r.controlTeamId);
   });
@@ -270,7 +344,7 @@ function resolveBuzz(room) {
     r.steal.stealerId = best.playerId;
     r.steal.stealerTeamId = byId(room, best.playerId)?.teamId ?? null;
     r.typerId = best.playerId;
-    setTimer(room, room.settings.stealSeconds * 1000, () => applyAnswer(room, best.playerId, ''));
+    setTimer(room, STEAL_MS, () => applyAnswer(room, best.playerId, ''));
   }
   emit(room, 'buzz', { playerId: best.playerId, reactionMs: best.reactionMs });
 }
@@ -358,6 +432,7 @@ function endRound(room, winnerTeamId) {
   r.winnerTeamId = winnerTeamId;
   r.typerId = null;
   room.phase = 'round_end';
+  setTimer(room, ROUND_END_AUTO_MS, () => nextRound(room));
   emit(room, 'roundEnd', { teamId: winnerTeamId, winnerTeamId, points, pot: r.pot, multiplier: r.multiplier });
 }
 
@@ -392,7 +467,7 @@ function revealBets(room) {
 function startBonusPlay(room) {
   room.phase = 'bonus_play';
   for (const t of room.teams) room.bonus.teams[t.id].typerId = take(room, t, 'typerIdx');
-  setTimer(room, room.settings.bonusSeconds * 1000, () => bonusReveal(room));
+  setTimer(room, BONUS_MS, () => bonusReveal(room));
   emit(room, 'update', { reason: 'bonusPlay' });
 }
 
@@ -422,6 +497,7 @@ function gameOver(room) {
   room.phase = 'game_over';
   room.paused = false;
   room.undo = null;
+  room.clock = null;
   if (room.round) room.round.typerId = null;
   const best = (key, cmp) => room.players.filter((p) => p[key] !== null && p[key] > 0).sort(cmp)[0]?.id ?? null;
   emit(room, 'gameOver', {
@@ -443,10 +519,14 @@ const handlers = {
       if (!['auto', 2, 3, 4].includes(d.teamCount)) return fail('Invalid teamCount');
       next.teamCount = d.teamCount;
     }
-    for (const [key, [min, max]] of Object.entries(SETTING_RANGES)) {
-      if (d[key] === undefined) continue;
-      if (!Number.isInteger(d[key]) || d[key] < min || d[key] > max) return fail(`${key} must be ${min}-${max}`);
-      next[key] = d[key];
+    if (d.gameMinutes !== undefined) {
+      if (!GAME_MINUTES.includes(d.gameMinutes)) return fail('gameMinutes must be 5, 7 or 10');
+      next.gameMinutes = d.gameMinutes;
+    }
+    if (d.categories !== undefined) {
+      if (!Array.isArray(d.categories) || !d.categories.every((c) => typeof c === 'string' && Object.hasOwn(room.categoryCounts, c))) return fail('Invalid categories');
+      if (!d.categories.length) return fail('Pick at least one category');
+      next.categories = [...new Set(d.categories)];
     }
     room.settings = next;
     emit(room, 'update', { reason: 'settings' });
@@ -483,14 +563,15 @@ const handlers = {
   'host:start'(room) {
     if (room.phase !== 'lobby') return fail('Already started');
     if (room.players.length < 2) return fail('Need at least 2 players');
+    const pool = poolFor(room);
+    if (pool.length < MIN_DECK) return fail(`Selected categories have only ${pool.length} questions — pick more (min ${MIN_DECK})`);
+    if (!pool.some((q) => q.answers.length >= 5)) return fail('Selected categories have no bonus question (5+ answers) — pick more');
     startGame(room);
   },
 
   'host:next'(room) {
-    if (room.phase === 'round_end') {
-      room.undo = null;
-      return room.round.number >= room.settings.rounds ? startBonus(room) : startRound(room, room.round.number + 1);
-    }
+    if (room.phase === 'team_naming') return finishNaming(room);
+    if (room.phase === 'round_end') return nextRound(room);
     if (room.phase === 'bonus_reveal') return gameOver(room);
     return fail('Nothing to advance');
   },
@@ -504,6 +585,7 @@ const handlers = {
       t.cancel?.();
       t.cancel = null;
     }
+    if (room.clock) room.clock.remainingMs = clockRemaining(room);
     emit(room, 'update', { reason: 'pause' });
   },
 
@@ -511,12 +593,13 @@ const handlers = {
     if (!room.paused) return fail('Not paused');
     room.paused = false;
     if (room.timer) arm(room, room.timer, room.timer.remaining);
+    if (room.clock) { room.clock.endsAt = room.now() + room.clock.remainingMs; room.clock.remainingMs = null; }
     emit(room, 'update', { reason: 'resume' });
   },
 
   'host:skip'(room) {
     if (!ROUND_PHASES.includes(room.phase)) return fail('Nothing to skip');
-    startRound(room, room.round.number);
+    startRound(room, room.round.number, room.round.isFinal);
   },
 
   'host:accept'(room) {
@@ -551,9 +634,33 @@ const handlers = {
   'host:playAgain'(room) {
     if (room.phase !== 'game_over') return fail('Game not over');
     clearTimer(room);
-    Object.assign(room, { phase: 'lobby', paused: false, teams: [], round: null, bonus: null, deck: [], bonusQuestion: null, undo: null });
+    Object.assign(room, { phase: 'lobby', paused: false, teams: [], round: null, bonus: null, pool: [], deck: [], bonusQuestion: null, undo: null, clock: null });
     for (const pl of room.players) { pl.teamId = null; pl.hits = 0; pl.bestReactionMs = null; }
     emit(room, 'update', { reason: 'playAgain' });
+  },
+
+  'team:name'(room, p, d) {
+    if (room.paused) return fail('Paused');
+    if (room.phase !== 'team_naming') return fail('Not naming teams now');
+    const team = teamById(room, p.teamId);
+    if (!team || actingCaptain(room, team) !== p.id) return fail('Only your captain can name the team');
+    if (team.nameLocked) return fail('Name already locked');
+    const name = cleanText(d.name, 24);
+    if (!name) return fail('Team name must be 1-24 characters');
+    if (room.teams.some((t) => t !== team && t.name.toLowerCase() === name.toLowerCase())) return fail('Another team has that name');
+    team.name = name;
+    emit(room, 'teamName', { teamId: team.id, name });
+  },
+
+  'team:lock'(room, p) {
+    if (room.paused) return fail('Paused');
+    if (room.phase !== 'team_naming') return fail('Not naming teams now');
+    const team = teamById(room, p.teamId);
+    if (!team || actingCaptain(room, team) !== p.id) return fail('Only your captain can lock the name');
+    if (team.nameLocked) return fail('Name already locked');
+    team.nameLocked = true;
+    emit(room, 'teamLocked', { teamId: team.id });
+    if (room.teams.every((t) => t.nameLocked)) finishNaming(room);
   },
 
   buzz(room, p, d) {
@@ -648,23 +755,30 @@ function snapshotFor(room, playerId) {
   const t = room.timer;
   const r = room.round;
   const b = room.bonus;
+  const c = room.clock;
   return {
     code: room.code, phase: room.phase, paused: room.paused, serverNow,
     you: { id: playerId, name: me?.name ?? null, teamId: me?.teamId ?? null, isHost },
     hostId: room.hostId,
-    settings: { ...room.settings },
+    settings: { ...room.settings, categories: [...room.settings.categories] },
+    categoryCounts: { ...room.categoryCounts },
     players: room.players.map((p) => ({
       id: p.id, name: p.name, teamId: p.teamId, connected: p.connected, isHost: p.id === room.hostId, hits: p.hits, bestReactionMs: p.bestReactionMs,
     })),
-    teams: room.teams.map((x) => ({ id: x.id, name: x.name, color: x.color, score: x.score, playerIds: [...x.playerIds] })),
+    teams: room.teams.map((x) => ({
+      id: x.id, name: x.name, color: x.color, score: x.score, playerIds: [...x.playerIds],
+      captainId: actingCaptain(room, x), nameLocked: x.nameLocked, nextTyperId: peek(room, x, 'typerIdx'),
+    })),
     customQuestions: isHost ? room.customQuestions.map((q) => ({ id: q.id, q: q.q, answerCount: q.answers.length })) : [],
     timer: t && t.visible ? { endsAt: room.paused ? serverNow + t.remaining : t.endsAt, duration: t.duration } : null,
+    gameClock: c ? { endsAt: serverNow + clockRemaining(room), durationMs: c.durationMs } : null,
     round: r && ROUND_PHASES.concat('round_end').includes(room.phase) ? {
-      number: r.number, total: r.total, multiplier: r.multiplier, category: r.category, question: r.question,
+      number: r.number, total: r.total, isFinal: r.isFinal, multiplier: r.multiplier, category: r.category, question: r.question,
       board: boardOf(r.answers),
       strikes: r.strikes, pot: r.pot, controlTeamId: r.controlTeamId,
       faceoff: { playerIds: [...r.faceoff.playerIds], teamIds: [...r.faceoff.teamIds], status: r.faceoff.status, buzzWinnerId: r.faceoff.buzzWinnerId, answeringId: r.faceoff.answeringId },
       currentTyperId: r.typerId,
+      activeTeamId: r.typerId ? byId(room, r.typerId)?.teamId ?? null : null,
       steal: r.steal ? { teamIds: [...r.steal.teamIds], status: r.steal.status, stealerId: r.steal.stealerId } : null,
       lastGuess: r.lastGuess ? { ...r.lastGuess } : null,
       canAccept: isHost && !!room.undo && r.lastGuess?.correct === false,
