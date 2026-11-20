@@ -1,2 +1,2 @@
-# Handoff → SDE
-Build per .10x/specs/2026-11-20-ridgetech-feud-design.md (§6 contract is law). ADR-001. Three parallel tracks; see decisions/engineering-manager.
+# Handoff → DevOps/SRE / Owner
+Code complete on branch feat/ridgetech-feud, PR to main. Railway: create service from GitHub repo, branch main, generate domain. Runbook in decisions/sre. Don't merge during live games.
